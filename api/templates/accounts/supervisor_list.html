@@ -1,0 +1,162 @@
+{% extends 'base.html' %}
+
+{% block title %}Kredi Satıcıları - Spradar{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="card shadow-lg mb-4">
+                <div class="card-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                    <h3 class="mb-0">
+                        <i class="fas fa-users"></i> Kredi Satıcıları (P2P)
+                    </h3>
+                    <p class="mb-0 mt-2">
+                        <small>Güvenilir satıcılardan kredi satın alın. Her satıcı kendi fiyatını belirler.</small>
+                    </p>
+                </div>
+                <div class="card-body">
+                    {% if supervisors %}
+                        <div class="alert alert-info">
+                            <i class="fas fa-info-circle"></i> 
+                            <strong>Nasıl Çalışır?</strong> Satıcıyı seçin, kredi miktarını belirleyin ve satıcının IBAN'ına ödeme yapın. 
+                            Satıcı ödemenizi onayladıktan sonra kredileriniz hesabınıza eklenir.
+                        </div>
+
+                        <div class="row">
+                            {% for item in supervisors %}
+                            <div class="col-md-6 col-lg-4 mb-4">
+                                <div class="card h-100 border-0 shadow-sm hover-shadow">
+                                    <div class="card-body">
+                                        <!-- Kullanıcı Bilgisi -->
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center" style="width: 50px; height: 50px; font-size: 24px;">
+                                                <i class="fas fa-user-tie"></i>
+                                            </div>
+                                            <div class="ms-3">
+                                                <h5 class="mb-0">{{ item.profile.user.get_full_name|default:item.profile.user.username }}</h5>
+                                                <small class="text-muted">
+                                                    <i class="fas fa-shield-alt"></i> Doğrulanmış Satıcı
+                                                </small>
+                                            </div>
+                                        </div>
+
+                                        <!-- Fiyat -->
+                                        <div class="mb-3 p-3 bg-light rounded">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <small class="text-muted">Birim Fiyat</small>
+                                                    <h4 class="mb-0 text-primary">{{ item.profile.supervisor_price }} ₺</h4>
+                                                    <small class="text-muted">/ kredi</small>
+                                                </div>
+                                                <div class="col-6 text-end">
+                                                    <small class="text-muted">Stok</small>
+                                                    <h4 class="mb-0 text-success">{{ item.available_credits }}</h4>
+                                                    <small class="text-muted">kredi</small>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- İstatistikler -->
+                                        <div class="mb-3">
+                                            <div class="d-flex justify-content-between mb-2">
+                                                <span class="text-muted">
+                                                    <i class="fas fa-chart-line"></i> Başarı Oranı
+                                                </span>
+                                                <span class="badge" style="background: {% if item.success_rate >= 80 %}#28a745{% elif item.success_rate >= 50 %}#ffc107{% else %}#dc3545{% endif %};">
+                                                    {{ item.success_rate|floatformat:0 }}%
+                                                </span>
+                                            </div>
+                                            <div class="progress" style="height: 8px;">
+                                                <div class="progress-bar" role="progressbar" 
+                                                     style="width: {{ item.success_rate }}%; background: {% if item.success_rate >= 80 %}#28a745{% elif item.success_rate >= 50 %}#ffc107{% else %}#dc3545{% endif %};"
+                                                     aria-valuenow="{{ item.success_rate }}" aria-valuemin="0" aria-valuemax="100"></div>
+                                            </div>
+                                            <small class="text-muted">
+                                                {{ item.profile.supervisor_completed_orders }} / {{ item.profile.supervisor_total_orders }} sipariş tamamlandı
+                                            </small>
+                                        </div>
+
+                                        <!-- Aksiyon Butonu -->
+                                        <div class="d-grid">
+                                            {% if item.available_credits >= 10 %}
+                                                <a href="{% url 'supervisor_purchase' item.profile.id %}" class="btn btn-primary">
+                                                    <i class="fas fa-shopping-cart"></i> Kredi Satın Al
+                                                </a>
+                                            {% else %}
+                                                <button class="btn btn-secondary" disabled>
+                                                    <i class="fas fa-exclamation-triangle"></i> Stok Yetersiz
+                                                </button>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- Card Footer - Banka Bilgisi -->
+                                    <div class="card-footer bg-transparent border-top-0">
+                                        <small class="text-muted">
+                                            <i class="fas fa-university"></i> {{ item.profile.supervisor_bank_name|default:"Banka belirtilmemiş" }}
+                                        </small>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+
+                    {% else %}
+                        <div class="alert alert-warning text-center">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <h5>Şu anda aktif satıcı bulunmamaktadır</h5>
+                            <p class="mb-0">Lütfen daha sonra tekrar kontrol edin veya doğrudan admin'den kredi satın alın.</p>
+                            <a href="{% url 'buy_credits' %}" class="btn btn-primary mt-3">
+                                <i class="fas fa-shopping-cart"></i> Admin'den Kredi Al
+                            </a>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Bilgilendirme Kartları -->
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <div class="card border-success">
+                        <div class="card-body text-center">
+                            <i class="fas fa-shield-check fa-3x text-success mb-3"></i>
+                            <h5>Güvenli</h5>
+                            <p class="text-muted small mb-0">Tüm satıcılar doğrulanmıştır ve işlemler sistematik olarak takip edilir.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card border-primary">
+                        <div class="card-body text-center">
+                            <i class="fas fa-bolt fa-3x text-primary mb-3"></i>
+                            <h5>Hızlı</h5>
+                            <p class="text-muted small mb-0">Satıcı ödemenizi onayladıktan sonra kredileriniz anında hesabınıza yüklenir.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <div class="card border-info">
+                        <div class="card-body text-center">
+                            <i class="fas fa-hand-holding-usd fa-3x text-info mb-3"></i>
+                            <h5>Uygun Fiyat</h5>
+                            <p class="text-muted small mb-0">Satıcılar rekabetçi fiyatlar sunarak size en iyi teklifi vermek için yarışır.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.hover-shadow {
+    transition: all 0.3s ease;
+}
+
+.hover-shadow:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2) !important;
+}
+</style>
+{% endblock %}

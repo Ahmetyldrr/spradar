@@ -1,0 +1,279 @@
+{% extends 'base.html' %}
+
+{% block title %}Kredi Satın Al - Spradar{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <!-- Başlık -->
+            <div class="text-center mb-4">
+                <h1><i class="bi bi-lightning-charge-fill text-warning"></i> Kredi Satın Al</h1>
+                <p class="lead text-muted">Admin'den veya güvenilir satıcılardan kredi satın alabilirsiniz</p>
+            </div>
+            
+            <!-- Seçenek Butonları -->
+            <div class="row mb-4">
+                <div class="col-md-6 mb-3">
+                    <div class="card h-100 border-primary">
+                        <div class="card-body text-center">
+                            <h3 class="text-primary"><i class="bi bi-building"></i> Admin'den Al</h3>
+                            <p class="mb-2">Resmi satış kanalı</p>
+                            <h4 class="text-success">0.49 ₺ / kredi</h4>
+                            <button class="btn btn-primary" onclick="showAdminPurchase()">
+                                <i class="bi bi-cart-plus"></i> Admin'den Satın Al
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="card h-100 border-success">
+                        <div class="card-body text-center">
+                            <h3 class="text-success"><i class="bi bi-people"></i> Satıcılardan Al</h3>
+                            <p class="mb-2">P2P Marketplace (Daha ucuz)</p>
+                            <h4 class="text-success">0.29 - 0.99 ₺ / kredi</h4>
+                            <button class="btn btn-success" onclick="showSupervisorList()">
+                                <i class="bi bi-shop"></i> Satıcıları Görüntüle
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Admin Kredi Satın Alma Formu -->
+            <div class="card border-primary mb-4" id="admin_purchase_section">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">
+                        <i class="bi bi-cart-plus"></i> Kredi Satın Alma Formu
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <form method="POST" action="{% url 'purchase_credits' %}">
+                        {% csrf_token %}
+                        <div class="row align-items-end g-3">
+                            <div class="col-md-6">
+                                <label for="credit_amount" class="form-label">
+                                    <i class="bi bi-coin"></i> <strong>Kredi Miktarı</strong>
+                                </label>
+                                <input 
+                                    type="number" 
+                                    class="form-control form-control-lg" 
+                                    id="credit_amount" 
+                                    name="credit_amount" 
+                                    min="10" 
+                                    max="100000" 
+                                    value="100" 
+                                    required
+                                    oninput="calculatePrice()"
+                                >
+                                <div class="form-text">Minimum: 10 - Maksimum: 100.000</div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <div class="price-display-box text-center">
+                                    <div class="price-label">Toplam Tutar</div>
+                                    <div class="price-amount" id="total_price">49,00 ₺</div>
+                                    <div class="price-per-credit">0,49 ₺ / kredi</div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-12">
+                                <button type="submit" class="btn btn-primary btn-lg w-100">
+                                    <i class="bi bi-cart-plus"></i>
+                                    <span id="purchase_button_text">49,00 TL - Sipariş Ver</span>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    
+                    <div class="alert alert-info mt-3 mb-0">
+                        <h6><i class="bi bi-info-circle-fill"></i> Nasıl Çalışır?</h6>
+                        <ol class="mb-0">
+                            <li>Kredi miktarını girin ve sipariş verin</li>
+                            <li>Ödeme bilgileri sayfasına yönlendirileceksiniz</li>
+                            <li>Banka havalesi veya EFT ile ödeme yapın</li>
+                            <li>Ödeme onaylandıktan sonra krediler otomatik eklenir</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- P2P Satıcılar Listesi -->
+            <div class="card border-success mb-4" id="supervisor_list_section" style="display: none;">
+                <div class="card-header bg-success text-white">
+                    <h4 class="mb-0">
+                        <i class="bi bi-shop"></i> P2P Satıcılar - Daha Uygun Fiyatlarla Kredi Alın
+                    </h4>
+                </div>
+                <div class="card-body">
+                    {% if supervisors %}
+                        <div class="alert alert-info">
+                            <i class="bi bi-info-circle"></i>
+                            <strong>P2P Sistemi:</strong> Güvenilir satıcılardan daha uygun fiyatlarla kredi satın alabilirsiniz.
+                            Satıcılar banka havalesi ile ödeme kabul eder ve onayladıktan sonra kredileriniz hesabınıza yüklenir.
+                        </div>
+                        
+                        <div class="row">
+                            {% for supervisor in supervisors %}
+                            <div class="col-md-6 mb-3">
+                                <div class="card h-100 shadow-sm">
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-between align-items-start mb-3">
+                                            <div>
+                                                <h5 class="mb-1">
+                                                    <i class="bi bi-person-circle text-primary"></i> 
+                                                    {{ supervisor.user.username }}
+                                                </h5>
+                                                <small class="text-muted">
+                                                    <i class="bi bi-clock-history"></i> 
+                                                    {{ supervisor.supervisor_total_orders }} sipariş
+                                                </small>
+                                            </div>
+                                            <span class="badge bg-success fs-6">
+                                                {{ supervisor.supervisor_price }} ₺
+                                            </span>
+                                        </div>
+                                        
+                                        <!-- Başarı Oranı -->
+                                        {% with success_rate=supervisor.get_supervisor_success_rate %}
+                                        <div class="mb-2">
+                                            <div class="d-flex justify-content-between mb-1">
+                                                <small>Başarı Oranı</small>
+                                                <small><strong>{{ success_rate|floatformat:1 }}%</strong></small>
+                                            </div>
+                                            <div class="progress" style="height: 8px;">
+                                                <div class="progress-bar 
+                                                    {% if success_rate >= 90 %}bg-success
+                                                    {% elif success_rate >= 70 %}bg-warning
+                                                    {% else %}bg-danger{% endif %}"
+                                                    style="width: {{ success_rate }}%">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        {% endwith %}
+                                        
+                                        <!-- Stok -->
+                                        <div class="mb-3">
+                                            <i class="bi bi-box-seam"></i>
+                                            <strong>Stok:</strong> 
+                                            <span class="badge bg-info">{{ supervisor.credits }} kredi</span>
+                                        </div>
+                                        
+                                        <!-- Banka -->
+                                        <div class="mb-3">
+                                            <i class="bi bi-bank"></i>
+                                            <strong>Banka:</strong> {{ supervisor.supervisor_bank_name }}
+                                        </div>
+                                        
+                                        <!-- Buton -->
+                                        {% if supervisor.credits > 0 %}
+                                            <a href="{% url 'supervisor_purchase' supervisor.id %}" class="btn btn-success w-100">
+                                                <i class="bi bi-cart-plus"></i> Satın Al
+                                            </a>
+                                        {% else %}
+                                            <button class="btn btn-secondary w-100" disabled>
+                                                <i class="bi bi-x-circle"></i> Stok Yok
+                                            </button>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        
+                        <div class="alert alert-warning mt-3">
+                            <h6><i class="bi bi-shield-check"></i> Güvenlik İpuçları</h6>
+                            <ul class="mb-0">
+                                <li>Yüksek başarı oranına sahip satıcıları tercih edin</li>
+                                <li>Ödeme kodunuzu mutlaka havale açıklamasına yazın</li>
+                                <li>Satıcı onayladıktan sonra kredileriniz otomatik yüklenir</li>
+                            </ul>
+                        </div>
+                    {% else %}
+                        <div class="alert alert-warning">
+                            <i class="bi bi-exclamation-triangle"></i>
+                            Şu anda aktif satıcı bulunmuyor. Lütfen Admin'den kredi satın alın.
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+            
+            <!-- Bekleyen Siparişler -->
+            {% if pending_purchases %}
+            <div class="card border-warning">
+                <div class="card-header bg-warning text-dark">
+                    <h5 class="mb-0">
+                        <i class="bi bi-hourglass-split"></i> Bekleyen Siparişleriniz
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Sipariş No</th>
+                                    <th>Kredi</th>
+                                    <th>Tutar</th>
+                                    <th>Ödeme Kodu</th>
+                                    <th>Tarih</th>
+                                    <th>İşlem</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for purchase in pending_purchases %}
+                                <tr>
+                                    <td><strong>#{{ purchase.id }}</strong></td>
+                                    <td>{{ purchase.credit_amount|floatformat:0 }} Kredi</td>
+                                    <td>{{ purchase.price|floatformat:2 }} TL</td>
+                                    <td>
+                                        <code style="font-weight: bold; font-size: 1rem;">
+                                            {{ purchase.payment_code }}
+                                        </code>
+                                    </td>
+                                    <td>{{ purchase.created_at|date:"d.m.Y H:i" }}</td>
+                                    <td>
+                                        <a href="{% url 'payment_info' purchase.id %}" class="btn btn-sm btn-primary">
+                                            <i class="bi bi-credit-card"></i> Ödeme Bilgileri
+                                        </a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<script>
+function calculatePrice() {
+    const creditAmount = document.getElementById('credit_amount').value;
+    const pricePerCredit = 0.49;
+    const totalPrice = (creditAmount * pricePerCredit).toFixed(2);
+    
+    // Fiyat gösterimini güncelle
+    document.getElementById('total_price').textContent = totalPrice.replace('.', ',') + ' ₺';
+    document.getElementById('purchase_button_text').textContent = totalPrice.replace('.', ',') + ' TL - Sipariş Ver';
+}
+
+function showAdminPurchase() {
+    document.getElementById('admin_purchase_section').style.display = 'block';
+    document.getElementById('supervisor_list_section').style.display = 'none';
+    // Scroll to section
+    document.getElementById('admin_purchase_section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function showSupervisorList() {
+    document.getElementById('admin_purchase_section').style.display = 'none';
+    document.getElementById('supervisor_list_section').style.display = 'block';
+    // Scroll to section
+    document.getElementById('supervisor_list_section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// Sayfa yüklendiğinde varsayılan fiyatı hesapla
+document.addEventListener('DOMContentLoaded', calculatePrice);
+</script>
+{% endblock %}

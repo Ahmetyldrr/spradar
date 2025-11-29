@@ -1,0 +1,293 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+
+{% block title %}Duyurular - Spradar{% endblock %}
+
+{% block extra_css %}
+<style>
+    .page-header {
+        background: linear-gradient(135deg, var(--grass-green) 0%, var(--field-green) 100%);
+        color: white;
+        padding: 80px 0 60px;
+        margin: -2rem -15px 3rem;
+        text-align: center;
+    }
+    
+    .filter-buttons {
+        background: white;
+        border-radius: 15px;
+        padding: 20px;
+        margin-bottom: 30px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+    
+    .filter-btn {
+        padding: 8px 20px;
+        border-radius: 20px;
+        border: 2px solid var(--primary-green);
+        background: white;
+        color: var(--primary-green);
+        margin-right: 10px;
+        margin-bottom: 10px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        font-weight: 600;
+    }
+    
+    .filter-btn:hover, .filter-btn.active {
+        background: var(--primary-green);
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
+    }
+    
+    .announcement-card {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        margin-bottom: 20px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .announcement-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+    
+    .announcement-card.pinned {
+        border-left: 5px solid #ffc107;
+        background: #fffbf0;
+    }
+    
+    .announcement-card.pinned::before {
+        content: '📌';
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 24px;
+    }
+    
+    .announcement-badge {
+        display: inline-block;
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+    
+    .badge-info {
+        background: #17a2b8;
+        color: white;
+    }
+    
+    .badge-success {
+        background: #28a745;
+        color: white;
+    }
+    
+    .badge-warning {
+        background: #ffc107;
+        color: #333;
+    }
+    
+    .badge-danger {
+        background: #dc3545;
+        color: white;
+    }
+    
+    .announcement-title {
+        font-size: 24px;
+        font-weight: bold;
+        color: var(--grass-green);
+        margin-bottom: 15px;
+    }
+    
+    .announcement-content {
+        color: #666;
+        line-height: 1.8;
+        margin-bottom: 15px;
+        white-space: pre-line;
+    }
+    
+    .announcement-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 15px;
+        border-top: 1px solid #eee;
+        font-size: 14px;
+        color: #999;
+    }
+    
+    .announcement-date {
+        display: flex;
+        align-items: center;
+    }
+    
+    .announcement-date i {
+        margin-right: 5px;
+    }
+    
+    .no-announcements {
+        text-align: center;
+        padding: 60px 0;
+        color: #999;
+    }
+    
+    .no-announcements i {
+        font-size: 80px;
+        margin-bottom: 20px;
+        opacity: 0.3;
+    }
+    
+    .unread-dot {
+        width: 10px;
+        height: 10px;
+        background: #dc3545;
+        border-radius: 50%;
+        display: inline-block;
+        margin-left: 10px;
+        animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.5; }
+    }
+    
+    .btn-read {
+        background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+        color: white;
+        border: none;
+        padding: 8px 20px;
+        border-radius: 20px;
+        font-size: 14px;
+        transition: all 0.3s ease;
+    }
+    
+    .btn-read:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<div class="page-header">
+    <div class="container">
+        <h1 class="display-4 fw-bold">
+            <i class="fas fa-bullhorn"></i> Duyurular
+        </h1>
+        <p class="lead">Spradar'dan son haberler ve güncellemeler</p>
+    </div>
+</div>
+
+<div class="container pb-5">
+    
+    <!-- Filtre Butonları -->
+    <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">
+            <i class="fas fa-th-large"></i> Tümü
+        </button>
+        <button class="filter-btn" data-filter="INFO">
+            <i class="fas fa-info-circle"></i> Bilgi
+        </button>
+        <button class="filter-btn" data-filter="SUCCESS">
+            <i class="fas fa-check-circle"></i> Başarı
+        </button>
+        <button class="filter-btn" data-filter="WARNING">
+            <i class="fas fa-exclamation-triangle"></i> Uyarı
+        </button>
+        <button class="filter-btn" data-filter="DANGER">
+            <i class="fas fa-exclamation-circle"></i> Önemli
+        </button>
+    </div>
+    
+    <!-- Duyurular -->
+    {% if announcements %}
+        {% for announcement in announcements %}
+        <div class="announcement-card {% if announcement.is_pinned %}pinned{% endif %}" 
+             data-type="{{ announcement.announcement_type }}">
+            
+            <span class="announcement-badge badge-{{ announcement.announcement_type|lower }}">
+                {% if announcement.announcement_type == 'INFO' %}
+                    <i class="fas fa-info-circle"></i> Bilgi
+                {% elif announcement.announcement_type == 'SUCCESS' %}
+                    <i class="fas fa-check-circle"></i> Başarı
+                {% elif announcement.announcement_type == 'WARNING' %}
+                    <i class="fas fa-exclamation-triangle"></i> Uyarı
+                {% elif announcement.announcement_type == 'DANGER' %}
+                    <i class="fas fa-exclamation-circle"></i> Önemli
+                {% endif %}
+            </span>
+            
+            {% if user.is_authenticated and announcement.id not in read_announcements %}
+            <span class="unread-dot" title="Okunmadı"></span>
+            {% endif %}
+            
+            <h2 class="announcement-title">{{ announcement.title }}</h2>
+            
+            <div class="announcement-content">{{ announcement.content }}</div>
+            
+            <div class="announcement-footer">
+                <div class="announcement-date">
+                    <i class="fas fa-calendar-alt"></i>
+                    {{ announcement.created_at|date:"d F Y, H:i" }}
+                </div>
+                {% if announcement.created_by %}
+                <div>
+                    <i class="fas fa-user"></i>
+                    {{ announcement.created_by.username }}
+                </div>
+                {% endif %}
+            </div>
+            
+            {% if user.is_authenticated and announcement.id not in read_announcements %}
+            <form method="POST" action="{% url 'mark_announcement_read' announcement.id %}" style="margin-top: 15px;">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-read">
+                    <i class="fas fa-check"></i> Okundu Olarak İşaretle
+                </button>
+            </form>
+            {% endif %}
+        </div>
+        {% endfor %}
+    {% else %}
+        <div class="no-announcements">
+            <i class="fas fa-inbox"></i>
+            <h3>Henüz duyuru yok</h3>
+            <p class="text-muted">Yeni duyurular için takipte kalın!</p>
+        </div>
+    {% endif %}
+    
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Filtreleme
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Aktif butonu güncelle
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            
+            const filter = this.dataset.filter;
+            
+            // Duyuruları filtrele
+            document.querySelectorAll('.announcement-card').forEach(card => {
+                if (filter === 'all' || card.dataset.type === filter) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}

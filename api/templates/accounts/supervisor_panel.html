@@ -1,0 +1,294 @@
+{% extends 'base.html' %}
+
+{% block title %}Satıcı Panelim - Spradar{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <!-- Başlık ve İstatistikler -->
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <h2><i class="bi bi-briefcase"></i> Satıcı Panelim</h2>
+            <p class="text-muted">Kredi satışlarınızı buradan yönetin</p>
+        </div>
+    </div>
+
+    <!-- İstatistik Kartları -->
+    <div class="row mb-4">
+        <div class="col-md-3">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <h3 class="text-primary">{{ user.profile.credits }}</h3>
+                    <p class="text-muted mb-0">Mevcut Kredilerim</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <h3 class="text-warning">{{ pending_orders.count }}</h3>
+                    <p class="text-muted mb-0">Bekleyen Sipariş</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <h3 class="text-success">{{ user.profile.supervisor_completed_orders }}</h3>
+                    <p class="text-muted mb-0">Tamamlanan Sipariş</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card text-center shadow-sm">
+                <div class="card-body">
+                    <h3 class="text-info">{{ success_rate|floatformat:1 }}%</h3>
+                    <p class="text-muted mb-0">Başarı Oranı</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ayarlar Butonu -->
+    <div class="row mb-4">
+        <div class="col-md-12">
+            <a href="{% url 'supervisor_settings' %}" class="btn btn-outline-primary">
+                <i class="bi bi-gear"></i> Satıcı Ayarlarım (Fiyat, Banka Bilgileri)
+            </a>
+            <a href="{% url 'buy_credits' %}" class="btn btn-outline-success">
+                <i class="bi bi-cart-plus"></i> Toptan Kredi Al (0.29 ₺)
+            </a>
+        </div>
+    </div>
+
+    <!-- Siparişler Tabs -->
+    <div class="card shadow-sm">
+        <div class="card-header">
+            <ul class="nav nav-tabs card-header-tabs" id="orderTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="pending-tab" data-bs-toggle="tab" data-bs-target="#pending" type="button">
+                        <i class="bi bi-hourglass-split"></i> Bekleyen ({{ pending_orders.count }})
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="approved-tab" data-bs-toggle="tab" data-bs-target="#approved" type="button">
+                        <i class="bi bi-check-circle"></i> Onaylanan ({{ approved_orders.count }})
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="rejected-tab" data-bs-toggle="tab" data-bs-target="#rejected" type="button">
+                        <i class="bi bi-x-circle"></i> Reddedilen ({{ rejected_orders.count }})
+                    </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="all-tab" data-bs-toggle="tab" data-bs-target="#all" type="button">
+                        <i class="bi bi-list"></i> Tüm Siparişler ({{ all_orders.count }})
+                    </button>
+                </li>
+            </ul>
+        </div>
+        <div class="card-body">
+            <div class="tab-content" id="orderTabsContent">
+                <!-- Bekleyen Siparişler -->
+                <div class="tab-pane fade show active" id="pending" role="tabpanel">
+                    {% if pending_orders %}
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Tarih</th>
+                                        <th>Alıcı</th>
+                                        <th>Miktar</th>
+                                        <th>Tutar</th>
+                                        <th>Ödeme Kodu</th>
+                                        <th>İşlemler</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for order in pending_orders %}
+                                    <tr>
+                                        <td>{{ order.created_at|date:"d.m.Y H:i" }}</td>
+                                        <td>
+                                            <strong>{{ order.buyer.user.username }}</strong><br>
+                                            <small class="text-muted">{{ order.buyer.user.email }}</small>
+                                        </td>
+                                        <td><span class="badge bg-info">{{ order.credit_amount }} kredi</span></td>
+                                        <td><strong>{{ order.total_price }} ₺</strong></td>
+                                        <td><code>{{ order.payment_code }}</code></td>
+                                        <td>
+                                            <form method="POST" action="{% url 'supervisor_approve_order' order.id %}" style="display: inline;">
+                                                {% csrf_token %}
+                                                <button type="submit" class="btn btn-sm btn-success" onclick="return confirm('Bu siparişi onaylamak istediğinizden emin misiniz?')">
+                                                    <i class="bi bi-check"></i> Onayla
+                                                </button>
+                                            </form>
+                                            <form method="POST" action="{% url 'supervisor_reject_order' order.id %}" style="display: inline;">
+                                                {% csrf_token %}
+                                                <button type="submit" class="btn btn-sm btn-danger" onclick="return confirm('Bu siparişi reddetmek istediğinizden emin misiniz?')">
+                                                    <i class="bi bi-x"></i> Reddet
+                                                </button>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    {% else %}
+                        <div class="alert alert-info">
+                            <i class="bi bi-info-circle"></i> Bekleyen sipariş bulunmuyor.
+                        </div>
+                    {% endif %}
+                </div>
+
+                <!-- Onaylanan Siparişler -->
+                <div class="tab-pane fade" id="approved" role="tabpanel">
+                    {% if approved_orders %}
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Tarih</th>
+                                        <th>Alıcı</th>
+                                        <th>Miktar</th>
+                                        <th>Tutar</th>
+                                        <th>Ödeme Kodu</th>
+                                        <th>Onay Tarihi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for order in approved_orders %}
+                                    <tr>
+                                        <td>{{ order.created_at|date:"d.m.Y H:i" }}</td>
+                                        <td>
+                                            <strong>{{ order.buyer.user.username }}</strong><br>
+                                            <small class="text-muted">{{ order.buyer.user.email }}</small>
+                                        </td>
+                                        <td><span class="badge bg-info">{{ order.credit_amount }} kredi</span></td>
+                                        <td><strong>{{ order.total_price }} ₺</strong></td>
+                                        <td><code>{{ order.payment_code }}</code></td>
+                                        <td>
+                                            <small class="text-success">
+                                                <i class="bi bi-check-circle"></i> {{ order.completed_at|date:"d.m.Y H:i" }}
+                                            </small>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    {% else %}
+                        <div class="alert alert-info">
+                            <i class="bi bi-info-circle"></i> Onaylanan sipariş bulunmuyor.
+                        </div>
+                    {% endif %}
+                </div>
+
+                <!-- Reddedilen Siparişler -->
+                <div class="tab-pane fade" id="rejected" role="tabpanel">
+                    {% if rejected_orders %}
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Tarih</th>
+                                        <th>Alıcı</th>
+                                        <th>Miktar</th>
+                                        <th>Tutar</th>
+                                        <th>Ödeme Kodu</th>
+                                        <th>Red Nedeni</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for order in rejected_orders %}
+                                    <tr>
+                                        <td>{{ order.created_at|date:"d.m.Y H:i" }}</td>
+                                        <td>
+                                            <strong>{{ order.buyer.user.username }}</strong><br>
+                                            <small class="text-muted">{{ order.buyer.user.email }}</small>
+                                        </td>
+                                        <td><span class="badge bg-info">{{ order.credit_amount }} kredi</span></td>
+                                        <td><strong>{{ order.total_price }} ₺</strong></td>
+                                        <td><code>{{ order.payment_code }}</code></td>
+                                        <td>
+                                            <small class="text-danger">
+                                                {{ order.rejection_reason|default:"Belirtilmedi" }}
+                                            </small>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    {% else %}
+                        <div class="alert alert-info">
+                            <i class="bi bi-info-circle"></i> Reddedilen sipariş bulunmuyor.
+                        </div>
+                    {% endif %}
+                </div>
+
+                <!-- Tüm Siparişler -->
+                <div class="tab-pane fade" id="all" role="tabpanel">
+                    {% if all_orders %}
+                        <div class="table-responsive">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th>Tarih</th>
+                                        <th>Alıcı</th>
+                                        <th>Miktar</th>
+                                        <th>Tutar</th>
+                                        <th>Ödeme Kodu</th>
+                                        <th>Durum</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for order in all_orders %}
+                                    <tr>
+                                        <td>{{ order.created_at|date:"d.m.Y H:i" }}</td>
+                                        <td>
+                                            <strong>{{ order.buyer.user.username }}</strong><br>
+                                            <small class="text-muted">{{ order.buyer.user.email }}</small>
+                                        </td>
+                                        <td><span class="badge bg-info">{{ order.credit_amount }} kredi</span></td>
+                                        <td><strong>{{ order.total_price }} ₺</strong></td>
+                                        <td><code>{{ order.payment_code }}</code></td>
+                                        <td>
+                                            {% if order.payment_status == 'PENDING' %}
+                                                <span class="badge bg-warning text-dark">⏳ Bekliyor</span>
+                                            {% elif order.payment_status == 'APPROVED' %}
+                                                <span class="badge bg-success">✅ Onaylandı</span>
+                                            {% elif order.payment_status == 'REJECTED' %}
+                                                <span class="badge bg-danger">❌ Reddedildi</span>
+                                            {% elif order.payment_status == 'CANCELLED' %}
+                                                <span class="badge bg-secondary">🚫 İptal</span>
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    {% else %}
+                        <div class="alert alert-info">
+                            <i class="bi bi-info-circle"></i> Henüz sipariş bulunmuyor.
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Yardım Kartı -->
+    <div class="card mt-4 shadow-sm">
+        <div class="card-body">
+            <h6><i class="bi bi-lightbulb"></i> Satıcı İpuçları</h6>
+            <ul class="mb-0">
+                <li>Siparişleri hızlıca onaylayarak başarı oranınızı artırın</li>
+                <li>Banka hesabınızı düzenli kontrol edin ve ödemeleri hızlıca doğrulayın</li>
+                <li>Yeterli kredi stoğu bulundurun (Toptan Kredi Al butonundan)</li>
+                <li>Fiyatınızı rekabetçi tutarak daha fazla sipariş alabilirsiniz</li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

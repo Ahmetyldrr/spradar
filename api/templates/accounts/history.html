@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+
+{% block title %}Yorum Geçmişi - Spradar{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h4 class="mb-0">
+                    <i class="bi bi-clock-history"></i>
+                    Yorum Geçmişim
+                </h4>
+                <span class="badge bg-primary fs-6">{{ total_comments }} Yorum</span>
+            </div>
+            <div class="card-body">
+                {% if page_obj %}
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th width="15%">Tarih</th>
+                                    <th width="25%">Maç</th>
+                                    <th>Soru</th>
+                                    <th width="10%" class="text-center">Kredi</th>
+                                    <th width="10%" class="text-center">Detay</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for comment in page_obj %}
+                                    <tr>
+                                        <td>
+                                            <small class="text-muted">
+                                                {{ comment.created_at|date:"d.m.Y" }}<br>
+                                                {{ comment.created_at|time:"H:i" }}
+                                            </small>
+                                        </td>
+                                        <td>
+                                            <strong>{{ comment.match_info|default:"Maç Yorumu" }}</strong>
+                                        </td>
+                                        <td>
+                                            <span class="text-muted">{{ comment.user_question|truncatewords:15 }}</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <span class="badge bg-danger">-{{ comment.credits_used }}</span>
+                                        </td>
+                                        <td class="text-center">
+                                            <button type="button" 
+                                                    class="btn btn-sm btn-outline-primary" 
+                                                    data-bs-toggle="modal" 
+                                                    data-bs-target="#commentModal{{ comment.id }}">
+                                                <i class="bi bi-eye"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="commentModal{{ comment.id }}" tabindex="-1" aria-labelledby="commentModalLabel{{ comment.id }}" aria-hidden="true">
+                                        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title">Yorum Detayı</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <h6><i class="bi bi-info-circle"></i> Maç Bilgisi</h6>
+                                                    <p class="text-muted">{{ comment.match_info|default:"Maç Yorumu" }}</p>
+                                                    
+                                                    <h6 class="mt-3"><i class="bi bi-question-circle"></i> Sorunuz</h6>
+                                                    <p>{{ comment.user_question }}</p>
+                                                    
+                                                    <h6 class="mt-3"><i class="bi bi-robot"></i> AI Cevabı</h6>
+                                                    <div class="alert alert-light">
+                                                        {{ comment.ai_response|linebreaks }}
+                                                    </div>
+                                                    
+                                                    <hr>
+                                                    <small class="text-muted">
+                                                        <i class="bi bi-calendar"></i> {{ comment.created_at|date:"d F Y, H:i" }}
+                                                        | <i class="bi bi-coin"></i> {{ comment.credits_used }} kredi kullanıldı
+                                                    </small>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <!-- Pagination -->
+                    {% if page_obj.has_other_pages %}
+                        <nav aria-label="Sayfa navigasyonu" class="mt-4">
+                            <ul class="pagination justify-content-center">
+                                {% if page_obj.has_previous %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ page_obj.previous_page_number }}">
+                                            <i class="bi bi-chevron-left"></i> Önceki
+                                        </a>
+                                    </li>
+                                {% endif %}
+                                
+                                {% for num in page_obj.paginator.page_range %}
+                                    {% if page_obj.number == num %}
+                                        <li class="page-item active">
+                                            <span class="page-link">{{ num }}</span>
+                                        </li>
+                                    {% elif num > page_obj.number|add:'-3' and num < page_obj.number|add:'3' %}
+                                        <li class="page-item">
+                                            <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
+                                
+                                {% if page_obj.has_next %}
+                                    <li class="page-item">
+                                        <a class="page-link" href="?page={{ page_obj.next_page_number }}">
+                                            Sonraki <i class="bi bi-chevron-right"></i>
+                                        </a>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </nav>
+                    {% endif %}
+                {% else %}
+                    <div class="text-center py-5">
+                        <i class="bi bi-inbox" style="font-size: 5rem; color: #e5e7eb;"></i>
+                        <h5 class="mt-3 text-muted">Henüz yorum yapmadınız</h5>
+                        <p class="text-muted">AI ile maç analizi yapmaya başlayın!</p>
+                        <a href="/" class="btn btn-gradient mt-3">
+                            <i class="bi bi-search"></i>
+                            Maçları Keşfet
+                        </a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

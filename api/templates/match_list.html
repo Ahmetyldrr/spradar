@@ -1,0 +1,600 @@
+{% extends 'base.html' %}
+
+{% block title %}Maç Listesi - FX Futbol{% endblock %}
+
+{% block extra_css %}
+<!-- Version: 2.1 - {{ request.META.REQUEST_TIME|default:"FRESH" }} -->
+<style>
+    .match-table-container {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        overflow: hidden;
+    }
+    
+    .stats-cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-bottom: 2rem;
+    }
+    
+    .stat-card {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 1.5rem;
+        border-radius: 10px;
+        text-align: center;
+    }
+    
+    .stat-card h3 {
+        font-size: 2rem;
+        margin: 0;
+        font-weight: bold;
+    }
+    
+    .stat-card p {
+        margin: 0.5rem 0 0 0;
+        opacity: 0.9;
+        font-size: 0.9rem;
+    }
+    
+    .filter-section {
+        background: #f8f9fa;
+        padding: 1.5rem;
+        border-radius: 10px;
+        margin-bottom: 1.5rem;
+    }
+    
+    .filter-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        align-items: end;
+    }
+    
+    .filter-grid .form-group {
+        margin-bottom: 0;
+    }
+    
+    .filter-grid label {
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #495057;
+        margin-bottom: 0.3rem;
+    }
+    
+    .filter-grid input, .filter-grid select {
+        font-size: 0.9rem;
+        height: 38px;
+    }
+    
+    .match-table {
+        width: 100%;
+        font-size: 0.85rem;
+        margin: 0;
+    }
+    
+    .match-table thead {
+        background: linear-gradient(135deg, var(--grass-green) 0%, var(--field-green) 100%);
+        color: white;
+        position: sticky;
+        top: 0;
+        z-index: 10;
+    }
+    
+    .match-table thead th {
+        padding: 0.75rem 0.5rem;
+        font-weight: 600;
+        border: none;
+        white-space: nowrap;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    
+    .match-table tbody tr {
+        border-bottom: 1px solid #e9ecef;
+        transition: all 0.2s ease;
+    }
+    
+    .match-table tbody tr:hover {
+        background-color: #f8f9fa;
+        transform: scale(1.01);
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    }
+    
+    .match-table tbody td {
+        padding: 0.6rem 0.5rem;
+        vertical-align: middle;
+        font-size: 0.85rem;
+    }
+    
+    .match-date {
+        color: #6c757d;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+    
+    .match-time {
+        color: #495057;
+        font-weight: 600;
+        white-space: nowrap;
+    }
+    
+    .league-badge {
+        display: inline-block;
+        padding: 0.2rem 0.5rem;
+        background: #e7f3ff;
+        color: #0066cc;
+        border-radius: 4px;
+        font-size: 0.75rem;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+    
+    .country-flag {
+        color: #6c757d;
+        font-size: 0.8rem;
+    }
+    
+    .team-name {
+        font-weight: 500;
+        color: #212529;
+    }
+    
+    .team-name.home {
+        color: #0066cc;
+    }
+    
+    .team-name.away {
+        color: #666;
+    }
+    
+    .vs-separator {
+        color: #adb5bd;
+        font-weight: 600;
+        padding: 0 0.5rem;
+    }
+    
+    .action-btn {
+        padding: 0.3rem 0.8rem;
+        font-size: 0.75rem;
+        border-radius: 6px;
+        font-weight: 500;
+        white-space: nowrap;
+    }
+    
+    .btn-ai {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border: none;
+        color: white;
+    }
+    
+    .btn-ai:hover {
+        opacity: 0.9;
+        color: white;
+    }
+    
+    .table-responsive {
+        max-height: 70vh;
+        overflow-y: auto;
+        overflow-x: auto;
+    }
+    
+    .table-responsive::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+    
+    .table-responsive::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+    
+    .table-responsive::-webkit-scrollbar-thumb {
+        background: #888;
+        border-radius: 4px;
+    }
+    
+    .table-responsive::-webkit-scrollbar-thumb:hover {
+        background: #555;
+    }
+    
+    /* Time Picker Styles */
+    .time-picker-container {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .time-input-wrapper {
+        position: relative;
+        flex: 1;
+    }
+    
+    .time-display {
+        cursor: pointer;
+        padding-right: 2.5rem;
+        font-weight: 500;
+    }
+    
+    .time-icon {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #6c757d;
+        pointer-events: none;
+    }
+    
+    .time-separator {
+        color: #6c757d;
+        font-weight: bold;
+        padding: 0 0.3rem;
+    }
+    
+    /* Time Picker Modal */
+    .time-picker-modal {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0,0,0,0.5);
+        z-index: 9999;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .time-picker-modal.active {
+        display: flex;
+    }
+    
+    .time-picker-content {
+        background: white;
+        border-radius: 15px;
+        padding: 1.5rem;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        max-width: 400px;
+        width: 90%;
+    }
+    
+    .time-picker-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        border-bottom: 2px solid #e9ecef;
+    }
+    
+    .time-picker-header h5 {
+        margin: 0;
+        color: #212529;
+        font-weight: 600;
+    }
+    
+    .time-picker-close {
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        color: #6c757d;
+        cursor: pointer;
+        padding: 0;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .time-picker-close:hover {
+        color: #dc3545;
+    }
+    
+    .time-grid {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .time-slot {
+        padding: 0.75rem 0.5rem;
+        border: 2px solid #e9ecef;
+        border-radius: 8px;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        font-weight: 500;
+        font-size: 0.9rem;
+        background: white;
+    }
+    
+    .time-slot:hover {
+        background: #f8f9fa;
+        border-color: var(--grass-green);
+        transform: translateY(-2px);
+    }
+    
+    .time-slot.selected {
+        background: linear-gradient(135deg, var(--grass-green) 0%, var(--field-green) 100%);
+        color: white;
+        border-color: var(--field-green);
+    }
+    
+    .time-picker-footer {
+        display: flex;
+        gap: 0.5rem;
+        margin-top: 1rem;
+    }
+    
+    .time-picker-footer button {
+        flex: 1;
+        padding: 0.75rem;
+        border: none;
+        border-radius: 8px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.2s ease;
+    }
+    
+    .btn-time-cancel {
+        background: #6c757d;
+        color: white;
+    }
+    
+    .btn-time-cancel:hover {
+        background: #5a6268;
+    }
+    
+    .btn-time-confirm {
+        background: linear-gradient(135deg, var(--grass-green) 0%, var(--field-green) 100%);
+        color: white;
+    }
+    
+    .btn-time-confirm:hover {
+        opacity: 0.9;
+        transform: translateY(-1px);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- İstatistik Kartları -->
+<div class="stats-cards">
+    <div class="stat-card">
+        <h3><i class="fas fa-futbol"></i> {{ matches|length }}</h3>
+        <p>Toplam Maç</p>
+    </div>
+    <div class="stat-card" style="background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);">
+        <h3><i class="fas fa-flag"></i> 96</h3>
+        <p>Ülke</p>
+    </div>
+    <div class="stat-card" style="background: linear-gradient(135deg, #ee0979 0%, #ff6a00 100%);">
+        <h3><i class="fas fa-trophy"></i> 153</h3>
+        <p>Lig</p>
+    </div>
+</div>
+
+<!-- Filtreler -->
+<div class="filter-section">
+    <form method="get" id="filterForm">
+        <div class="filter-grid">
+            <div class="form-group">
+                <label><i class="fas fa-calendar"></i> Tarih</label>
+                <input type="date" class="form-control" name="date" value="{{ selected_date|default:'' }}">
+            </div>
+            
+            <div class="form-group">
+                <label><i class="fas fa-flag"></i> Ülke</label>
+                <select class="form-select" name="country">
+                    <option value="">Tüm Ülkeler</option>
+                    <!-- Django'dan ülke listesi gelecek -->
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label><i class="fas fa-trophy"></i> Lig</label>
+                <select class="form-select" name="league">
+                    <option value="">Tüm Ligler</option>
+                    <!-- Django'dan lig listesi gelecek -->
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label><i class="fas fa-clock"></i> Saat Aralığı</label>
+                <div class="time-picker-container">
+                    <div class="time-input-wrapper">
+                        <input type="text" class="form-control time-display" id="timeFrom" name="time_from" value="00:00" readonly onclick="showTimePicker('from')">
+                        <i class="fas fa-clock time-icon"></i>
+                    </div>
+                    <span class="time-separator">→</span>
+                    <div class="time-input-wrapper">
+                        <input type="text" class="form-control time-display" id="timeTo" name="time_to" value="23:59" readonly onclick="showTimePicker('to')">
+                        <i class="fas fa-clock time-icon"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label><i class="fas fa-search"></i> Takım Ara</label>
+                <input type="text" class="form-control" name="team" placeholder="Takım adı...">
+            </div>
+            
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary w-100">
+                    <i class="fas fa-filter"></i> Filtrele
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% if matches %}
+<!-- Maç Tablosu -->
+<div class="match-table-container">
+    <div class="table-responsive">
+        <table class="match-table table table-hover mb-0">
+            <thead>
+                <tr>
+                    <th style="width: 90px;">Tarih</th>
+                    <th style="width: 70px;">Saat</th>
+                    <th style="width: 120px;">Ülke</th>
+                    <th style="width: 150px;">Lig</th>
+                    <th style="width: 200px;">Ev Sahibi</th>
+                    <th style="width: 40px;"></th>
+                    <th style="width: 200px;">Deplasman</th>
+                    <th style="width: 100px;" class="text-center">İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for match in matches %}
+                <tr>
+                    <td class="match-date">
+                        <i class="fas fa-calendar-alt"></i> {{ match.match_date }}
+                    </td>
+                    <td class="match-time">
+                        <i class="fas fa-clock"></i> {{ match.match_time }}
+                    </td>
+                    <td class="country-flag">
+                        <i class="fas fa-flag"></i> {{ match.country }}
+                    </td>
+                    <td>
+                        <span class="league-badge">{{ match.league|truncatewords:3 }}</span>
+                    </td>
+                    <td class="team-name home">
+                        <i class="fas fa-home"></i> {{ match.home_team_name }}
+                    </td>
+                    <td class="text-center vs-separator">VS</td>
+                    <td class="team-name away">
+                        <i class="fas fa-plane-departure"></i> {{ match.away_team_name }}
+                    </td>
+                    <td class="text-center">
+                        <a href="{% url 'match_detail' match.match_id %}" class="btn btn-sm btn-ai action-btn">
+                            <i class="fas fa-robot"></i> AI Analiz
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% else %}
+<div class="match-table-container">
+    <div class="text-center py-5">
+        <i class="fas fa-search fa-3x text-muted mb-3"></i>
+        <h4>Maç Bulunamadı</h4>
+        <p class="text-muted">Lütfen farklı bir tarih veya filtre deneyin</p>
+    </div>
+</div>
+{% endif %}
+
+<!-- Time Picker Modal -->
+<div class="time-picker-modal" id="timePickerModal">
+    <div class="time-picker-content">
+        <div class="time-picker-header">
+            <h5><i class="fas fa-clock"></i> Saat Seçin</h5>
+            <button class="time-picker-close" onclick="closeTimePicker()">×</button>
+        </div>
+        
+        <div class="time-grid" id="timeGrid">
+            <!-- JavaScript ile oluşturulacak -->
+        </div>
+        
+        <div class="time-picker-footer">
+            <button class="btn-time-cancel" onclick="closeTimePicker()">
+                <i class="fas fa-times"></i> İptal
+            </button>
+            <button class="btn-time-confirm" onclick="confirmTime()">
+                <i class="fas fa-check"></i> Onayla
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+let currentTimeInput = null;
+let selectedTime = null;
+
+// 24 saatlik zaman dilimlerini oluştur
+function generateTimeSlots() {
+    const timeGrid = document.getElementById('timeGrid');
+    timeGrid.innerHTML = '';
+    
+    for (let hour = 0; hour < 24; hour++) {
+        const timeSlot = document.createElement('div');
+        timeSlot.className = 'time-slot';
+        timeSlot.textContent = String(hour).padStart(2, '0') + ':00';
+        timeSlot.dataset.time = String(hour).padStart(2, '0') + ':00';
+        
+        timeSlot.onclick = function() {
+            // Önceki seçimi kaldır
+            document.querySelectorAll('.time-slot').forEach(slot => {
+                slot.classList.remove('selected');
+            });
+            
+            // Yeni seçimi ekle
+            this.classList.add('selected');
+            selectedTime = this.dataset.time;
+        };
+        
+        timeGrid.appendChild(timeSlot);
+    }
+}
+
+// Time picker'ı aç
+function showTimePicker(inputType) {
+    currentTimeInput = inputType;
+    const modal = document.getElementById('timePickerModal');
+    modal.classList.add('active');
+    
+    // Mevcut değeri seç
+    const currentValue = inputType === 'from' 
+        ? document.getElementById('timeFrom').value 
+        : document.getElementById('timeTo').value;
+    
+    selectedTime = currentValue;
+    
+    // Grid'i oluştur
+    generateTimeSlots();
+    
+    // Mevcut seçimi vurgula
+    document.querySelectorAll('.time-slot').forEach(slot => {
+        if (slot.dataset.time === currentValue) {
+            slot.classList.add('selected');
+        }
+    });
+}
+
+// Time picker'ı kapat
+function closeTimePicker() {
+    const modal = document.getElementById('timePickerModal');
+    modal.classList.remove('active');
+    currentTimeInput = null;
+    selectedTime = null;
+}
+
+// Zamanı onayla
+function confirmTime() {
+    if (selectedTime && currentTimeInput) {
+        if (currentTimeInput === 'from') {
+            document.getElementById('timeFrom').value = selectedTime;
+        } else {
+            document.getElementById('timeTo').value = selectedTime;
+        }
+    }
+    closeTimePicker();
+}
+
+// Modal dışına tıklanınca kapat
+document.addEventListener('click', function(event) {
+    const modal = document.getElementById('timePickerModal');
+    if (event.target === modal) {
+        closeTimePicker();
+    }
+});
+</script>
+{% endblock %}

@@ -1,0 +1,195 @@
+{% extends 'base.html' %}
+
+{% block title %}Satıcı Ayarları - Spradar{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <!-- Başlık -->
+            <div class="text-center mb-4">
+                <h2><i class="bi bi-gear"></i> Satıcı Ayarları</h2>
+                <p class="text-muted">Satış bilgilerinizi ve fiyatınızı güncelleyin</p>
+            </div>
+
+            <!-- Mevcut Bilgiler -->
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-info text-white">
+                    <h5 class="mb-0"><i class="bi bi-info-circle"></i> Mevcut Durumunuz</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><strong>Toplam Sipariş:</strong> {{ profile.supervisor_total_orders }}</p>
+                            <p><strong>Tamamlanan:</strong> {{ profile.supervisor_completed_orders }}</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p><strong>Başarı Oranı:</strong> 
+                                <span class="badge bg-success">{{ profile.get_supervisor_success_rate|floatformat:1 }}%</span>
+                            </p>
+                            <p><strong>Durum:</strong> 
+                                {% if profile.supervisor_is_active %}
+                                    <span class="badge bg-success">Aktif</span>
+                                {% else %}
+                                    <span class="badge bg-danger">Pasif</span>
+                                {% endif %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ayarlar Formu -->
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0"><i class="bi bi-pencil"></i> Ayarları Düzenle</h5>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        {% csrf_token %}
+
+                        <!-- Banka Adı -->
+                        <div class="mb-3">
+                            <label for="bank_name" class="form-label">
+                                <i class="bi bi-bank"></i> Banka Adı
+                            </label>
+                            <input 
+                                type="text" 
+                                class="form-control" 
+                                id="bank_name" 
+                                name="bank_name" 
+                                value="{{ profile.supervisor_bank_name }}"
+                                required
+                            >
+                        </div>
+
+                        <!-- IBAN -->
+                        <div class="mb-3">
+                            <label for="iban" class="form-label">
+                                <i class="bi bi-credit-card"></i> IBAN Numarası
+                            </label>
+                            <input 
+                                type="text" 
+                                class="form-control" 
+                                id="iban" 
+                                name="iban" 
+                                value="{{ profile.supervisor_iban }}"
+                                maxlength="34"
+                                required
+                            >
+                            <small class="form-text text-muted">TR ile başlayan IBAN numaranız</small>
+                        </div>
+
+                        <!-- Hesap Sahibi -->
+                        <div class="mb-3">
+                            <label for="account_holder" class="form-label">
+                                <i class="bi bi-person-badge"></i> Hesap Sahibi Adı Soyadı
+                            </label>
+                            <input 
+                                type="text" 
+                                class="form-control" 
+                                id="account_holder" 
+                                name="account_holder" 
+                                value="{{ profile.supervisor_account_holder }}"
+                                required
+                            >
+                        </div>
+
+                        <!-- Satış Fiyatı -->
+                        <div class="mb-3">
+                            <label for="price" class="form-label">
+                                <i class="bi bi-cash-coin"></i> Kredi Başına Satış Fiyatı (₺)
+                            </label>
+                            <input 
+                                type="number" 
+                                class="form-control" 
+                                id="price" 
+                                name="price" 
+                                value="{{ profile.supervisor_price }}"
+                                min="0.29" 
+                                max="0.99" 
+                                step="0.01"
+                                required
+                            >
+                            <small class="form-text text-muted">
+                                Min: 0.29 ₺ (maliyet), Max: 0.99 ₺
+                                <br>
+                                <strong>Kazancınız:</strong> <span id="profit_display">{{ profile.supervisor_price|add:"-0.29"|floatformat:2 }} ₺</span> / kredi
+                            </small>
+                        </div>
+
+                        <!-- Aktif/Pasif -->
+                        <div class="mb-4">
+                            <div class="form-check form-switch">
+                                <input 
+                                    class="form-check-input" 
+                                    type="checkbox" 
+                                    id="is_active" 
+                                    name="is_active"
+                                    {% if profile.supervisor_is_active %}checked{% endif %}
+                                >
+                                <label class="form-check-label" for="is_active">
+                                    Satıcı hesabım aktif (Kullanıcılar satıcılar listesinde görebilsin)
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Bilgilendirme -->
+                        <div class="alert alert-warning">
+                            <h6><i class="bi bi-exclamation-triangle"></i> Önemli Notlar</h6>
+                            <ul class="mb-0">
+                                <li>Banka bilgileriniz müşterilere gösterilecektir</li>
+                                <li>Fiyat değişikliği mevcut siparişleri etkilemez</li>
+                                <li>Hesabınızı pasif yaparsanız yeni sipariş alamazsınız</li>
+                            </ul>
+                        </div>
+
+                        <!-- Butonlar -->
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-success btn-lg">
+                                <i class="bi bi-check-circle"></i> Değişiklikleri Kaydet
+                            </button>
+                            <a href="{% url 'supervisor_panel' %}" class="btn btn-outline-secondary">
+                                <i class="bi bi-arrow-left"></i> Panele Dön
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- İstatistikler -->
+            <div class="card mt-4 shadow-sm">
+                <div class="card-header bg-light">
+                    <h5 class="mb-0"><i class="bi bi-graph-up"></i> İstatistikleriniz</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row text-center">
+                        <div class="col-md-4">
+                            <h3 class="text-primary">{{ profile.credits }}</h3>
+                            <p class="text-muted">Mevcut Kredi</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h3 class="text-success">{{ profile.supervisor_completed_orders }}</h3>
+                            <p class="text-muted">Tamamlanan</p>
+                        </div>
+                        <div class="col-md-4">
+                            <h3 class="text-info">{{ profile.get_supervisor_success_rate|floatformat:1 }}%</h3>
+                            <p class="text-muted">Başarı Oranı</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Kar hesaplama
+    document.getElementById('price').addEventListener('input', function() {
+        const price = parseFloat(this.value) || 0.29;
+        const cost = 0.29;
+        const profit = Math.max(0, price - cost);
+        document.getElementById('profit_display').textContent = profit.toFixed(2) + ' ₺';
+    });
+</script>
+{% endblock %}

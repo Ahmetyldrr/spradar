@@ -1,0 +1,842 @@
+"""
+Authentication Views - Kullanıcı kaydı, giriş, çıkış, profil
+"""
+
+from django.shortcuts import render, redirect
+from django.contrib.auth import login, logout, authenticate
+from django.contrib.auth.decorators import login_required
+from django.contrib import messages
+from django.db.models import Sum, Count, Q
+from django.contrib.auth.models import User
+from .forms import UserRegistrationForm, UserLoginForm
+from .models import UserProfile, CommentHistory, CreditTransaction, CreditPurchase, SupervisorCreditPurchase
+
+
+def register_view(request):
+    """Kullanıcı kayıt sayfası"""
+    if request.user.is_authenticated:
+        return redirect('profile')
+    
+    if request.method == 'POST':
+        form = UserRegistrationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            
+            # Otomatik giriş yap
+            login(request, user)
+            
+            messages.success(
+                request,
+                f'🎉 Hoş geldiniz {user.username}! Hesabınız başarıyla oluşturuldu. '
+                f'Başlangıç hediyesi olarak 10 kredi kazandınız!'
+            )
+            
+            return redirect('profile')
+        else:
+            messages.error(request, 'Kayıt sırasında bir hata oluştu. Lütfen formu kontrol edin.')
+    else:
+        form = UserRegistrationForm()
+    
+    return render(request, 'accounts/register.html', {'form': form})
+
+
+def login_view(request):
+    """Kullanıcı giriş sayfası"""
+    if request.user.is_authenticated:
+        return redirect('profile')
+    
+    if request.method == 'POST':
+        form = UserLoginForm(request, data=request.POST)
+        if form.is_valid():
+            username = form.cleaned_data.get('username')
+            password = form.cleaned_data.get('password')
+            remember_me = form.cleaned_data.get('remember_me', False)
+            
+            user = authenticate(username=username, password=password)
+            
+            if user is not None:
+                login(request, user)
+                
+                # Remember me - Session süresini ayarla
+                if not remember_me:
+                    request.session.set_expiry(0)  # Browser kapanınca session bitsin
+                else:
+                    request.session.set_expiry(1209600)  # 2 hafta
+                
+                messages.success(request, f'Hoş geldiniz, {user.username}!')
+                
+                # Redirect to next or profile
+                next_url = request.GET.get('next', 'profile')
+                return redirect(next_url)
+            else:
+                messages.error(request, 'Kullanıcı adı veya şifre hatalı.')
+        else:
+            messages.error(request, 'Giriş sırasında bir hata oluştu.')
+    else:
+        form = UserLoginForm()
+    
+    return render(request, 'accounts/login.html', {'form': form})
+
+
+@login_required
+def logout_view(request):
+    """Kullanıcı çıkış"""
+    logout(request)
+    messages.info(request, 'Başarıyla çıkış yaptınız.')
+    return redirect('login')
+
+
+@login_required
+@login_required
+def profile_view(request):
+    """Kullanıcı profil sayfası - Sadece temel bilgiler ve istatistikler"""
+    profile = request.user.profile
+    
+    # İstatistikler
+    total_comments = CommentHistory.objects.filter(user=request.user).count()
+    total_credits_earned = CreditTransaction.objects.filter(
+        user_profile=profile,
+        transaction_type='CREDIT'
+    ).aggregate(total=Sum('amount'))['total'] or 0
+    
+    total_credits_spent = CreditTransaction.objects.filter(
+        user_profile=profile,
+        transaction_type='DEBIT'
+    ).aggregate(total=Sum('amount'))['total'] or 0
+    
+    context = {
+        'profile': profile,
+        'total_comments': total_comments,
+        'total_credits_earned': total_credits_earned,
+        'total_credits_spent': total_credits_spent,
+    }
+    
+    return render(request, 'accounts/profile.html', context)
+
+
+@login_required
+def history_view(request):
+    """Kullanıcı yorum geçmişi - Sadece kendi yorumlarını görebilir"""
+    comments = CommentHistory.objects.filter(user=request.user).order_by('-created_at')
+    
+    # Pagination için sayfalama (opsiyonel)
+    from django.core.paginator import Paginator
+    paginator = Paginator(comments, 20)  # Her sayfada 20 yorum
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    
+    context = {
+        'page_obj': page_obj,
+        'total_comments': comments.count(),
+    }
+    
+    return render(request, 'accounts/history.html', context)
+
+
+@login_required
+def credit_history_view(request):
+    """Kredi işlem geçmişi - CreditTransaction + CreditTransfer birleşik görünüm"""
+    from itertools import chain
+    from operator import attrgetter
+    from .models import CreditTransfer
+    
+    # Normal transaction'lar
+    transactions = CreditTransaction.objects.filter(
+        user_profile=request.user.profile
+    ).select_related('user_profile__user')
+    
+    # Gönderilen transferler
+    sent_transfers = CreditTransfer.objects.filter(
+        from_user=request.user.profile
+    ).select_related('to_user__user')
+    
+    # Alınan transferler
+    received_transfers = CreditTransfer.objects.filter(
+        to_user=request.user.profile
+    ).select_related('from_user__user')
+    
+    # Her item'a type attribute'u ekle (Django template'lerde __class__ kullanılamaz)
+    for item in transactions:
+        item.item_type = 'transaction'
+    
+    for item in sent_transfers:
+        item.item_type = 'transfer_sent'
+        item.is_sender = True
+    
+    for item in received_transfers:
+        item.item_type = 'transfer_received'
+        item.is_sender = False
+    
+    # Hepsini birleştir ve tarihe göre sırala
+    all_items = sorted(
+        chain(transactions, sent_transfers, received_transfers),
+        key=attrgetter('created_at'),
+        reverse=True
+    )
+    
+    # Pagination
+    from django.core.paginator import Paginator
+    paginator = Paginator(all_items, 30)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    
+    # İstatistikler
+    total_earned = transactions.filter(transaction_type='CREDIT').aggregate(
+        total=Sum('amount')
+    )['total'] or 0
+    
+    total_spent = transactions.filter(transaction_type='DEBIT').aggregate(
+        total=Sum('amount')
+    )['total'] or 0
+    
+    # Transfer istatistikleri
+    total_sent = sent_transfers.aggregate(total=Sum('amount'))['total'] or 0
+    total_received = received_transfers.aggregate(total=Sum('amount'))['total'] or 0
+    
+    stats = {
+        'total_earned': total_earned + total_received,
+        'total_spent': total_spent + total_sent,
+        'transaction_count': len(all_items),
+        'transfer_sent': total_sent,
+        'transfer_received': total_received,
+    }
+    
+    context = {
+        'page_obj': page_obj,
+        'stats': stats,
+    }
+    
+    return render(request, 'accounts/credit_history.html', context)
+
+
+
+@login_required
+def purchase_credits_view(request):
+    """Özel kredi satın alma"""
+    if request.method == 'POST':
+        try:
+            credit_amount = int(request.POST.get('credit_amount', 0))
+            
+            # Minimum 10 kredi kontrolü
+            if credit_amount < 10:
+                messages.error(request, '❌ En az 10 kredi satın alabilirsiniz.')
+                return redirect('profile')
+            
+            # Maksimum 100.000 kredi kontrolü
+            if credit_amount > 100000:
+                messages.error(request, '❌ En fazla 100.000 kredi satın alabilirsiniz.')
+                return redirect('profile')
+            
+            # Fiyat hesapla
+            price = CreditPurchase.calculate_price(credit_amount)
+            
+            # Sipariş oluştur
+            purchase = CreditPurchase.objects.create(
+                user_profile=request.user.profile,
+                credit_amount=credit_amount,
+                price=price,
+                payment_status='PENDING'
+            )
+            
+            messages.success(
+                request,
+                f'✅ Kredi siparişiniz alındı! Sipariş No: #{purchase.id}'
+            )
+            
+            # Ödeme bilgileri sayfasına yönlendir
+            return redirect('payment_info', purchase_id=purchase.id)
+            
+        except (ValueError, TypeError) as e:
+            messages.error(request, '❌ Geçersiz kredi miktarı!')
+            return redirect('buy_credits')
+    
+    return redirect('buy_credits')
+
+
+@login_required
+def payment_info_view(request, purchase_id):
+    """Ödeme bilgileri sayfası - Sipariş sonrası"""
+    from django.conf import settings
+    
+    # Siparişi kontrol et
+    try:
+        purchase = CreditPurchase.objects.get(
+            id=purchase_id,
+            user_profile=request.user.profile
+        )
+    except CreditPurchase.DoesNotExist:
+        messages.error(request, '❌ Sipariş bulunamadı!')
+        return redirect('profile')
+    
+    context = {
+        'purchase': purchase,
+        'bank_accounts': settings.PAYMENT_BANK_ACCOUNTS,
+        'payment_instructions': settings.PAYMENT_INSTRUCTIONS,
+    }
+    
+    return render(request, 'accounts/payment_info.html', context)
+
+
+@login_required  
+def buy_credits_view(request):
+    """Kredi satın alma sayfası"""
+    from django.conf import settings
+    
+    # Bekleyen siparişler
+    pending_purchases = CreditPurchase.objects.filter(
+        user_profile=request.user.profile,
+        payment_status='PENDING'
+    ).order_by('-created_at')
+    
+    # Aktif supervisor'ları getir (P2P satıcılar)
+    supervisors = UserProfile.objects.filter(
+        is_supervisor=True,
+        supervisor_is_active=True,
+        credits__gt=0  # Stoğu olan satıcılar
+    ).select_related('user').order_by('-supervisor_completed_orders')
+    
+    context = {
+        'pending_purchases': pending_purchases,
+        'bank_accounts': settings.PAYMENT_BANK_ACCOUNTS,
+        'supervisors': supervisors,
+    }
+    
+    return render(request, 'accounts/buy_credits.html', context)
+
+
+# ==============================================================================
+# 💼 SUPERVISOR (P2P) VIEWS
+# ==============================================================================
+
+@login_required
+def supervisor_list_view(request):
+    """
+    Aktif supervisor'ları listele (P2P Satıcılar)
+    Kullanıcılar buradan supervisor seçip kredi satın alabilir
+    """
+    # Aktif supervisor'ları getir
+    supervisors = UserProfile.objects.filter(
+        is_supervisor=True,
+        supervisor_is_active=True
+    ).select_related('user').order_by('-supervisor_completed_orders', 'supervisor_price')
+    
+    # Başarı oranlarını hesapla
+    supervisor_data = []
+    for sup in supervisors:
+        supervisor_data.append({
+            'profile': sup,
+            'success_rate': sup.get_supervisor_success_rate(),
+            'available_credits': sup.credits,
+        })
+    
+    context = {
+        'supervisors': supervisor_data,
+    }
+    
+    return render(request, 'accounts/supervisor_list.html', context)
+
+
+@login_required
+def supervisor_purchase_view(request, supervisor_id):
+    """
+    Seçilen supervisor'dan kredi satın alma sayfası
+    """
+    from django.shortcuts import get_object_or_404
+    
+    supervisor_profile = get_object_or_404(
+        UserProfile,
+        id=supervisor_id,
+        is_supervisor=True,
+        supervisor_is_active=True
+    )
+    
+    if request.method == 'POST':
+        credit_amount = int(request.POST.get('credit_amount', 0))
+        payment_note = request.POST.get('payment_note', '')
+        
+        # Validasyon
+        if credit_amount < 10:
+            messages.error(request, 'Minimum 10 kredi satın alabilirsiniz.')
+            return redirect('supervisor_purchase', supervisor_id=supervisor_id)
+        
+        if credit_amount > supervisor_profile.credits:
+            messages.error(request, f'Satıcının yeterli kredisi yok. Mevcut: {supervisor_profile.credits}')
+            return redirect('supervisor_purchase', supervisor_id=supervisor_id)
+        
+        # Sipariş oluştur
+        purchase = SupervisorCreditPurchase.objects.create(
+            buyer=request.user.profile,
+            supervisor=supervisor_profile,
+            credit_amount=credit_amount,
+            unit_price=supervisor_profile.supervisor_price,
+            payment_note=payment_note
+        )
+        
+        # Supervisor sayaçlarını güncelle
+        supervisor_profile.supervisor_total_orders += 1
+        supervisor_profile.save(update_fields=['supervisor_total_orders'])
+        
+        messages.success(
+            request,
+            f'Siparişiniz oluşturuldu! Ödeme kodunuz: {purchase.payment_code}'
+        )
+        
+        return redirect('supervisor_payment_info', purchase_id=purchase.id)
+    
+    # GET request - form göster
+    context = {
+        'supervisor': supervisor_profile,
+        'success_rate': supervisor_profile.get_supervisor_success_rate(),
+        'initial_total': float(supervisor_profile.supervisor_price) * 10,  # Default 10 kredi
+    }
+    
+    return render(request, 'accounts/supervisor_purchase.html', context)
+
+
+@login_required
+def supervisor_payment_info_view(request, purchase_id):
+    """
+    P2P sipariş ödeme bilgileri sayfası
+    """
+    from django.shortcuts import get_object_or_404
+    
+    purchase = get_object_or_404(
+        SupervisorCreditPurchase,
+        id=purchase_id,
+        buyer=request.user.profile
+    )
+    
+    context = {
+        'purchase': purchase,
+        'supervisor': purchase.supervisor,
+    }
+    
+    return render(request, 'accounts/supervisor_payment_info.html', context)
+
+
+@login_required
+def supervisor_panel_view(request):
+    """
+    Supervisor paneli - Kendi siparişlerini görebilir, onaylayabilir
+    Sadece supervisor kullanıcılar erişebilir
+    """
+    if not request.user.profile.is_supervisor:
+        messages.error(request, 'Bu sayfaya erişim yetkiniz yok.')
+        return redirect('profile')
+    
+    # Tüm siparişler
+    all_orders = SupervisorCreditPurchase.objects.filter(
+        supervisor=request.user.profile
+    ).select_related('buyer__user').order_by('-created_at')
+    
+    # Durum bazlı filtreleme
+    pending_orders = all_orders.filter(payment_status='PENDING')
+    approved_orders = all_orders.filter(payment_status='APPROVED')
+    rejected_orders = all_orders.filter(payment_status='REJECTED')
+    
+    context = {
+        'all_orders': all_orders,
+        'pending_orders': pending_orders,
+        'approved_orders': approved_orders,
+        'rejected_orders': rejected_orders,
+        'success_rate': request.user.profile.get_supervisor_success_rate(),
+    }
+    
+    return render(request, 'accounts/supervisor_panel.html', context)
+
+
+@login_required
+def supervisor_approve_order_view(request, purchase_id):
+    """
+    Supervisor siparişi onaylar
+    POST only
+    """
+    from django.shortcuts import get_object_or_404
+    from django.http import JsonResponse
+    
+    if not request.user.profile.is_supervisor:
+        return JsonResponse({'success': False, 'message': 'Yetkiniz yok'}, status=403)
+    
+    if request.method != 'POST':
+        return JsonResponse({'success': False, 'message': 'Sadece POST'}, status=405)
+    
+    purchase = get_object_or_404(
+        SupervisorCreditPurchase,
+        id=purchase_id,
+        supervisor=request.user.profile
+    )
+    
+    success, message = purchase.approve_order()
+    
+    if success:
+        messages.success(request, message)
+        return redirect('supervisor_panel')
+    else:
+        messages.error(request, message)
+        return redirect('supervisor_panel')
+
+
+@login_required
+def supervisor_reject_order_view(request, purchase_id):
+    """
+    Supervisor siparişi reddeder
+    POST only
+    """
+    from django.shortcuts import get_object_or_404
+    
+    if not request.user.profile.is_supervisor:
+        messages.error(request, 'Yetkiniz yok')
+        return redirect('profile')
+    
+    if request.method != 'POST':
+        return redirect('supervisor_panel')
+    
+    purchase = get_object_or_404(
+        SupervisorCreditPurchase,
+        id=purchase_id,
+        supervisor=request.user.profile
+    )
+    
+    reason = request.POST.get('reason', 'Ödeme doğrulanamadı')
+    success, message = purchase.reject_order(reason)
+    
+    if success:
+        messages.success(request, message)
+    else:
+        messages.error(request, message)
+    
+    return redirect('supervisor_panel')
+
+
+@login_required
+def supervisor_settings_view(request):
+    """
+    Supervisor ayarları - IBAN bilgilerini düzenleme
+    """
+    if not request.user.profile.is_supervisor:
+        messages.error(request, 'Bu sayfaya erişim yetkiniz yok.')
+        return redirect('profile')
+    
+    if request.method == 'POST':
+        profile = request.user.profile
+        
+        profile.supervisor_bank_name = request.POST.get('bank_name', '')
+        profile.supervisor_iban = request.POST.get('iban', '')
+        profile.supervisor_account_holder = request.POST.get('account_holder', '')
+        profile.supervisor_price = request.POST.get('price', 0.35)
+        profile.supervisor_is_active = request.POST.get('is_active') == 'on'
+        
+        profile.save()
+        
+        messages.success(request, 'Ayarlarınız güncellendi.')
+        return redirect('supervisor_settings')
+    
+    context = {
+        'profile': request.user.profile,
+    }
+    
+    return render(request, 'accounts/supervisor_settings.html', context)
+
+
+@login_required
+def supervisor_application_view(request):
+    """Supervisor başvuru formu"""
+    from .models import SupervisorApplication
+    
+    profile = request.user.profile
+    
+    # Zaten supervisor ise, panel'e yönlendir
+    if profile.is_supervisor:
+        messages.info(request, 'Zaten bir satıcısınız.')
+        return redirect('supervisor_panel')
+    
+    # Bekleyen başvuru var mı kontrol et
+    existing_application = SupervisorApplication.objects.filter(
+        user_profile=profile,
+        status='PENDING'
+    ).first()
+    
+    if existing_application:
+        messages.warning(request, 'Zaten beklemede olan bir başvurunuz var.')
+        return redirect('supervisor_application_status')
+    
+    if request.method == 'POST':
+        # Form verilerini al
+        bank_name = request.POST.get('bank_name', '').strip()
+        iban = request.POST.get('iban', '').strip()
+        account_holder = request.POST.get('account_holder', '').strip()
+        proposed_price = request.POST.get('proposed_price', '0.35')
+        description = request.POST.get('description', '').strip()
+        
+        # Basit validasyon
+        if not all([bank_name, iban, account_holder]):
+            messages.error(request, 'Lütfen tüm zorunlu alanları doldurun.')
+            return render(request, 'accounts/supervisor_application.html', {
+                'bank_name': bank_name,
+                'iban': iban,
+                'account_holder': account_holder,
+                'proposed_price': proposed_price,
+                'description': description,
+            })
+        
+        # Fiyat validasyonu
+        try:
+            price = float(proposed_price)
+            if price < 0.29 or price > 0.99:
+                messages.error(request, 'Önerilen fiyat 0.29 ₺ ile 0.99 ₺ arasında olmalıdır.')
+                return render(request, 'accounts/supervisor_application.html', {
+                    'bank_name': bank_name,
+                    'iban': iban,
+                    'account_holder': account_holder,
+                    'proposed_price': proposed_price,
+                    'description': description,
+                })
+        except (ValueError, TypeError):
+            messages.error(request, 'Geçersiz fiyat formatı.')
+            return render(request, 'accounts/supervisor_application.html')
+        
+        # Başvuruyu oluştur
+        application = SupervisorApplication.objects.create(
+            user_profile=profile,
+            bank_name=bank_name,
+            iban=iban,
+            account_holder=account_holder,
+            proposed_price=price,
+            description=description,
+            status='PENDING'
+        )
+        
+        messages.success(
+            request,
+            '✅ Başvurunuz başarıyla gönderildi! Başvurunuz incelenip en kısa sürede size dönüş yapılacaktır.'
+        )
+        
+        return redirect('supervisor_application_status')
+    
+    # GET request - boş form göster
+    context = {
+        'default_price': '0.35',
+    }
+    
+    return render(request, 'accounts/supervisor_application.html', context)
+
+
+@login_required
+def supervisor_application_status_view(request):
+    """Başvuru durumu görüntüleme"""
+    from .models import SupervisorApplication
+    
+    profile = request.user.profile
+    
+    # Zaten supervisor ise, panel'e yönlendir
+    if profile.is_supervisor:
+        messages.info(request, 'Zaten bir satıcısınız.')
+        return redirect('supervisor_panel')
+    
+    # Son başvuruyu bul
+    application = SupervisorApplication.objects.filter(
+        user_profile=profile
+    ).order_by('-created_at').first()
+    
+    if not application:
+        messages.info(request, 'Henüz bir başvurunuz bulunmuyor.')
+        return redirect('supervisor_application')
+    
+    context = {
+        'application': application,
+    }
+    
+    return render(request, 'accounts/supervisor_application_status.html', context)
+
+
+@login_required
+def credit_transfer_view(request):
+    """
+    Kredi transfer sayfası - Kullanıcılara kredi gönderme
+    """
+    if request.method == 'POST':
+        to_username = request.POST.get('to_username', '').strip()
+        amount = request.POST.get('amount', 0)
+        note = request.POST.get('note', '').strip()
+        
+        try:
+            amount = int(amount)
+            if amount <= 0:
+                messages.error(request, 'Geçersiz miktar.')
+                return redirect('credit_transfer')
+            
+            # Alıcı kullanıcıyı bul
+            try:
+                to_user = User.objects.get(username=to_username)
+                to_profile = to_user.profile
+            except User.DoesNotExist:
+                messages.error(request, f'Kullanıcı bulunamadı: {to_username}')
+                return redirect('credit_transfer')
+            
+            # Kendine gönderme kontrolü
+            if to_profile == request.user.profile:
+                messages.error(request, 'Kendinize kredi gönderemezsiniz.')
+                return redirect('credit_transfer')
+            
+            # Yeterli bakiye kontrolü
+            if request.user.profile.credits < amount:
+                messages.error(request, f'Yetersiz bakiye. Mevcut: {request.user.profile.credits} kredi')
+                return redirect('credit_transfer')
+            
+            # Transfer işlemi
+            from .models import CreditTransfer
+            transfer = CreditTransfer.objects.create(
+                from_user=request.user.profile,
+                to_user=to_profile,
+                amount=amount,
+                note=note
+            )
+            
+            messages.success(request, f'✅ {amount} kredi {to_username} kullanıcısına gönderildi!')
+            return redirect('credit_transfer')
+            
+        except ValueError as e:
+            messages.error(request, f'Hata: {str(e)}')
+            return redirect('credit_transfer')
+        except Exception as e:
+            messages.error(request, f'Beklenmeyen hata: {str(e)}')
+            return redirect('credit_transfer')
+    
+    # Transfer geçmişi
+    from .models import CreditTransfer
+    sent_transfers = CreditTransfer.objects.filter(
+        from_user=request.user.profile
+    ).select_related('to_user__user')[:20]
+    
+    received_transfers = CreditTransfer.objects.filter(
+        to_user=request.user.profile
+    ).select_related('from_user__user')[:20]
+    
+    # Tüm kullanıcılar (admin hariç)
+    all_users = UserProfile.objects.exclude(
+        user=request.user
+    ).exclude(
+        user__is_superuser=True
+    ).select_related('user').order_by('user__username')[:100]
+    
+    context = {
+        'sent_transfers': sent_transfers,
+        'received_transfers': received_transfers,
+        'all_users': all_users,
+    }
+    
+    return render(request, 'accounts/credit_transfer.html', context)
+
+
+def about_view(request):
+    """Hakkımızda sayfası"""
+    return render(request, 'accounts/about.html')
+
+
+def help_view(request):
+    """Yardım ve SSS sayfası"""
+    return render(request, 'accounts/help.html')
+
+
+@login_required
+def submit_support_ticket(request):
+    """Destek talebi gönderme"""
+    if request.method != 'POST':
+        messages.error(request, 'Geçersiz istek.')
+        return redirect('help')
+    
+    from .models import SupportTicket
+    
+    try:
+        category = request.POST.get('category')
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+        
+        if not all([category, subject, message]):
+            messages.error(request, 'Lütfen tüm alanları doldurun.')
+            return redirect('help')
+        
+        # Destek talebini oluştur
+        ticket = SupportTicket.objects.create(
+            user=request.user,
+            category=category,
+            subject=subject[:200],  # Max 200 karakter
+            message=message,
+            status='OPEN',
+            priority='MEDIUM'
+        )
+        
+        messages.success(
+            request,
+            f'✅ Destek talebiniz başarıyla oluşturuldu! (Talep #{ticket.id})\n'
+            f'En kısa sürede yanıt vereceğiz. Yanıtları profil sayfanızdan takip edebilirsiniz.'
+        )
+        
+    except Exception as e:
+        messages.error(request, f'Destek talebi oluşturulurken hata: {str(e)}')
+    
+    return redirect('help')
+
+
+def announcements_view(request):
+    """Duyurular sayfası"""
+    from .models import Announcement, UserAnnouncementRead
+    from django.utils import timezone
+    
+    # Aktif duyuruları getir
+    now = timezone.now()
+    announcements = Announcement.objects.filter(
+        is_active=True,
+        start_date__lte=now
+    ).filter(
+        Q(end_date__isnull=True) | Q(end_date__gte=now)
+    ).order_by('-is_pinned', '-created_at')
+    
+    # Kullanıcı giriş yaptıysa okunmuş duyuruları belirle
+    read_announcements = []
+    if request.user.is_authenticated:
+        read_announcements = list(
+            UserAnnouncementRead.objects.filter(
+                user=request.user
+            ).values_list('announcement_id', flat=True)
+        )
+    
+    context = {
+        'announcements': announcements,
+        'read_announcements': read_announcements,
+    }
+    
+    return render(request, 'accounts/announcements.html', context)
+
+
+@login_required
+def mark_announcement_read(request, announcement_id):
+    """Duyuruyu okundu olarak işaretle"""
+    if request.method != 'POST':
+        messages.error(request, 'Geçersiz istek.')
+        return redirect('announcements')
+    
+    from .models import Announcement, UserAnnouncementRead
+    
+    try:
+        announcement = Announcement.objects.get(id=announcement_id)
+        
+        # Zaten okunmuş mu kontrol et
+        UserAnnouncementRead.objects.get_or_create(
+            user=request.user,
+            announcement=announcement
+        )
+        
+        messages.success(request, 'Duyuru okundu olarak işaretlendi.')
+        
+    except Announcement.DoesNotExist:
+        messages.error(request, 'Duyuru bulunamadı.')
+    except Exception as e:
+        messages.error(request, f'Hata: {str(e)}')
+    
+    return redirect('announcements')
+
+
+
+
+

@@ -1,0 +1,1012 @@
+{% extends 'base.html' %}
+
+{% block title %}Maç Yorumları - FX Futbol{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* Hamburger menu butonu (sadece mobilde görünür) */
+    .mobile-menu-toggle {
+        display: none;
+        position: fixed;
+        top: 80px;
+        left: 15px;
+        z-index: 1001;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        color: white;
+        font-size: 20px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        cursor: pointer;
+    }
+    
+    .sidebar {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 350px;
+        height: calc(100vh - 70px);
+        background: white;
+        overflow-y: auto;
+        box-shadow: 2px 0 20px rgba(0,0,0,0.1);
+        z-index: 1000;
+        transition: transform 0.3s ease;
+    }
+    
+    .content-area {
+        margin-left: 370px;
+        padding: 20px;
+    }
+    
+    /* Mobil responsive */
+    @media (max-width: 768px) {
+        .mobile-menu-toggle {
+            display: block;
+        }
+        
+        .sidebar {
+            transform: translateX(-100%);
+        }
+        
+        .sidebar.active {
+            transform: translateX(0);
+        }
+        
+        .content-area {
+            margin-left: 0;
+            padding: 70px 15px 15px;
+        }
+    }
+    
+    .accordion-button {
+        font-weight: 600;
+    }
+    
+    .accordion-button:not(.collapsed) {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+    }
+    
+    .match-item {
+        cursor: pointer;
+        padding: 12px;
+        margin: 5px 0;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        border-left: 3px solid #667eea;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .match-item:hover {
+        background: #f8f9fa;
+        transform: translateX(5px);
+    }
+    
+    .match-item.active {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+    }
+    
+    .match-info {
+        flex: 1;
+    }
+    
+    .ai-btn {
+        width: 35px;
+        height: 35px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border: none;
+        color: white;
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        flex-shrink: 0;
+        margin-left: 10px;
+        box-shadow: 0 2px 10px rgba(102, 126, 234, 0.3);
+    }
+    
+    .ai-btn:hover {
+        transform: scale(1.1);
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.5);
+    }
+    
+    .match-item.active .ai-btn {
+        background: white;
+        color: #667eea;
+    }
+    
+    .match-teams {
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+    
+    .match-time {
+        font-size: 0.8rem;
+        color: #6c757d;
+    }
+    
+    .match-item.active .match-time {
+        color: rgba(255,255,255,0.8);
+    }
+    
+    .commentary-display {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    }
+    
+    .commentary-text {
+        white-space: pre-wrap;
+        font-size: 1.05rem;
+        line-height: 1.8;
+        color: #333;
+    }
+    
+    .section-title {
+        color: #667eea;
+        font-weight: bold;
+        margin-top: 30px;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 3px solid #667eea;
+    }
+    
+    .country-badge {
+        display: inline-block;
+        padding: 5px 10px;
+        background: #667eea;
+        color: white;
+        border-radius: 5px;
+        font-size: 0.85rem;
+        margin-left: 10px;
+    }
+    
+    .league-badge {
+        display: inline-block;
+        padding: 3px 8px;
+        background: #764ba2;
+        color: white;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        margin-left: 5px;
+    }
+    
+    .empty-state {
+        text-align: center;
+        padding: 100px 20px;
+        color: #6c757d;
+    }
+    
+    .empty-state i {
+        font-size: 4rem;
+        margin-bottom: 20px;
+        opacity: 0.3;
+    }
+    
+    .nav-pills .nav-link {
+        font-size: 0.85rem;
+        padding: 8px 12px;
+        border-radius: 8px;
+    }
+    
+    .nav-pills .nav-link.active {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+    
+    .matches-list {
+        max-height: calc(100vh - 300px);
+        overflow-y: auto;
+    }
+    
+    .match-league {
+        color: #6c757d;
+        font-size: 0.75rem;
+    }
+    
+    .dates-list {
+        max-height: calc(100vh - 300px);
+        overflow-y: auto;
+    }
+    
+    .date-item {
+        cursor: pointer;
+        padding: 15px;
+        margin: 8px 0;
+        background: white;
+        border-radius: 10px;
+        border-left: 4px solid #667eea;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: all 0.3s ease;
+    }
+    
+    .date-item:hover {
+        background: #f8f9fa;
+        transform: translateX(5px);
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+    
+    .date-display {
+        font-size: 0.95rem;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Mobile hamburger menu button -->
+<button class="mobile-menu-toggle" onclick="toggleSidebar()">
+    <i class="fas fa-bars"></i>
+</button>
+
+<!-- Sidebar: Ülke > Lig > Maçlar -->
+<div class="sidebar" id="sidebar">
+    <div class="p-3">
+        <h5 class="mb-3">
+            <i class="fas fa-globe"></i> Maçlar
+        </h5>
+        
+        <!-- Tarih Seçici -->
+        <form method="get" class="mb-3">
+            <div class="input-group input-group-sm">
+                <input type="date" class="form-control" name="date" value="{{ selected_date }}" required>
+                <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </form>
+        
+        <!-- Tabs: Tüm Maçlar | Ülke/Lig | Günler -->
+        <ul class="nav nav-pills mb-3" id="matchTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="all-tab" data-bs-toggle="pill" data-bs-target="#all-matches" type="button">
+                    <i class="fas fa-list"></i> Tümü
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="country-tab" data-bs-toggle="pill" data-bs-target="#country-matches" type="button">
+                    <i class="fas fa-flag"></i> Ülke/Lig
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="dates-tab" data-bs-toggle="pill" data-bs-target="#dates-matches" type="button">
+                    <i class="fas fa-calendar"></i> Günler
+                </button>
+            </li>
+        </ul>
+        
+        <div class="tab-content" id="matchTabsContent">
+            <!-- TAB 1: TÜM MAÇLAR (Saate göre) -->
+            <div class="tab-pane fade show active" id="all-matches" role="tabpanel">
+                {% if all_matches %}
+                <div class="matches-list">
+                    {% for match in all_matches %}
+                    <div class="match-item" 
+                         data-match-id="{{ match.match_id }}"
+                         data-friendly-url="{{ match.get_friendly_url }}"
+                         onclick="loadMatch({{ match.match_id }})">
+                        <div class="match-info">
+                            <div class="match-time mb-1">
+                                <i class="fas fa-clock"></i> {{ match.match_time }}
+                            </div>
+                            <div class="match-teams">
+                                <i class="fas fa-home"></i> {{ match.home_team_name }}
+                                <br>
+                                <i class="fas fa-plane"></i> {{ match.away_team_name }}
+                            </div>
+                            <div class="match-league mt-1">
+                                <small><i class="fas fa-flag"></i> {{ match.country }} - {{ match.league }}</small>
+                            </div>
+                        </div>
+                        <button class="ai-btn" 
+                                onclick="event.stopPropagation(); openAIChat({{ match.match_id }}, '{{ match.home_team_name }}', '{{ match.away_team_name }}')"
+                                title="AI ile Konuş">
+                            <i class="fas fa-robot"></i>
+                        </button>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <div class="alert alert-warning">
+                    <i class="fas fa-exclamation-triangle"></i> Maç bulunamadı
+                </div>
+                {% endif %}
+            </div>
+            
+            <!-- TAB 2: ÜLKE/LİG (Accordion) -->
+            <div class="tab-pane fade" id="country-matches" role="tabpanel">
+                {% if grouped_matches %}
+                <div class="accordion" id="matchesAccordion">
+                    {% for country, leagues in grouped_matches.items %}
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button {% if not forloop.first %}collapsed{% endif %}" 
+                                    type="button" 
+                                    data-bs-toggle="collapse" 
+                                    data-bs-target="#country{{ forloop.counter }}">
+                                <i class="fas fa-flag me-2"></i> {{ country }}
+                                <span class="country-badge">{{ leagues|length }} lig</span>
+                            </button>
+                        </h2>
+                        <div id="country{{ forloop.counter }}" 
+                             class="accordion-collapse collapse {% if forloop.first %}show{% endif %}" 
+                             data-bs-parent="#matchesAccordion">
+                            <div class="accordion-body p-0">
+                                <!-- Ligler Accordion -->
+                                <div class="accordion" id="leagues{{ forloop.counter }}">
+                                    {% for league, matches in leagues.items %}
+                                    <div class="accordion-item border-0">
+                                        <h2 class="accordion-header">
+                                            <button class="accordion-button collapsed" 
+                                                    type="button" 
+                                                    data-bs-toggle="collapse" 
+                                                    data-bs-target="#league{{ forloop.parentloop.counter }}_{{ forloop.counter }}">
+                                                <i class="fas fa-trophy me-2"></i> {{ league }}
+                                                <span class="league-badge">{{ matches|length }} maç</span>
+                                            </button>
+                                        </h2>
+                                        <div id="league{{ forloop.parentloop.counter }}_{{ forloop.counter }}" 
+                                             class="accordion-collapse collapse" 
+                                             data-bs-parent="#leagues{{ forloop.parentloop.counter }}">
+                                            <div class="accordion-body p-2">
+                                                <!-- Maçlar -->
+                                                {% for match in matches %}
+                                                <div class="match-item" 
+                                                     data-match-id="{{ match.match_id }}"
+                                                     data-friendly-url="{{ match.get_friendly_url }}"
+                                                     onclick="loadMatch({{ match.match_id }})">
+                                                    <div class="match-info">
+                                                        <div class="match-teams">
+                                                            <i class="fas fa-home"></i> {{ match.home_team_name }}
+                                                            <br>
+                                                            <i class="fas fa-plane"></i> {{ match.away_team_name }}
+                                                        </div>
+                                                        <div class="match-time mt-1">
+                                                            <i class="fas fa-clock"></i> {{ match.match_time }}
+                                                        </div>
+                                                    </div>
+                                                    <button class="ai-btn" 
+                                                            onclick="event.stopPropagation(); openAIChat({{ match.match_id }}, '{{ match.home_team_name }}', '{{ match.away_team_name }}')"
+                                                            title="AI ile Konuş">
+                                                        <i class="fas fa-robot"></i>
+                                                    </button>
+                                                </div>
+                                                {% endfor %}
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <div class="alert alert-warning">
+                    <i class="fas fa-exclamation-triangle"></i> Maç bulunamadı
+                </div>
+                {% endif %}
+            </div>
+            
+            <!-- TAB 3: GÜNLER (Date Tabs) -->
+            <div class="tab-pane fade" id="dates-matches" role="tabpanel">
+                {% if available_dates %}
+                <div class="dates-list">
+                    {% for date_info in available_dates %}
+                    <div class="date-item" onclick="loadDate('{{ date_info.date }}')">
+                        <div class="date-display">
+                            <i class="fas fa-calendar-day"></i> 
+                            <strong>{{ date_info.display }}</strong>
+                        </div>
+                        <div class="date-count">
+                            <span class="badge bg-primary">{{ date_info.count }} maç</span>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <div class="alert alert-info">
+                    <i class="fas fa-info-circle"></i> Son 30 günde maç bulunamadı
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Content Area: Maç Yorumları -->
+<div class="content-area">
+    <div id="commentaryDisplay">
+        <div class="empty-state">
+            <i class="fas fa-hand-pointer"></i>
+            <h4>Bir Maç Seçin</h4>
+            <p>Soldaki menüden bir maç seçerek yorumları görüntüleyin</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+// Maç yorumlarını yükle
+async function loadMatch(matchId) {
+    // Aktif sınıfını güncelle
+    document.querySelectorAll('.match-item').forEach(item => {
+        item.classList.remove('active');
+    });
+    
+    const matchElement = document.querySelector(`[data-match-id="${matchId}"]`);
+    matchElement.classList.add('active');
+    
+    // SEO-friendly URL'i al ve browser URL'ini güncelle
+    const friendlyUrl = matchElement.getAttribute('data-friendly-url');
+    if (friendlyUrl) {
+        window.history.pushState({matchId: matchId}, '', friendlyUrl);
+    }
+    
+    // Loading göster
+    document.getElementById('commentaryDisplay').innerHTML = `
+        <div class="text-center py-5">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Yükleniyor...</span>
+            </div>
+            <p class="mt-3 text-muted">Yorum yükleniyor...</p>
+        </div>
+    `;
+    
+    try {
+        // API'den maç detayını al
+        const response = await fetch(`/api/matches/${matchId}/`);
+        const data = await response.json();
+        
+        // Yorumu göster
+        displayCommentary(data);
+    } catch (error) {
+        document.getElementById('commentaryDisplay').innerHTML = `
+            <div class="alert alert-danger">
+                <i class="fas fa-exclamation-circle"></i> 
+                Yorum yüklenirken hata oluştu: ${error.message}
+            </div>
+        `;
+    }
+}
+
+// Yorumu HTML olarak göster
+function displayCommentary(data) {
+    const commentary = data.commentary_json;
+    
+    let html = `
+        <div class="commentary-display">
+            <div class="text-center mb-4">
+                <h2>
+                    <i class="fas fa-home"></i> ${data.home_team_name}
+                    <span class="mx-3">VS</span>
+                    <i class="fas fa-plane"></i> ${data.away_team_name}
+                </h2>
+                <p class="text-muted">
+                    <i class="fas fa-calendar"></i> ${data.match_date} | 
+                    <i class="fas fa-clock"></i> ${data.match_time} |
+                    <i class="fas fa-flag"></i> ${data.country} - ${data.league}
+                </p>
+                <button onclick="copyAllCommentary()" class="btn btn-success">
+                    <i class="fas fa-copy"></i> Tümünü Kopyala
+                </button>
+            </div>
+            <hr>
+    `;
+    
+    // Home Commentary
+    if (commentary.home_commentary) {
+        html += `
+            <h3 class="section-title">
+                <i class="fas fa-home text-primary"></i> Ev Sahibi: ${data.home_team_name}
+            </h3>
+            <div class="commentary-text mb-4">${commentary.home_commentary}</div>
+        `;
+    }
+    
+    // Away Commentary
+    if (commentary.away_commentary) {
+        html += `
+            <h3 class="section-title">
+                <i class="fas fa-plane text-danger"></i> Deplasman: ${data.away_team_name}
+            </h3>
+            <div class="commentary-text mb-4">${commentary.away_commentary}</div>
+        `;
+    }
+    
+    // Match Interaction
+    if (commentary.match_interaction) {
+        html += `
+            <h3 class="section-title">
+                <i class="fas fa-exchange-alt text-warning"></i> Maç Etkileşimi
+            </h3>
+            <div class="commentary-text mb-4">${commentary.match_interaction}</div>
+        `;
+    }
+    
+    // Combined Prompt
+    if (commentary.combined_prompt) {
+        html += `
+            <h3 class="section-title">
+                <i class="fas fa-file-alt text-success"></i> Kapsamlı Analiz
+            </h3>
+            <div class="commentary-text mb-4">${commentary.combined_prompt}</div>
+        `;
+    }
+    
+    html += `</div>`;
+    
+    document.getElementById('commentaryDisplay').innerHTML = html;
+}
+
+// Sayfa yüklendiğinde bugünün tarihini varsayılan yap
+window.addEventListener('DOMContentLoaded', function() {
+    const dateInput = document.querySelector('input[type="date"]');
+    if (!dateInput.value) {
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.value = today;
+    }
+});
+
+// Tarih değiştir ve sayfayı yenile
+function loadDate(date) {
+    // Form'u bul ve tarihi set et
+    const dateInput = document.querySelector('input[type="date"]');
+    dateInput.value = date;
+    
+    // Form'u submit et
+    dateInput.closest('form').submit();
+}
+
+// Sidebar toggle (mobil için)
+function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const btn = document.querySelector('.mobile-menu-toggle i');
+    
+    sidebar.classList.toggle('active');
+    
+    // Icon değiştir
+    if (sidebar.classList.contains('active')) {
+        btn.classList.remove('fa-bars');
+        btn.classList.add('fa-times');
+    } else {
+        btn.classList.remove('fa-times');
+        btn.classList.add('fa-bars');
+    }
+}
+
+// Maç seçildiğinde mobilde sidebar'ı kapat
+const originalLoadMatch = loadMatch;
+loadMatch = function(matchId) {
+    originalLoadMatch(matchId);
+    
+    // Mobilde sidebar'ı kapat
+    if (window.innerWidth <= 768) {
+        const sidebar = document.getElementById('sidebar');
+        if (sidebar.classList.contains('active')) {
+            toggleSidebar();
+        }
+    }
+}
+
+// Tüm commentary'yi kopyala
+function copyAllCommentary() {
+    const commentaryDiv = document.querySelector('.commentary-display');
+    
+    // Sadece text içeriğini al (HTML tagları olmadan)
+    let textToCopy = '';
+    
+    // Başlık
+    const title = commentaryDiv.querySelector('h2');
+    if (title) {
+        textToCopy += title.textContent.trim() + '\n\n';
+    }
+    
+    // Tarih bilgisi
+    const dateInfo = commentaryDiv.querySelector('.text-muted');
+    if (dateInfo) {
+        textToCopy += dateInfo.textContent.trim() + '\n\n';
+    }
+    
+    textToCopy += '='.repeat(60) + '\n\n';
+    
+    // Tüm section'ları al
+    const sections = commentaryDiv.querySelectorAll('.section-title, .commentary-text');
+    sections.forEach(section => {
+        if (section.classList.contains('section-title')) {
+            textToCopy += '\n' + section.textContent.trim() + '\n' + '-'.repeat(40) + '\n\n';
+        } else if (section.classList.contains('commentary-text')) {
+            textToCopy += section.textContent.trim() + '\n\n';
+        }
+    });
+    
+    // Geçici textarea oluştur (eski tarayıcılar için)
+    const textarea = document.createElement('textarea');
+    textarea.value = textToCopy;
+    textarea.style.position = 'fixed';
+    textarea.style.top = '0';
+    textarea.style.left = '0';
+    textarea.style.width = '2em';
+    textarea.style.height = '2em';
+    textarea.style.padding = '0';
+    textarea.style.border = 'none';
+    textarea.style.outline = 'none';
+    textarea.style.boxShadow = 'none';
+    textarea.style.background = 'transparent';
+    document.body.appendChild(textarea);
+    textarea.select();
+    
+    try {
+        // Kopyala
+        const successful = document.execCommand('copy');
+        
+        if (successful) {
+            // Butonu başarı mesajına çevir
+            const btn = event.target.closest('button');
+            const originalHTML = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-check"></i> Kopyalandı!';
+            btn.classList.remove('btn-success');
+            btn.classList.add('btn-primary');
+            
+            // 2 saniye sonra eski haline dön
+            setTimeout(() => {
+                btn.innerHTML = originalHTML;
+                btn.classList.remove('btn-primary');
+                btn.classList.add('btn-success');
+            }, 2000);
+        } else {
+            alert('Kopyalama başarısız oldu. Lütfen manuel olarak kopyalayın.');
+        }
+    } catch (err) {
+        // Hata durumunda modal göster
+        alert('Kopyalama hatası: ' + err.message + '\n\nMetni manuel olarak seçip kopyalayabilirsiniz.');
+    } finally {
+        // Textarea'yı temizle
+        document.body.removeChild(textarea);
+    }
+}
+
+// AI Chat Functions
+let currentChatMatchId = null;
+let chatHistory = [];
+
+// 🔥 Kredi badge'ini güncelle
+function updateCreditBadge(newCredit) {
+    console.log('🔥 updateCreditBadge çağrıldı! Yeni kredi:', newCredit);
+    
+    // Navbar'daki kredi badge'ini bul (SADECE LOGIN OLAN KULLANICILAR İÇİN VAR!)
+    const creditBadge = document.querySelector('.badge.bg-primary');
+    console.log('📍 Badge bulundu:', creditBadge);
+    
+    if (creditBadge) {
+        const icon = '<i class="fas fa-coins"></i>';
+        const oldValue = creditBadge.textContent.trim();
+        creditBadge.innerHTML = `${icon} ${newCredit}`;
+        console.log('✅ Badge güncellendi:', oldValue, '→', newCredit);
+        
+        // Animasyon ekle (görsel feedback)
+        creditBadge.style.animation = 'pulse 0.5s ease';
+        setTimeout(() => {
+            creditBadge.style.animation = '';
+        }, 500);
+    } else {
+        console.warn('⚠️ Kredi badge bulunamadı! (Kullanıcı login değil veya badge selector yanlış)');
+    }
+}
+
+// AI Chat Modal Aç
+function openAIChat(matchId, homeTeam, awayTeam) {
+    currentChatMatchId = matchId;
+    
+    // Modal title güncelle
+    document.getElementById('aiChatModalTitle').textContent = `${homeTeam} vs ${awayTeam}`;
+    
+    // Mesajları temizle
+    const messagesContainer = document.getElementById('aiChatMessagesContainer');
+    messagesContainer.innerHTML = `
+        <div class="chat-message ai">
+            <div class="chat-bubble">
+                👋 Merhaba! Bu maç hakkında sana yardımcı olabilirim. Sormak istediğin bir şey var mı?
+            </div>
+        </div>
+        <div class="typing-indicator" id="typingIndicator">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    `;
+    
+    // Chat geçmişini yükle
+    loadChatHistory(matchId);
+    
+    // Modal'ı göster
+    const modal = new bootstrap.Modal(document.getElementById('aiChatModal'));
+    modal.show();
+    
+    // Input'a focus
+    setTimeout(() => {
+        document.getElementById('aiChatInput').focus();
+    }, 500);
+}
+
+// Chat geçmişini yükle
+async function loadChatHistory(matchId) {
+    try {
+        const response = await fetch(`/api/chat/${matchId}/history/`);
+        const data = await response.json();
+        
+        if (data.messages.length > 0) {
+            const messagesContainer = document.getElementById('aiChatMessagesContainer');
+            const typingIndicator = document.getElementById('typingIndicator');
+            
+            // Hoş geldin mesajını temizle
+            messagesContainer.innerHTML = '<div class="typing-indicator" id="typingIndicator"><span></span><span></span><span></span></div>';
+            
+            // Mesajları ekle
+            data.messages.forEach(msg => {
+                addMessageToUI(msg.user_message, 'user', msg.created_at);
+                addMessageToUI(msg.ai_response, 'ai', msg.created_at);
+            });
+            
+            chatHistory = data.messages;
+        }
+        
+        scrollChatToBottom();
+    } catch (error) {
+        console.error('Chat geçmişi yüklenemedi:', error);
+    }
+}
+
+// UI'ya mesaj ekle
+function addMessageToUI(message, sender, timestamp = null) {
+    const messagesContainer = document.getElementById('aiChatMessagesContainer');
+    const typingIndicator = document.getElementById('typingIndicator');
+    
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `chat-message ${sender}`;
+    
+    const bubble = document.createElement('div');
+    bubble.className = 'chat-bubble';
+    bubble.textContent = message;
+    
+    messageDiv.appendChild(bubble);
+    
+    if (timestamp) {
+        const timeDiv = document.createElement('div');
+        timeDiv.className = 'chat-timestamp';
+        const date = new Date(timestamp);
+        timeDiv.textContent = date.toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' });
+        messageDiv.appendChild(timeDiv);
+    }
+    
+    // Typing indicator'dan önce ekle
+    messagesContainer.insertBefore(messageDiv, typingIndicator);
+    scrollChatToBottom();
+}
+
+// Chat'i en alta scroll et
+function scrollChatToBottom() {
+    const messagesContainer = document.getElementById('aiChatMessagesContainer');
+    messagesContainer.scrollTop = messagesContainer.scrollHeight;
+}
+
+// Mesaj gönder
+async function sendAIChatMessage() {
+    const input = document.getElementById('aiChatInput');
+    const sendButton = document.getElementById('aiChatSendBtn');
+    const message = input.value.trim();
+    
+    if (!message || !currentChatMatchId) return;
+    
+    // UI'yı güncelle
+    addMessageToUI(message, 'user', new Date().toISOString());
+    input.value = '';
+    sendButton.disabled = true;
+    
+    // Typing indicator göster
+    const typingIndicator = document.getElementById('typingIndicator');
+    typingIndicator.classList.add('active');
+    scrollChatToBottom();
+    
+    try {
+        const response = await fetch(`/api/chat/${currentChatMatchId}/`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': getCookie('csrftoken')
+            },
+            body: JSON.stringify({ message: message })
+        });
+        
+        const data = await response.json();
+        
+        // Typing indicator gizle
+        typingIndicator.classList.remove('active');
+        
+        // AI yanıtını ekle
+        addMessageToUI(data.ai_response, 'ai', data.timestamp);
+        
+        // 🔥 KREDİ SAYISINI GÜNCELLE (Navbar'daki badge)
+        console.log('🔥 Kredi güncelleme çalışıyor:', data.credits);
+        if (data.credits && data.credits.remaining !== undefined) {
+            console.log('✅ updateCreditBadge çağrılıyor:', data.credits.remaining);
+            updateCreditBadge(data.credits.remaining);
+        } else {
+            console.warn('⚠️ data.credits bulunamadı:', data);
+        }
+        
+    } catch (error) {
+        console.error('Mesaj gönderilemedi:', error);
+        typingIndicator.classList.remove('active');
+        addMessageToUI('❌ Üzgünüm, bir hata oluştu. Lütfen tekrar dene.', 'ai');
+    } finally {
+        sendButton.disabled = false;
+        input.focus();
+    }
+}
+
+// Enter tuşu ile gönder
+function handleAIChatKeyPress(event) {
+    if (event.key === 'Enter') {
+        sendAIChatMessage();
+    }
+}
+
+// CSRF token al
+function getCookie(name) {
+    let cookieValue = null;
+    if (document.cookie && document.cookie !== '') {
+        const cookies = document.cookie.split(';');
+        for (let i = 0; i < cookies.length; i++) {
+            const cookie = cookies[i].trim();
+            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                break;
+            }
+        }
+    }
+    return cookieValue;
+}
+</script>
+
+<!-- AI Chat Modal -->
+<div class="modal fade" id="aiChatModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+                <h5 class="modal-title" id="aiChatModalTitle">
+                    <i class="fas fa-robot"></i> AI Asistan
+                </h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body p-0" style="height: 500px; display: flex; flex-direction: column;">
+                <div id="aiChatMessagesContainer" style="flex: 1; overflow-y: auto; padding: 20px; background: #f8f9fa;">
+                    <!-- Mesajlar buraya eklenecek -->
+                </div>
+                <div style="padding: 15px; background: white; border-top: 1px solid #e0e0e0; display: flex; gap: 10px;">
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="aiChatInput" 
+                        placeholder="Bir soru sor..."
+                        onkeypress="handleAIChatKeyPress(event)"
+                        style="border-radius: 25px;"
+                    >
+                    <button 
+                        class="btn btn-primary" 
+                        id="aiChatSendBtn"
+                        onclick="sendAIChatMessage()"
+                        style="border-radius: 50%; width: 45px; height: 45px; padding: 0; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none;">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+.chat-message {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-message.user {
+    align-items: flex-end;
+}
+
+.chat-message.ai {
+    align-items: flex-start;
+}
+
+.chat-bubble {
+    max-width: 80%;
+    padding: 12px 16px;
+    border-radius: 18px;
+    word-wrap: break-word;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.chat-message.user .chat-bubble {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-bottom-right-radius: 4px;
+}
+
+.chat-message.ai .chat-bubble {
+    background: white;
+    color: #333;
+    border-bottom-left-radius: 4px;
+}
+
+.chat-timestamp {
+    font-size: 0.75rem;
+    color: #999;
+    margin-top: 5px;
+    padding: 0 5px;
+}
+
+.typing-indicator {
+    display: none;
+    padding: 12px 16px;
+    background: white;
+    border-radius: 18px;
+    border-bottom-left-radius: 4px;
+    max-width: 80px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.typing-indicator.active {
+    display: block;
+}
+
+.typing-indicator span {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #667eea;
+    border-radius: 50%;
+    margin: 0 2px;
+    animation: typing 1.4s infinite;
+}
+
+.typing-indicator span:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.typing-indicator span:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes typing {
+    0%, 60%, 100% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(-10px);
+    }
+}
+
+/* 🔥 Kredi Badge Pulse Animation */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.15); box-shadow: 0 0 15px rgba(13, 110, 253, 0.5); }
+    100% { transform: scale(1); }
+}
+</style>
+
+</script>
+{% endblock %}

@@ -1,0 +1,147 @@
+{% extends 'base.html' %}
+
+{% block title %}Ödeme Bilgileri - Spradar{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-10">
+            <!-- Başarı Mesajı -->
+            <div class="alert alert-success text-center">
+                <h3><i class="bi bi-check-circle-fill"></i> Sipariş Başarıyla Oluşturuldu!</h3>
+                <p class="mb-0">Aşağıdaki ödeme bilgilerini kullanarak ödemenizi tamamlayın</p>
+            </div>
+            
+            <!-- Sipariş Özeti -->
+            <div class="card border-primary mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">
+                        <i class="bi bi-receipt"></i> Sipariş Özeti
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="mb-2"><strong>Sipariş No:</strong> #{{ purchase.id }}</p>
+                            <p class="mb-2"><strong>Kredi Miktarı:</strong> {{ purchase.credit_amount|floatformat:0 }} Kredi</p>
+                            <p class="mb-0"><strong>Tutar:</strong> {{ purchase.price|floatformat:2 }} TL</p>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="alert alert-warning text-center mb-0">
+                                <h6><i class="bi bi-exclamation-triangle-fill"></i> Ödeme Kodunuz</h6>
+                                <h2 class="mb-0" style="font-family: monospace; letter-spacing: 2px;">
+                                    {{ purchase.payment_code }}
+                                </h2>
+                                <small class="d-block mt-2">Havale/EFT açıklamasına bu kodu yazın!</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Banka Hesapları -->
+            <div class="card border-success mb-4">
+                <div class="card-header bg-success text-white">
+                    <h4 class="mb-0">
+                        <i class="bi bi-bank"></i> Ödeme Yapılacak Banka Hesapları
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        {% for bank in bank_accounts %}
+                        <div class="col-md-6 mb-3">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <i class="bi bi-bank2"></i> {{ bank.bank_name }}
+                                    </h5>
+                                    <hr>
+                                    <p class="mb-2"><strong>IBAN:</strong></p>
+                                    <div class="input-group mb-3">
+                                        <input 
+                                            type="text" 
+                                            class="form-control form-control-lg" 
+                                            value="{{ bank.iban }}" 
+                                            readonly 
+                                            id="iban_{{ forloop.counter }}"
+                                        >
+                                        <button 
+                                            class="btn btn-primary" 
+                                            type="button" 
+                                            onclick="copyToClipboard('iban_{{ forloop.counter }}')"
+                                        >
+                                            <i class="bi bi-clipboard"></i> Kopyala
+                                        </button>
+                                    </div>
+                                    <p class="mb-0">
+                                        <strong>Hesap Sahibi:</strong><br>
+                                        {{ bank.account_holder }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Ödeme Talimatları -->
+            <div class="card border-info">
+                <div class="card-header bg-info text-white">
+                    <h4 class="mb-0">
+                        <i class="bi bi-info-circle-fill"></i> Ödeme Talimatları
+                    </h4>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-danger">
+                        <h5><i class="bi bi-exclamation-triangle-fill"></i> ÖNEMLİ!</h5>
+                        {{ payment_instructions|linebreaks }}
+                    </div>
+                    
+                    <h5>Adım Adım Ödeme Süreci:</h5>
+                    <ol class="mb-3">
+                        <li><strong>Banka Seçin:</strong> Yukarıdaki banka hesaplarından birini seçin</li>
+                        <li><strong>IBAN Kopyalayın:</strong> "Kopyala" butonuna tıklayarak IBAN'ı kopyalayın</li>
+                        <li><strong>Havale/EFT Yapın:</strong> Bankanızın mobil uygulaması veya internet bankacılığından havale yapın</li>
+                        <li><strong>Ödeme Kodunu Yazın:</strong> Açıklama kısmına <code>{{ purchase.payment_code }}</code> yazın</li>
+                        <li><strong>Onay Bekleyin:</strong> Ödeme onaylandığında krediler otomatik olarak hesabınıza tanımlanır</li>
+                    </ol>
+                    
+                    <div class="d-grid gap-2">
+                        <a href="{% url 'profile' %}" class="btn btn-lg btn-primary">
+                            <i class="bi bi-house"></i> Profilime Dön
+                        </a>
+                        <a href="{% url 'buy_credits' %}" class="btn btn-lg btn-outline-secondary">
+                            <i class="bi bi-arrow-left"></i> Kredi Satın Alma Sayfasına Dön
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function copyToClipboard(elementId) {
+    const input = document.getElementById(elementId);
+    input.select();
+    input.setSelectionRange(0, 99999); // Mobile
+    
+    // Modern copy API
+    navigator.clipboard.writeText(input.value).then(function() {
+        // Feedback
+        const button = input.nextElementSibling;
+        const originalHTML = button.innerHTML;
+        button.innerHTML = '<i class="bi bi-check"></i> Kopyalandı!';
+        button.classList.remove('btn-primary');
+        button.classList.add('btn-success');
+        
+        setTimeout(() => {
+            button.innerHTML = originalHTML;
+            button.classList.remove('btn-success');
+            button.classList.add('btn-primary');
+        }, 2000);
+    });
+}
+</script>
+{% endblock %}

@@ -1,0 +1,298 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+
+{% block title %}Hakkımızda{% endblock %}
+
+{% block extra_css %}
+<style>
+    .hero-section {
+        background: linear-gradient(135deg, var(--grass-green) 0%, var(--field-green) 100%);
+        color: white;
+        padding: 100px 0 80px;
+        position: relative;
+        overflow: hidden;
+        margin: -2rem -15px 3rem;
+    }
+    
+    .hero-section::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"><path d="M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z" fill="%23ffffff" fill-opacity="0.1"/></svg>');
+        background-size: cover;
+        opacity: 0.3;
+    }
+    
+    .hero-content {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+    }
+    
+    .feature-card {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        margin-bottom: 30px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+        height: 100%;
+    }
+    
+    .feature-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    }
+    
+    .feature-icon {
+        font-size: 3rem;
+        color: var(--primary-green);
+        margin-bottom: 20px;
+    }
+    
+    .feature-title {
+        color: var(--grass-green);
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+    
+    .stats-section {
+        background: white;
+        padding: 60px 0;
+        margin: 40px 0;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+    
+    .stat-item {
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .stat-number {
+        font-size: 3rem;
+        font-weight: bold;
+        color: var(--primary-green);
+        display: block;
+    }
+    
+    .stat-label {
+        color: #666;
+        font-size: 1.1rem;
+        margin-top: 10px;
+    }
+    
+    .section-title {
+        color: var(--grass-green);
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+    
+    .how-it-works {
+        padding: 40px 0;
+    }
+    
+    .step-card {
+        text-align: center;
+        padding: 30px;
+    }
+    
+    .step-number {
+        width: 80px;
+        height: 80px;
+        background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+        color: white;
+        font-size: 2rem;
+        font-weight: bold;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 20px;
+        box-shadow: 0 5px 15px rgba(46, 204, 113, 0.3);
+    }
+    
+    .mission-section, .vision-section {
+        background: white;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        margin-bottom: 30px;
+    }
+    
+    .mission-section h3, .vision-section h3 {
+        color: var(--grass-green);
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    
+    .cta-section {
+        background: linear-gradient(135deg, var(--grass-green) 0%, var(--field-green) 100%);
+        color: white;
+        padding: 60px 0;
+        margin: 40px -15px -2rem;
+        text-align: center;
+    }
+    
+    .btn-cta {
+        background: #FFD700;
+        color: var(--field-green);
+        padding: 15px 40px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        border: none;
+        border-radius: 50px;
+        transition: all 0.3s ease;
+        box-shadow: 0 5px 15px rgba(255, 215, 0, 0.3);
+    }
+    
+    .btn-cta:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 25px rgba(255, 215, 0, 0.5);
+        color: var(--field-green);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div class="hero-section">
+    <div class="container">
+        <div class="hero-content">
+            <h1 class="display-3 fw-bold mb-4">
+                <i class="fas fa-futbol"></i> FxFutbol
+            </h1>
+            <p class="lead fs-4">Yapay Zeka Destekli Futbol Analiz Platformu</p>
+            <p class="fs-5 mt-3">Maç tahminlerinde yeni nesil çözüm</p>
+        </div>
+    </div>
+</div>
+
+<!-- Features Section -->
+<div class="container my-5">
+    <h2 class="section-title">Neler Sunuyoruz?</h2>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <h3 class="feature-title">Yapay Zeka Desteği</h3>
+                <p>Gelişmiş AI algoritmaları ile maç analizleri ve tahminler</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-coins"></i>
+                </div>
+                <h3 class="feature-title">Kredi Sistemi</h3>
+                <p>Esnek kredi paketleri ile istediğiniz kadar yorum alın</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h3 class="feature-title">Detaylı Analiz</h3>
+                <p>İstatistikler, form durumu ve özel stratejiler</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <h3 class="feature-title">Supervisor Sistemi</h3>
+                <p>Kullanıcılar arası kredi alışverişi ve kazanç fırsatı</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-exchange-alt"></i>
+                </div>
+                <h3 class="feature-title">Kredi Transferi</h3>
+                <p>Arkadaşlarınıza anında kredi gönderme imkanı</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3 class="feature-title">Güvenli Sistem</h3>
+                <p>SSL şifreleme ve güvenli ödeme altyapısı</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- How It Works -->
+<div class="how-it-works">
+    <div class="container">
+        <h2 class="section-title">Nasıl Çalışır?</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h4 class="fw-bold mt-3">Kayıt Olun</h4>
+                    <p>Ücretsiz hesap oluşturun ve 10 kredi hediye kazanın</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h4 class="fw-bold mt-3">Kredi Alın</h4>
+                    <p>Uygun paketlerden birini seçin veya supervisor'lardan satın alın</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h4 class="fw-bold mt-3">Tahmin Yapın</h4>
+                    <p>AI yorumlarını okuyun ve kazançlı bahisler yapın</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Mission & Vision -->
+<div class="container my-5">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="mission-section">
+                <h3><i class="fas fa-bullseye"></i> Misyonumuz</h3>
+                <p>Futbol severlere yapay zeka teknolojisiyle desteklenmiş, güvenilir ve doğru maç analizleri sunarak, bahis kararlarında en iyi arkadaşları olmak.</p>
+                <p>Her kullanıcımıza eşit fırsat tanıyan, şeffaf ve adil bir platform oluşturmak.</p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="vision-section">
+                <h3><i class="fas fa-eye"></i> Vizyonumuz</h3>
+                <p>Türkiye'nin en büyük ve en güvenilir yapay zeka destekli futbol analiz platformu olmak.</p>
+                <p>Kullanıcılarımızın kazançlarını maksimize ederken, eğlenceli ve güvenli bir deneyim sunmak.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CTA Section -->
+<div class="cta-section">
+    <div class="container">
+        <h2 class="display-5 fw-bold mb-4">Hemen Başlayın!</h2>
+        <p class="lead mb-4">Ücretsiz kayıt olun ve 10 kredi hediye kazanın</p>
+        <a href="{% url 'register' %}" class="btn btn-cta">
+            <i class="fas fa-rocket"></i> Şimdi Kayıt Ol
+        </a>
+    </div>
+</div>
+{% endblock %}

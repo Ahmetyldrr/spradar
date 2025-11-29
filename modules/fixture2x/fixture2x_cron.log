@@ -1,0 +1,841 @@
+[2025-11-16 20:06:35] [INFO] ============================================================
+[2025-11-16 20:06:35] [INFO] 🚀 FIXTURE 2X SİSTEMİ BAŞLADI
+[2025-11-16 20:06:35] [INFO] ============================================================
+[2025-11-16 20:06:35] [INFO] 📋 Fixtures 2X sistemi oluşturuluyor...
+[2025-11-16 20:06:35] [INFO] ⚙️  Fonksiyonlar ekleniyor...
+[2025-11-16 20:06:35] [INFO] 🔄 Fixture 2X transformasyonu başlatılıyor...
+[2025-11-16 20:07:00] [SUCCESS] ✅ Fixture 2x işlem başarılı!
+[2025-11-16 20:07:00] [INFO] ============================================================
+[2025-11-16 20:07:00] [INFO] 🏆 TEAM STATS SİSTEMİ BAŞLIYOR - SADECE SUM TABLOSU!
+[2025-11-16 20:07:00] [INFO] ============================================================
+[2025-11-16 20:07:00] [INFO] 📊 TÜM MAÇLAR - team_sum_last_10 hesaplanıyor...
+[2025-11-16 20:08:42] [INFO] ============================================================
+[2025-11-16 20:08:42] [INFO] 🚀 FIXTURE 2X SİSTEMİ BAŞLADI
+[2025-11-16 20:08:42] [INFO] ============================================================
+[2025-11-16 20:08:42] [INFO] 📋 Fixtures 2X sistemi oluşturuluyor...
+[2025-11-16 20:08:42] [INFO] ⚙️  Fonksiyonlar ekleniyor...
+[2025-11-16 20:08:42] [INFO] 🔄 Fixture 2X transformasyonu başlatılıyor...
+[2025-11-16 20:09:15] [SUCCESS] ✅ Fixture 2x işlem başarılı!
+[2025-11-16 20:09:15] [INFO] ============================================================
+[2025-11-16 20:09:15] [INFO] 🏆 TEAM STATS SİSTEMİ BAŞLIYOR - SADECE SUM TABLOSU!
+[2025-11-16 20:09:15] [INFO] ============================================================
+[2025-11-16 20:09:15] [INFO] 📊 TÜM MAÇLAR - team_sum_last_10 hesaplanıyor...
+[2025-11-16 20:10:35] [INFO] ============================================================
+[2025-11-16 20:10:35] [INFO] 🚀 FIXTURE 2X SİSTEMİ BAŞLADI
+[2025-11-16 20:10:35] [INFO] ============================================================
+[2025-11-16 20:10:35] [INFO] 📋 Fixtures 2X sistemi oluşturuluyor...
+[2025-11-16 20:10:35] [INFO] ⚙️  Fonksiyonlar ekleniyor...
+[2025-11-16 20:10:35] [INFO] 🔄 Fixture 2X transformasyonu başlatılıyor...
+[2025-11-16 20:10:49] [INFO] 🏠 EV SAHİBİ - team_sum_home_last_10 hesaplanıyor...
+[2025-11-16 20:11:25] [SUCCESS] ✅ Fixture 2x işlem başarılı!
+[2025-11-16 20:11:25] [INFO] ============================================================
+[2025-11-16 20:11:25] [INFO] 🏆 TEAM STATS SİSTEMİ BAŞLIYOR - SADECE SUM TABLOSU!
+[2025-11-16 20:11:25] [INFO] ============================================================
+[2025-11-16 20:11:25] [INFO] 📊 TÜM MAÇLAR - team_sum_last_10 hesaplanıyor...
+[2025-11-16 20:15:03] [INFO] 🏠 EV SAHİBİ - team_sum_home_last_10 hesaplanıyor...
+[2025-11-16 20:15:03] [INFO] ✈️  DEPLASMAN - team_sum_away_last_10 hesaplanıyor...
+[2025-11-16 20:15:03] [INFO] ============================================================
+[2025-11-16 20:15:03] [INFO] 🔥 DİNAMİK STREAK SİSTEMİ BAŞLIYOR!
+[2025-11-16 20:15:03] [INFO] ============================================================
+[2025-11-16 20:15:03] [INFO] 🔥 TÜM MAÇLAR - team_dynamic_streaks_all hesaplanıyor...
+[2025-11-16 20:15:03] [INFO] 🏠 EV SAHİBİ STREAK - team_dynamic_streaks_home_all hesaplanıyor...
+[2025-11-16 20:15:04] [INFO] ✈️  DEPLASMAN STREAK - team_dynamic_streaks_away_all hesaplanıyor...
+[2025-11-16 20:15:04] [INFO] ============================================================
+[2025-11-16 20:15:04] [SUCCESS] ✅ TÜM İŞLEMLER TAMAMLANDI! (Süre: 381.91 saniye)
+[2025-11-16 20:15:04] [INFO] ============================================================
+[2025-11-16 20:16:06] [INFO] ✈️  DEPLASMAN - team_sum_away_last_10 hesaplanıyor...
+[2025-11-16 20:16:06] [INFO] ============================================================
+[2025-11-16 20:16:06] [INFO] 🔥 DİNAMİK STREAK SİSTEMİ BAŞLIYOR!
+[2025-11-16 20:16:06] [INFO] ============================================================
+[2025-11-16 20:16:06] [INFO] 🔥 TÜM MAÇLAR - team_dynamic_streaks_all hesaplanıyor...
+[2025-11-16 20:16:06] [INFO] 🏠 EV SAHİBİ STREAK - team_dynamic_streaks_home_all hesaplanıyor...
+[2025-11-16 20:16:06] [INFO] ✈️  DEPLASMAN STREAK - team_dynamic_streaks_away_all hesaplanıyor...
+[2025-11-16 20:16:06] [INFO] ============================================================
+[2025-11-16 20:16:06] [SUCCESS] ✅ TÜM İŞLEMLER TAMAMLANDI! (Süre: 570.59 saniye)
+[2025-11-16 20:16:06] [INFO] ============================================================
+[2025-11-16 20:16:37] [INFO] 🏠 EV SAHİBİ - team_sum_home_last_10 hesaplanıyor...
+[2025-11-16 20:16:37] [INFO] ✈️  DEPLASMAN - team_sum_away_last_10 hesaplanıyor...
+[2025-11-16 20:16:37] [INFO] ============================================================
+[2025-11-16 20:16:37] [INFO] 🔥 DİNAMİK STREAK SİSTEMİ BAŞLIYOR!
+[2025-11-16 20:16:37] [INFO] ============================================================
+[2025-11-16 20:16:37] [INFO] 🔥 TÜM MAÇLAR - team_dynamic_streaks_all hesaplanıyor...
+[2025-11-16 20:16:37] [INFO] 🏠 EV SAHİBİ STREAK - team_dynamic_streaks_home_all hesaplanıyor...
+[2025-11-16 20:16:37] [INFO] ✈️  DEPLASMAN STREAK - team_dynamic_streaks_away_all hesaplanıyor...
+[2025-11-16 20:16:37] [INFO] ============================================================
+[2025-11-16 20:16:37] [SUCCESS] ✅ TÜM İŞLEMLER TAMAMLANDI! (Süre: 362.42 saniye)
+[2025-11-16 20:16:37] [INFO] ============================================================
+[2025-11-16 22:28:51] [INFO] ============================================================
+[2025-11-16 22:28:51] [INFO] 🚀 FIXTURE 2X SİSTEMİ BAŞLADI
+[2025-11-16 22:28:51] [INFO] ============================================================
+[2025-11-16 22:28:51] [INFO] 📋 Fixtures 2X sistemi oluşturuluyor...
+[2025-11-16 22:28:51] [INFO] ⚙️  Fonksiyonlar ekleniyor...
+[2025-11-16 22:28:51] [INFO] 🔄 Fixture 2X transformasyonu başlatılıyor...
+/var/www/spradar/database/source_connection.py:75: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql_query(sql, conn, params=params)
+[2025-11-16 22:29:10] [SUCCESS] ✅ Fixture 2x işlem başarılı!
+[2025-11-16 22:29:10] [INFO] ============================================================
+[2025-11-16 22:29:10] [INFO] 🏆 TEAM STATS SİSTEMİ BAŞLIYOR - SADECE SUM TABLOSU!
+[2025-11-16 22:29:10] [INFO] ============================================================
+[2025-11-16 22:29:10] [INFO] 📊 TÜM MAÇLAR - team_sum_last_10 hesaplanıyor...
+/var/www/spradar/database/analytics_connection.py:94: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql_query(sql, conn, params=params)
+[2025-11-16 22:29:49] [INFO] ============================================================
+[2025-11-16 22:29:49] [INFO] 🚀 FIXTURE 2X SİSTEMİ BAŞLADI
+[2025-11-16 22:29:49] [INFO] ============================================================
+[2025-11-16 22:29:49] [INFO] 📋 Fixtures 2X sistemi oluşturuluyor...
+[2025-11-16 22:29:49] [INFO] ⚙️  Fonksiyonlar ekleniyor...
+[2025-11-16 22:29:49] [INFO] 🔄 Fixture 2X transformasyonu başlatılıyor...
+/var/www/spradar/database/source_connection.py:75: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql_query(sql, conn, params=params)
+[2025-11-16 22:30:18] [SUCCESS] ✅ Fixture 2x işlem başarılı!
+[2025-11-16 22:30:18] [INFO] ============================================================
+[2025-11-16 22:30:18] [INFO] 🏆 TEAM STATS SİSTEMİ BAŞLIYOR - SADECE SUM TABLOSU!
+[2025-11-16 22:30:18] [INFO] ============================================================
+[2025-11-16 22:30:18] [INFO] 📊 TÜM MAÇLAR - team_sum_last_10 hesaplanıyor...
+/var/www/spradar/database/analytics_connection.py:94: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql_query(sql, conn, params=params)
+[2025-11-16 22:32:25] [INFO] 🏠 EV SAHİBİ - team_sum_home_last_10 hesaplanıyor...
+/var/www/spradar/database/analytics_connection.py:94: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql_query(sql, conn, params=params)
+[2025-11-16 22:33:12] [INFO] 🏠 EV SAHİBİ - team_sum_home_last_10 hesaplanıyor...
+/var/www/spradar/database/analytics_connection.py:94: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql_query(sql, conn, params=params)
+[2025-11-16 22:35:00] [INFO] ✈️  DEPLASMAN - team_sum_away_last_10 hesaplanıyor...
+/var/www/spradar/database/analytics_connection.py:94: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql_query(sql, conn, params=params)
+[2025-11-16 22:35:57] [INFO] ✈️  DEPLASMAN - team_sum_away_last_10 hesaplanıyor...
+/var/www/spradar/database/analytics_connection.py:94: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql_query(sql, conn, params=params)
+[2025-11-16 22:37:53] [INFO] ============================================================
+[2025-11-16 22:37:53] [INFO] 🔥 DİNAMİK STREAK SİSTEMİ BAŞLIYOR!
+[2025-11-16 22:37:53] [INFO] ============================================================
+[2025-11-16 22:37:53] [INFO] 🔥 TÜM MAÇLAR - team_dynamic_streaks_all hesaplanıyor...
+/var/www/spradar/database/analytics_connection.py:94: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql_query(sql, conn, params=params)
+[2025-11-16 22:39:10] [INFO] ============================================================
+[2025-11-16 22:39:10] [INFO] 🔥 DİNAMİK STREAK SİSTEMİ BAŞLIYOR!
+[2025-11-16 22:39:10] [INFO] ============================================================
+[2025-11-16 22:39:10] [INFO] 🔥 TÜM MAÇLAR - team_dynamic_streaks_all hesaplanıyor...
+/var/www/spradar/database/analytics_connection.py:94: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql_query(sql, conn, params=params)
+🔌 SOURCE DB: sport_db @ 167.71.74.229
+🔌 ANALYTICS DB: sr_analiz_db @ 167.71.74.229
+[2025-11-16 22:28:51] [INFO] ============================================================
+[2025-11-16 22:28:51] [INFO] 🚀 FIXTURE 2X SİSTEMİ BAŞLADI
+[2025-11-16 22:28:51] [INFO] ============================================================
+[2025-11-16 22:28:51] [INFO] 📋 Fixtures 2X sistemi oluşturuluyor...
+[2025-11-16 22:28:51] [INFO] ⚙️  Fonksiyonlar ekleniyor...
+   ✅ add_result eklendi (AKTİF)
+   ✅ add_goals eklendi (AKTİF)
+   ✅ add_ht_over_under eklendi (AKTİF)
+   ✅ add_ht2_over_under eklendi (AKTİF)
+   ✅ add_fulltime_over_under eklendi (AKTİF)
+   ✅ add_ht_kg eklendi (AKTİF)
+   ✅ add_match_result_kg eklendi (AKTİF)
+   ✅ kesin_gol_sayısı eklendi (AKTİF)
+   ✅ ht_gol_analiz eklendi (AKTİF)
+   ✅ ht2_gol_analiz eklendi (AKTİF)
+   ✅ match_gol_analiz eklendi (AKTİF)
+   ✅ add_all_advanced_stats eklendi (AKTİF)
+[2025-11-16 22:28:51] [INFO] 🔄 Fixture 2X transformasyonu başlatılıyor...
+🚀 FIXTURES 2X TRANSFORMATION BAŞLIYOR
+============================================================
+📊 Kaynak veriler çekiliyor...
+   ✅ 61,928 kayıt çekildi
+🔄 2x Transformation uygulanıyor...
+🔧 12 özel fonksiyon uygulanıyor...
+   ✅ add_result tamamlandı
+   ✅ add_goals tamamlandı
+   ✅ add_ht_over_under tamamlandı
+   ✅ add_ht2_over_under tamamlandı
+   ✅ add_fulltime_over_under tamamlandı
+   ✅ add_ht_kg tamamlandı
+   ✅ add_match_result_kg tamamlandı
+   ✅ kesin_gol_sayısı tamamlandı
+   ✅ ht_gol_analiz tamamlandı
+   ✅ ht2_gol_analiz tamamlandı
+   ✅ match_gol_analiz tamamlandı
+   ✅ add_all_advanced_stats tamamlandı
+   ⏰ created_at eklendi: 2025-11-16 22:28:57.394499
+   🔄 updated_at güncellendi: 2025-11-16 22:28:57.394499
+   📋 Transformation öncesi kolon sayısı: 172
+   🗑️ Silinecek kolonlar: ['home_team_id', 'away_team_id', 'home_team_name', 'away_team_name', 'home_score', 'away_score', 'home_score_1h', 'away_score_1h']
+   📋 Transformation sonrası kolon sayısı: 164
+💾 Analytics DB'ye kaydediliyor (fixtures_2x)...
+🗑️ fixtures_2x tablosu siliniyor...
+🔨 fixtures_2x tablosu oluşturuluyor...
+⚡ 123,856 kayıt fixtures_2x tablosuna yükleniyor...
+✅ fixtures_2x tablosu oluşturuldu (123,856 kayıt)
+   ✅ 123,856 kayıt başarıyla kaydedildi
+
+🎉 TRANSFORMATION TAMAMLANDI!
+   📊 Kaynak: 61,928 maç
+   🔄 Sonuç: 123,856 kayıt
+   💾 Tablo: fixtures_2x
+[2025-11-16 22:29:10] [SUCCESS] ✅ Fixture 2x işlem başarılı!
+[2025-11-16 22:29:10] [INFO] ============================================================
+[2025-11-16 22:29:10] [INFO] 🏆 TEAM STATS SİSTEMİ BAŞLIYOR - SADECE SUM TABLOSU!
+[2025-11-16 22:29:10] [INFO] ============================================================
+[2025-11-16 22:29:10] [INFO] 📊 TÜM MAÇLAR - team_sum_last_10 hesaplanıyor...
+   ✅ calculate_sum_all_stats eklendi (AKTİF, son 5 maç)
+🏆 TEAM STATS CALCULATION BAŞLIYOR
+============================================================
+📊 fixtures_2x tablosundan veriler çekiliyor...
+   ✅ 123,856 kayıt çekildi
+   🔄 calculate_sum_all_stats -> 10 maç
+📊 1 istatistik fonksiyonu hesaplanıyor...
+   🔄 calculate_sum_all_stats hesaplanıyor (son 10 maç)...
+   📊 Toplam sayısal kolon: 147
+   🗑️ Exclude edilen: ['match_id', 'unix_timestamp', 'opponent_team_id', 'season_id', 'team_id', 'week', 'stadiumid', 'round']
+   🔥 Toplanacak: 139 kolon
+   ✅ calculate_sum_all_stats tamamlandı (7718 takım)
+🔗 İstatistikler birleştiriliyor...
+   ⏰ created_at eklendi: 2025-11-16 22:32:22.827960
+   🔄 updated_at güncellendi: 2025-11-16 22:32:22.827960
+   ✅ 7718 takım istatistiği hazır
+💾 team_sum_last_10 tablosuna kaydediliyor...
+🗑️ team_sum_last_10 tablosu siliniyor...
+🔨 team_sum_last_10 tablosu oluşturuluyor...
+⚡ 7,718 kayıt team_sum_last_10 tablosuna yükleniyor...
+✅ team_sum_last_10 tablosu oluşturuldu (7,718 kayıt)
+   ✅ 7,718 takım istatistiği kaydedildi
+
+🎉 TEAM STATS TAMAMLANDI!
+   📊 Kaynak: fixtures_2x
+   🏆 Hedef: team_sum_last_10
+   📈 Takım Sayısı: 7718
+   📋 Kolon Sayısı: 286
+[2025-11-16 22:32:25] [INFO] 🏠 EV SAHİBİ - team_sum_home_last_10 hesaplanıyor...
+   ✅ calculate_sum_home_stats eklendi (AKTİF, son 10 maç)
+🏆 TEAM STATS CALCULATION BAŞLIYOR
+============================================================
+📊 fixtures_2x tablosundan veriler çekiliyor...
+   ✅ 123,856 kayıt çekildi
+   🔄 calculate_sum_home_stats -> 10 maç
+📊 1 istatistik fonksiyonu hesaplanıyor...
+   🔄 calculate_sum_home_stats hesaplanıyor (son 10 maç)...
+   🏠 Ev sahibi maçları filtresi uygulandı: 61928 kayıt
+   📊 Toplam sayısal kolon: 147
+   🗑️ Exclude edilen: ['match_id', 'unix_timestamp', 'opponent_team_id', 'season_id', 'team_id', 'is_home', 'is_away', 'week', 'stadiumid', 'round']
+   🔥 Toplanacak: 137 kolon
+   ✅ calculate_sum_home_stats tamamlandı (7624 takım)
+🔗 İstatistikler birleştiriliyor...
+   ⏰ created_at eklendi: 2025-11-16 22:34:57.764133
+   🔄 updated_at güncellendi: 2025-11-16 22:34:57.764133
+   ✅ 7624 takım istatistiği hazır
+💾 team_sum_home_last_10 tablosuna kaydediliyor...
+🗑️ team_sum_home_last_10 tablosu siliniyor...
+🔨 team_sum_home_last_10 tablosu oluşturuluyor...
+⚡ 7,624 kayıt team_sum_home_last_10 tablosuna yükleniyor...
+✅ team_sum_home_last_10 tablosu oluşturuldu (7,624 kayıt)
+   ✅ 7,624 takım istatistiği kaydedildi
+
+🎉 TEAM STATS TAMAMLANDI!
+   📊 Kaynak: fixtures_2x
+   🏆 Hedef: team_sum_home_last_10
+   📈 Takım Sayısı: 7624
+   📋 Kolon Sayısı: 283
+[2025-11-16 22:35:00] [INFO] ✈️  DEPLASMAN - team_sum_away_last_10 hesaplanıyor...
+   ✅ calculate_sum_away_stats eklendi (AKTİF, son 10 maç)
+🏆 TEAM STATS CALCULATION BAŞLIYOR
+============================================================
+📊 fixtures_2x tablosundan veriler çekiliyor...
+   ✅ 123,856 kayıt çekildi
+   🔄 calculate_sum_away_stats -> 10 maç
+📊 1 istatistik fonksiyonu hesaplanıyor...
+   🔄 calculate_sum_away_stats hesaplanıyor (son 10 maç)...
+   ✈️ Deplasman maçları filtresi uygulandı: 61928 kayıt
+   📊 Toplam sayısal kolon: 147
+   🗑️ Exclude edilen: ['match_id', 'unix_timestamp', 'opponent_team_id', 'season_id', 'team_id', 'is_home', 'is_away', 'week', 'stadiumid', 'round']
+   🔥 Toplanacak: 137 kolon
+   ✅ calculate_sum_away_stats tamamlandı (7585 takım)
+🔗 İstatistikler birleştiriliyor...
+   ⏰ created_at eklendi: 2025-11-16 22:37:50.997800
+   🔄 updated_at güncellendi: 2025-11-16 22:37:50.997800
+   ✅ 7585 takım istatistiği hazır
+💾 team_sum_away_last_10 tablosuna kaydediliyor...
+🗑️ team_sum_away_last_10 tablosu siliniyor...
+🔨 team_sum_away_last_10 tablosu oluşturuluyor...
+⚡ 7,585 kayıt team_sum_away_last_10 tablosuna yükleniyor...
+✅ team_sum_away_last_10 tablosu oluşturuldu (7,585 kayıt)
+   ✅ 7,585 takım istatistiği kaydedildi
+
+🎉 TEAM STATS TAMAMLANDI!
+   📊 Kaynak: fixtures_2x
+   🏆 Hedef: team_sum_away_last_10
+   📈 Takım Sayısı: 7585
+   📋 Kolon Sayısı: 283
+[2025-11-16 22:37:53] [INFO] ============================================================
+[2025-11-16 22:37:53] [INFO] 🔥 DİNAMİK STREAK SİSTEMİ BAŞLIYOR!
+[2025-11-16 22:37:53] [INFO] ============================================================
+[2025-11-16 22:37:53] [INFO] 🔥 TÜM MAÇLAR - team_dynamic_streaks_all hesaplanıyor...
+   ✅ calculate_dynamic_streaks eklendi (AKTİF, son 999 maç)
+🏆 TEAM STATS CALCULATION BAŞLIYOR
+============================================================
+📊 fixtures_2x tablosundan veriler çekiliyor...
+   ✅ 123,856 kayıt çekildi
+📊 1 istatistik fonksiyonu hesaplanıyor...
+   🔄 calculate_dynamic_streaks hesaplanıyor (son 999 maç)...
+   🔥 Streak hesaplanacak özellikler: 139 adet
+   📋 Özellikler: ['is_home', 'is_away', 'team_score', 'opponent_score', 'team_score_1h', 'opponent_score_1h', 'team_score_2h', 'opponent_score_2h', 'ht_win', 'ht_draw']...
+   ✅ calculate_dynamic_streaks tamamlandı (7718 takım)
+🔗 İstatistikler birleştiriliyor...[2025-11-16 22:42:56] [INFO] 🏠 EV SAHİBİ STREAK - team_dynamic_streaks_home_all hesaplanıyor...
+/var/www/spradar/database/analytics_connection.py:94: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql_query(sql, conn, params=params)
+🔌 SOURCE DB: sport_db @ 167.71.74.229
+🔌 ANALYTICS DB: sr_analiz_db @ 167.71.74.229
+[2025-11-16 22:29:49] [INFO] ============================================================
+[2025-11-16 22:29:49] [INFO] 🚀 FIXTURE 2X SİSTEMİ BAŞLADI
+[2025-11-16 22:29:49] [INFO] ============================================================
+[2025-11-16 22:29:49] [INFO] 📋 Fixtures 2X sistemi oluşturuluyor...
+[2025-11-16 22:29:49] [INFO] ⚙️  Fonksiyonlar ekleniyor...
+   ✅ add_result eklendi (AKTİF)
+   ✅ add_goals eklendi (AKTİF)
+   ✅ add_ht_over_under eklendi (AKTİF)
+   ✅ add_ht2_over_under eklendi (AKTİF)
+   ✅ add_fulltime_over_under eklendi (AKTİF)
+   ✅ add_ht_kg eklendi (AKTİF)
+   ✅ add_match_result_kg eklendi (AKTİF)
+   ✅ kesin_gol_sayısı eklendi (AKTİF)
+   ✅ ht_gol_analiz eklendi (AKTİF)
+   ✅ ht2_gol_analiz eklendi (AKTİF)
+   ✅ match_gol_analiz eklendi (AKTİF)
+   ✅ add_all_advanced_stats eklendi (AKTİF)
+[2025-11-16 22:29:49] [INFO] 🔄 Fixture 2X transformasyonu başlatılıyor...
+🚀 FIXTURES 2X TRANSFORMATION BAŞLIYOR
+============================================================
+📊 Kaynak veriler çekiliyor...
+   ✅ 61,928 kayıt çekildi
+🔄 2x Transformation uygulanıyor...
+🔧 12 özel fonksiyon uygulanıyor...
+   ✅ add_result tamamlandı
+   ✅ add_goals tamamlandı
+   ✅ add_ht_over_under tamamlandı
+   ✅ add_ht2_over_under tamamlandı
+   ✅ add_fulltime_over_under tamamlandı
+   ✅ add_ht_kg tamamlandı
+   ✅ add_match_result_kg tamamlandı
+   ✅ kesin_gol_sayısı tamamlandı
+   ✅ ht_gol_analiz tamamlandı
+   ✅ ht2_gol_analiz tamamlandı
+   ✅ match_gol_analiz tamamlandı
+   ✅ add_all_advanced_stats tamamlandı
+   ⏰ created_at eklendi: 2025-11-16 22:29:57.005522
+   🔄 updated_at güncellendi: 2025-11-16 22:29:57.005522
+   📋 Transformation öncesi kolon sayısı: 172
+   🗑️ Silinecek kolonlar: ['home_team_id', 'away_team_id', 'home_team_name', 'away_team_name', 'home_score', 'away_score', 'home_score_1h', 'away_score_1h']
+   📋 Transformation sonrası kolon sayısı: 164
+💾 Analytics DB'ye kaydediliyor (fixtures_2x)...
+🗑️ fixtures_2x tablosu siliniyor...
+🔨 fixtures_2x tablosu oluşturuluyor...
+⚡ 123,856 kayıt fixtures_2x tablosuna yükleniyor...
+✅ fixtures_2x tablosu oluşturuldu (123,856 kayıt)
+   ✅ 123,856 kayıt başarıyla kaydedildi
+
+🎉 TRANSFORMATION TAMAMLANDI!
+   📊 Kaynak: 61,928 maç
+   🔄 Sonuç: 123,856 kayıt
+   💾 Tablo: fixtures_2x
+[2025-11-16 22:30:18] [SUCCESS] ✅ Fixture 2x işlem başarılı!
+[2025-11-16 22:30:18] [INFO] ============================================================
+[2025-11-16 22:30:18] [INFO] 🏆 TEAM STATS SİSTEMİ BAŞLIYOR - SADECE SUM TABLOSU!
+[2025-11-16 22:30:18] [INFO] ============================================================
+[2025-11-16 22:30:18] [INFO] 📊 TÜM MAÇLAR - team_sum_last_10 hesaplanıyor...
+   ✅ calculate_sum_all_stats eklendi (AKTİF, son 5 maç)
+🏆 TEAM STATS CALCULATION BAŞLIYOR
+============================================================
+📊 fixtures_2x tablosundan veriler çekiliyor...
+   ✅ 123,856 kayıt çekildi
+   🔄 calculate_sum_all_stats -> 10 maç
+📊 1 istatistik fonksiyonu hesaplanıyor...
+   🔄 calculate_sum_all_stats hesaplanıyor (son 10 maç)...
+   📊 Toplam sayısal kolon: 147
+   🗑️ Exclude edilen: ['match_id', 'unix_timestamp', 'opponent_team_id', 'season_id', 'team_id', 'week', 'stadiumid', 'round']
+   🔥 Toplanacak: 139 kolon
+   ✅ calculate_sum_all_stats tamamlandı (7718 takım)
+🔗 İstatistikler birleştiriliyor...
+   ⏰ created_at eklendi: 2025-11-16 22:33:10.259733
+   🔄 updated_at güncellendi: 2025-11-16 22:33:10.259733
+   ✅ 7718 takım istatistiği hazır
+💾 team_sum_last_10 tablosuna kaydediliyor...
+🗑️ team_sum_last_10 tablosu siliniyor...
+🔨 team_sum_last_10 tablosu oluşturuluyor...
+⚡ 7,718 kayıt team_sum_last_10 tablosuna yükleniyor...
+✅ team_sum_last_10 tablosu oluşturuldu (7,718 kayıt)
+   ✅ 7,718 takım istatistiği kaydedildi
+
+🎉 TEAM STATS TAMAMLANDI!
+   📊 Kaynak: fixtures_2x
+   🏆 Hedef: team_sum_last_10
+   📈 Takım Sayısı: 7718
+   📋 Kolon Sayısı: 286
+[2025-11-16 22:33:12] [INFO] 🏠 EV SAHİBİ - team_sum_home_last_10 hesaplanıyor...
+   ✅ calculate_sum_home_stats eklendi (AKTİF, son 10 maç)
+🏆 TEAM STATS CALCULATION BAŞLIYOR
+============================================================
+📊 fixtures_2x tablosundan veriler çekiliyor...
+   ✅ 123,856 kayıt çekildi
+   🔄 calculate_sum_home_stats -> 10 maç
+📊 1 istatistik fonksiyonu hesaplanıyor...
+   🔄 calculate_sum_home_stats hesaplanıyor (son 10 maç)...
+   🏠 Ev sahibi maçları filtresi uygulandı: 61928 kayıt
+   📊 Toplam sayısal kolon: 147
+   🗑️ Exclude edilen: ['match_id', 'unix_timestamp', 'opponent_team_id', 'season_id', 'team_id', 'is_home', 'is_away', 'week', 'stadiumid', 'round']
+   🔥 Toplanacak: 137 kolon
+   ✅ calculate_sum_home_stats tamamlandı (7624 takım)
+🔗 İstatistikler birleştiriliyor...
+   ⏰ created_at eklendi: 2025-11-16 22:35:55.682535
+   🔄 updated_at güncellendi: 2025-11-16 22:35:55.682535
+   ✅ 7624 takım istatistiği hazır
+💾 team_sum_home_last_10 tablosuna kaydediliyor...
+🗑️ team_sum_home_last_10 tablosu siliniyor...
+🔨 team_sum_home_last_10 tablosu oluşturuluyor...
+⚡ 7,624 kayıt team_sum_home_last_10 tablosuna yükleniyor...
+✅ team_sum_home_last_10 tablosu oluşturuldu (7,624 kayıt)
+   ✅ 7,624 takım istatistiği kaydedildi
+
+🎉 TEAM STATS TAMAMLANDI!
+   📊 Kaynak: fixtures_2x
+   🏆 Hedef: team_sum_home_last_10
+   📈 Takım Sayısı: 7624
+   📋 Kolon Sayısı: 283
+[2025-11-16 22:35:57] [INFO] ✈️  DEPLASMAN - team_sum_away_last_10 hesaplanıyor...
+   ✅ calculate_sum_away_stats eklendi (AKTİF, son 10 maç)
+🏆 TEAM STATS CALCULATION BAŞLIYOR
+============================================================
+📊 fixtures_2x tablosundan veriler çekiliyor...
+   ✅ 123,856 kayıt çekildi
+   🔄 calculate_sum_away_stats -> 10 maç
+📊 1 istatistik fonksiyonu hesaplanıyor...
+   🔄 calculate_sum_away_stats hesaplanıyor (son 10 maç)...
+   ✈️ Deplasman maçları filtresi uygulandı: 61928 kayıt
+   📊 Toplam sayısal kolon: 147
+   🗑️ Exclude edilen: ['match_id', 'unix_timestamp', 'opponent_team_id', 'season_id', 'team_id', 'is_home', 'is_away', 'week', 'stadiumid', 'round']
+   🔥 Toplanacak: 137 kolon
+   ✅ calculate_sum_away_stats tamamlandı (7585 takım)
+🔗 İstatistikler birleştiriliyor...
+   ⏰ created_at eklendi: 2025-11-16 22:39:07.734120
+   🔄 updated_at güncellendi: 2025-11-16 22:39:07.734120
+   ✅ 7585 takım istatistiği hazır
+💾 team_sum_away_last_10 tablosuna kaydediliyor...
+🗑️ team_sum_away_last_10 tablosu siliniyor...
+🔨 team_sum_away_last_10 tablosu oluşturuluyor...
+⚡ 7,585 kayıt team_sum_away_last_10 tablosuna yükleniyor...
+✅ team_sum_away_last_10 tablosu oluşturuldu (7,585 kayıt)
+   ✅ 7,585 takım istatistiği kaydedildi
+
+🎉 TEAM STATS TAMAMLANDI!
+   📊 Kaynak: fixtures_2x
+   🏆 Hedef: team_sum_away_last_10
+   📈 Takım Sayısı: 7585
+   📋 Kolon Sayısı: 283
+[2025-11-16 22:39:10] [INFO] ============================================================
+[2025-11-16 22:39:10] [INFO] 🔥 DİNAMİK STREAK SİSTEMİ BAŞLIYOR!
+[2025-11-16 22:39:10] [INFO] ============================================================
+[2025-11-16 22:39:10] [INFO] 🔥 TÜM MAÇLAR - team_dynamic_streaks_all hesaplanıyor...
+   ✅ calculate_dynamic_streaks eklendi (AKTİF, son 999 maç)
+🏆 TEAM STATS CALCULATION BAŞLIYOR
+============================================================
+📊 fixtures_2x tablosundan veriler çekiliyor...
+   ✅ 123,856 kayıt çekildi
+📊 1 istatistik fonksiyonu hesaplanıyor...
+   🔄 calculate_dynamic_streaks hesaplanıyor (son 999 maç)...
+   🔥 Streak hesaplanacak özellikler: 139 adet
+   📋 Özellikler: ['is_home', 'is_away', 'team_score', 'opponent_score', 'team_score_1h', 'opponent_score_1h', 'team_score_2h', 'opponent_score_2h', 'ht_win', 'ht_draw']...
+   ✅ calculate_dynamic_streaks tamamlandı (7718 takım)
+🔗 İstatistikler birleştiriliyor...[2025-11-16 22:44:01] [INFO] 🏠 EV SAHİBİ STREAK - team_dynamic_streaks_home_all hesaplanıyor...
+/var/www/spradar/database/analytics_connection.py:94: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql_query(sql, conn, params=params)
+[2025-11-16 22:47:25] [INFO] ✈️  DEPLASMAN STREAK - team_dynamic_streaks_away_all hesaplanıyor...
+/var/www/spradar/database/analytics_connection.py:94: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql_query(sql, conn, params=params)
+[2025-11-16 22:51:25] [INFO] ============================================================
+[2025-11-16 22:51:25] [SUCCESS] ✅ TÜM İŞLEMLER TAMAMLANDI! (Süre: 1353.15 saniye)
+[2025-11-16 22:51:25] [INFO] ============================================================
+
+   ⏰ created_at eklendi: 2025-11-16 22:42:55.798593
+   🔄 updated_at güncellendi: 2025-11-16 22:42:55.798593
+   ✅ 7718 takım istatistiği hazır
+💾 team_dynamic_streaks_all tablosuna kaydediliyor...
+🗑️ team_dynamic_streaks_all tablosu siliniyor...
+🔨 team_dynamic_streaks_all tablosu oluşturuluyor...
+⚡ 7,718 kayıt team_dynamic_streaks_all tablosuna yükleniyor...
+✅ team_dynamic_streaks_all tablosu oluşturuldu (7,718 kayıt)
+   ✅ 7,718 takım istatistiği kaydedildi
+
+🎉 TEAM STATS TAMAMLANDI!
+   📊 Kaynak: fixtures_2x
+   🏆 Hedef: team_dynamic_streaks_all
+   📈 Takım Sayısı: 7718
+   📋 Kolon Sayısı: 148
+[2025-11-16 22:42:56] [INFO] 🏠 EV SAHİBİ STREAK - team_dynamic_streaks_home_all hesaplanıyor...
+   ✅ calculate_dynamic_streaks_home eklendi (AKTİF, son 999 maç)
+🏆 TEAM STATS CALCULATION BAŞLIYOR
+============================================================
+📊 fixtures_2x tablosundan veriler çekiliyor...
+   ✅ 123,856 kayıt çekildi
+📊 1 istatistik fonksiyonu hesaplanıyor...
+   🔄 calculate_dynamic_streaks_home hesaplanıyor (son 999 maç)...
+   🏠 Ev sahibi maçları filtresi uygulandı: 61928 kayıt
+   🔥 Ev sahibi streak özellikleri: 137 adet
+   ✅ calculate_dynamic_streaks_home tamamlandı (7624 takım)
+🔗 İstatistikler birleştiriliyor...
+   ⏰ created_at eklendi: 2025-11-16 22:47:24.736572
+   🔄 updated_at güncellendi: 2025-11-16 22:47:24.736572
+   ✅ 7624 takım istatistiği hazır
+💾 team_dynamic_streaks_home_all tablosuna kaydediliyor...
+🗑️ team_dynamic_streaks_home_all tablosu siliniyor...
+🔨 team_dynamic_streaks_home_all tablosu oluşturuluyor...
+⚡ 7,624 kayıt team_dynamic_streaks_home_all tablosuna yükleniyor...
+✅ team_dynamic_streaks_home_all tablosu oluşturuldu (7,624 kayıt)
+   ✅ 7,624 takım istatistiği kaydedildi
+
+🎉 TEAM STATS TAMAMLANDI!
+   📊 Kaynak: fixtures_2x
+   🏆 Hedef: team_dynamic_streaks_home_all
+   📈 Takım Sayısı: 7624
+   📋 Kolon Sayısı: 146
+[2025-11-16 22:47:25] [INFO] ✈️  DEPLASMAN STREAK - team_dynamic_streaks_away_all hesaplanıyor...
+   ✅ calculate_dynamic_streaks_away eklendi (AKTİF, son 999 maç)
+🏆 TEAM STATS CALCULATION BAŞLIYOR
+============================================================
+📊 fixtures_2x tablosundan veriler çekiliyor...
+   ✅ 123,856 kayıt çekildi
+📊 1 istatistik fonksiyonu hesaplanıyor...
+   🔄 calculate_dynamic_streaks_away hesaplanıyor (son 999 maç)...
+   ✈️ Deplasman maçları filtresi uygulandı: 61928 kayıt
+   🔥 Deplasman streak özellikleri: 137 adet
+   ✅ calculate_dynamic_streaks_away tamamlandı (7585 takım)
+🔗 İstatistikler birleştiriliyor...
+   ⏰ created_at eklendi: 2025-11-16 22:51:23.889982
+   🔄 updated_at güncellendi: 2025-11-16 22:51:23.889982
+   ✅ 7585 takım istatistiği hazır
+💾 team_dynamic_streaks_away_all tablosuna kaydediliyor...
+🗑️ team_dynamic_streaks_away_all tablosu siliniyor...
+🔨 team_dynamic_streaks_away_all tablosu oluşturuluyor...
+⚡ 7,585 kayıt team_dynamic_streaks_away_all tablosuna yükleniyor...
+✅ team_dynamic_streaks_away_all tablosu oluşturuldu (7,585 kayıt)
+   ✅ 7,585 takım istatistiği kaydedildi
+
+🎉 TEAM STATS TAMAMLANDI!
+   📊 Kaynak: fixtures_2x
+   🏆 Hedef: team_dynamic_streaks_away_all
+   📈 Takım Sayısı: 7585
+   📋 Kolon Sayısı: 146
+[2025-11-16 22:51:25] [INFO] ============================================================
+[2025-11-16 22:51:25] [SUCCESS] ✅ TÜM İŞLEMLER TAMAMLANDI! (Süre: 1353.15 saniye)
+[2025-11-16 22:51:25] [INFO] ============================================================
+[2025-11-20 21:12:32] [INFO] ============================================================
+[2025-11-20 21:12:32] [INFO] 🚀 FIXTURE 2X SİSTEMİ BAŞLADI
+[2025-11-20 21:12:32] [INFO] ============================================================
+[2025-11-20 21:12:32] [INFO] 📋 Fixtures 2X sistemi oluşturuluyor...
+[2025-11-20 21:12:32] [INFO] ⚙️  Fonksiyonlar ekleniyor...
+[2025-11-20 21:12:32] [INFO] 🔄 Fixture 2X transformasyonu başlatılıyor...
+[2025-11-20 21:13:12] [SUCCESS] ✅ Fixture 2x işlem başarılı!
+[2025-11-20 21:13:12] [INFO] ============================================================
+[2025-11-20 21:13:12] [INFO] 🏆 TEAM STATS SİSTEMİ BAŞLIYOR - SADECE SUM TABLOSU!
+[2025-11-20 21:13:12] [INFO] ============================================================
+[2025-11-20 21:13:12] [INFO] 📊 TÜM MAÇLAR - team_sum_last_10 hesaplanıyor...
+[2025-11-20 21:18:08] [INFO] 🏠 EV SAHİBİ - team_sum_home_last_10 hesaplanıyor...
+[2025-11-20 21:19:03] [INFO] ============================================================
+[2025-11-20 21:19:03] [INFO] 🚀 FIXTURE 2X SİSTEMİ BAŞLADI
+[2025-11-20 21:19:03] [INFO] ============================================================
+[2025-11-20 21:19:03] [INFO] 📋 Fixtures 2X sistemi oluşturuluyor...
+[2025-11-20 21:19:03] [INFO] ⚙️  Fonksiyonlar ekleniyor...
+[2025-11-20 21:19:03] [INFO] 🔄 Fixture 2X transformasyonu başlatılıyor...
+/var/www/spradar/database/source_connection.py:75: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql_query(sql, conn, params=params)
+[2025-11-20 21:19:57] [SUCCESS] ✅ Fixture 2x işlem başarılı!
+[2025-11-20 21:19:57] [INFO] ============================================================
+[2025-11-20 21:19:57] [INFO] 🏆 TEAM STATS SİSTEMİ BAŞLIYOR - SADECE SUM TABLOSU!
+[2025-11-20 21:19:57] [INFO] ============================================================
+[2025-11-20 21:19:57] [INFO] 📊 TÜM MAÇLAR - team_sum_last_10 hesaplanıyor...
+/var/www/spradar/database/analytics_connection.py:94: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql_query(sql, conn, params=params)
+[2025-11-20 21:22:59] [INFO] ✈️  DEPLASMAN - team_sum_away_last_10 hesaplanıyor...
+[2025-11-20 21:25:46] [INFO] 🏠 EV SAHİBİ - team_sum_home_last_10 hesaplanıyor...
+/var/www/spradar/database/analytics_connection.py:94: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql_query(sql, conn, params=params)
+[2025-11-20 21:28:29] [INFO] ============================================================
+[2025-11-20 21:28:29] [INFO] 🔥 DİNAMİK STREAK SİSTEMİ BAŞLIYOR!
+[2025-11-20 21:28:29] [INFO] ============================================================
+[2025-11-20 21:28:29] [INFO] 🔥 TÜM MAÇLAR - team_dynamic_streaks_all hesaplanıyor...
+[2025-11-20 21:30:37] [INFO] ✈️  DEPLASMAN - team_sum_away_last_10 hesaplanıyor...
+/var/www/spradar/database/analytics_connection.py:94: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql_query(sql, conn, params=params)
+[2025-11-20 21:37:07] [INFO] ============================================================
+[2025-11-20 21:37:07] [INFO] 🔥 DİNAMİK STREAK SİSTEMİ BAŞLIYOR!
+[2025-11-20 21:37:07] [INFO] ============================================================
+[2025-11-20 21:37:07] [INFO] 🔥 TÜM MAÇLAR - team_dynamic_streaks_all hesaplanıyor...
+/var/www/spradar/database/analytics_connection.py:94: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql_query(sql, conn, params=params)
+[2025-11-20 21:37:41] [INFO] 🏠 EV SAHİBİ STREAK - team_dynamic_streaks_home_all hesaplanıyor...
+[2025-11-20 21:44:48] [INFO] ✈️  DEPLASMAN STREAK - team_dynamic_streaks_away_all hesaplanıyor...
+🔌 SOURCE DB: sport_db @ 167.71.74.229
+🔌 ANALYTICS DB: sr_analiz_db @ 167.71.74.229
+[2025-11-20 21:19:03] [INFO] ============================================================
+[2025-11-20 21:19:03] [INFO] 🚀 FIXTURE 2X SİSTEMİ BAŞLADI
+[2025-11-20 21:19:03] [INFO] ============================================================
+[2025-11-20 21:19:03] [INFO] 📋 Fixtures 2X sistemi oluşturuluyor...
+[2025-11-20 21:19:03] [INFO] ⚙️  Fonksiyonlar ekleniyor...
+   ✅ add_result eklendi (AKTİF)
+   ✅ add_goals eklendi (AKTİF)
+   ✅ add_ht_over_under eklendi (AKTİF)
+   ✅ add_ht2_over_under eklendi (AKTİF)
+   ✅ add_fulltime_over_under eklendi (AKTİF)
+   ✅ add_ht_kg eklendi (AKTİF)
+   ✅ add_match_result_kg eklendi (AKTİF)
+   ✅ kesin_gol_sayısı eklendi (AKTİF)
+   ✅ ht_gol_analiz eklendi (AKTİF)
+   ✅ ht2_gol_analiz eklendi (AKTİF)
+   ✅ match_gol_analiz eklendi (AKTİF)
+   ✅ add_all_advanced_stats eklendi (AKTİF)
+[2025-11-20 21:19:03] [INFO] 🔄 Fixture 2X transformasyonu başlatılıyor...
+🚀 FIXTURES 2X TRANSFORMATION BAŞLIYOR
+============================================================
+📊 Kaynak veriler çekiliyor...
+   ✅ 100,749 kayıt çekildi
+🔄 2x Transformation uygulanıyor...
+🔧 12 özel fonksiyon uygulanıyor...
+   ✅ add_result tamamlandı
+   ✅ add_goals tamamlandı
+   ✅ add_ht_over_under tamamlandı
+   ✅ add_ht2_over_under tamamlandı
+   ✅ add_fulltime_over_under tamamlandı
+   ✅ add_ht_kg tamamlandı
+   ✅ add_match_result_kg tamamlandı
+   ✅ kesin_gol_sayısı tamamlandı
+   ✅ ht_gol_analiz tamamlandı
+   ✅ ht2_gol_analiz tamamlandı
+   ✅ match_gol_analiz tamamlandı
+   ✅ add_all_advanced_stats tamamlandı
+   ⏰ created_at eklendi: 2025-11-20 21:19:23.143936
+   🔄 updated_at güncellendi: 2025-11-20 21:19:23.143936
+   📋 Transformation öncesi kolon sayısı: 172
+   🗑️ Silinecek kolonlar: ['home_team_id', 'away_team_id', 'home_team_name', 'away_team_name', 'home_score', 'away_score', 'home_score_1h', 'away_score_1h']
+   📋 Transformation sonrası kolon sayısı: 164
+💾 Analytics DB'ye kaydediliyor (fixtures_2x)...
+🗑️ fixtures_2x tablosu siliniyor...
+🔨 fixtures_2x tablosu oluşturuluyor...
+⚡ 201,498 kayıt fixtures_2x tablosuna yükleniyor...
+✅ fixtures_2x tablosu oluşturuldu (201,498 kayıt)
+   ✅ 201,498 kayıt başarıyla kaydedildi
+
+🎉 TRANSFORMATION TAMAMLANDI!
+   📊 Kaynak: 100,749 maç
+   🔄 Sonuç: 201,498 kayıt
+   💾 Tablo: fixtures_2x
+[2025-11-20 21:19:57] [SUCCESS] ✅ Fixture 2x işlem başarılı!
+[2025-11-20 21:19:57] [INFO] ============================================================
+[2025-11-20 21:19:57] [INFO] 🏆 TEAM STATS SİSTEMİ BAŞLIYOR - SADECE SUM TABLOSU!
+[2025-11-20 21:19:57] [INFO] ============================================================
+[2025-11-20 21:19:57] [INFO] 📊 TÜM MAÇLAR - team_sum_last_10 hesaplanıyor...
+   ✅ calculate_sum_all_stats eklendi (AKTİF, son 5 maç)
+🏆 TEAM STATS CALCULATION BAŞLIYOR
+============================================================
+📊 fixtures_2x tablosundan veriler çekiliyor...
+   ✅ 201,498 kayıt çekildi
+   🔄 calculate_sum_all_stats -> 10 maç
+📊 1 istatistik fonksiyonu hesaplanıyor...
+   🔄 calculate_sum_all_stats hesaplanıyor (son 10 maç)...
+   📊 Toplam sayısal kolon: 147
+   🗑️ Exclude edilen: ['match_id', 'unix_timestamp', 'opponent_team_id', 'season_id', 'team_id', 'week', 'stadiumid', 'round']
+   🔥 Toplanacak: 139 kolon
+   ✅ calculate_sum_all_stats tamamlandı (13680 takım)
+🔗 İstatistikler birleştiriliyor...
+   ⏰ created_at eklendi: 2025-11-20 21:25:42.462153
+   🔄 updated_at güncellendi: 2025-11-20 21:25:42.462153
+   ✅ 13680 takım istatistiği hazır
+💾 team_sum_last_10 tablosuna kaydediliyor...
+🗑️ team_sum_last_10 tablosu siliniyor...
+🔨 team_sum_last_10 tablosu oluşturuluyor...
+⚡ 13,680 kayıt team_sum_last_10 tablosuna yükleniyor...
+✅ team_sum_last_10 tablosu oluşturuldu (13,680 kayıt)
+   ✅ 13,680 takım istatistiği kaydedildi
+
+🎉 TEAM STATS TAMAMLANDI!
+   📊 Kaynak: fixtures_2x
+   🏆 Hedef: team_sum_last_10
+   📈 Takım Sayısı: 13680
+   📋 Kolon Sayısı: 286
+[2025-11-20 21:25:46] [INFO] 🏠 EV SAHİBİ - team_sum_home_last_10 hesaplanıyor...
+   ✅ calculate_sum_home_stats eklendi (AKTİF, son 10 maç)
+🏆 TEAM STATS CALCULATION BAŞLIYOR
+============================================================
+📊 fixtures_2x tablosundan veriler çekiliyor...
+   ✅ 201,498 kayıt çekildi
+   🔄 calculate_sum_home_stats -> 10 maç
+📊 1 istatistik fonksiyonu hesaplanıyor...
+   🔄 calculate_sum_home_stats hesaplanıyor (son 10 maç)...
+   🏠 Ev sahibi maçları filtresi uygulandı: 100749 kayıt
+   📊 Toplam sayısal kolon: 147
+   🗑️ Exclude edilen: ['match_id', 'unix_timestamp', 'opponent_team_id', 'season_id', 'team_id', 'is_home', 'is_away', 'week', 'stadiumid', 'round']
+   🔥 Toplanacak: 137 kolon
+   ✅ calculate_sum_home_stats tamamlandı (12942 takım)
+🔗 İstatistikler birleştiriliyor...
+   ⏰ created_at eklendi: 2025-11-20 21:30:31.450809
+   🔄 updated_at güncellendi: 2025-11-20 21:30:31.450809
+   ✅ 12942 takım istatistiği hazır
+💾 team_sum_home_last_10 tablosuna kaydediliyor...
+🗑️ team_sum_home_last_10 tablosu siliniyor...
+🔨 team_sum_home_last_10 tablosu oluşturuluyor...
+⚡ 12,942 kayıt team_sum_home_last_10 tablosuna yükleniyor...
+✅ team_sum_home_last_10 tablosu oluşturuldu (12,942 kayıt)
+   ✅ 12,942 takım istatistiği kaydedildi
+
+🎉 TEAM STATS TAMAMLANDI!
+   📊 Kaynak: fixtures_2x
+   🏆 Hedef: team_sum_home_last_10
+   📈 Takım Sayısı: 12942
+   📋 Kolon Sayısı: 283
+[2025-11-20 21:30:37] [INFO] ✈️  DEPLASMAN - team_sum_away_last_10 hesaplanıyor...
+   ✅ calculate_sum_away_stats eklendi (AKTİF, son 10 maç)
+🏆 TEAM STATS CALCULATION BAŞLIYOR
+============================================================
+📊 fixtures_2x tablosundan veriler çekiliyor...
+   ✅ 201,498 kayıt çekildi
+   🔄 calculate_sum_away_stats -> 10 maç
+📊 1 istatistik fonksiyonu hesaplanıyor...
+   🔄 calculate_sum_away_stats hesaplanıyor (son 10 maç)...
+   ✈️ Deplasman maçları filtresi uygulandı: 100749 kayıt
+   📊 Toplam sayısal kolon: 147
+   🗑️ Exclude edilen: ['match_id', 'unix_timestamp', 'opponent_team_id', 'season_id', 'team_id', 'is_home', 'is_away', 'week', 'stadiumid', 'round']
+   🔥 Toplanacak: 137 kolon
+   ✅ calculate_sum_away_stats tamamlandı (12646 takım)
+🔗 İstatistikler birleştiriliyor...
+   ⏰ created_at eklendi: 2025-11-20 21:37:02.391685
+   🔄 updated_at güncellendi: 2025-11-20 21:37:02.391685
+   ✅ 12646 takım istatistiği hazır
+💾 team_sum_away_last_10 tablosuna kaydediliyor...
+🗑️ team_sum_away_last_10 tablosu siliniyor...
+🔨 team_sum_away_last_10 tablosu oluşturuluyor...
+⚡ 12,646 kayıt team_sum_away_last_10 tablosuna yükleniyor...
+✅ team_sum_away_last_10 tablosu oluşturuldu (12,646 kayıt)
+   ✅ 12,646 takım istatistiği kaydedildi
+
+🎉 TEAM STATS TAMAMLANDI!
+   📊 Kaynak: fixtures_2x
+   🏆 Hedef: team_sum_away_last_10
+   📈 Takım Sayısı: 12646
+   📋 Kolon Sayısı: 283
+[2025-11-20 21:37:07] [INFO] ============================================================
+[2025-11-20 21:37:07] [INFO] 🔥 DİNAMİK STREAK SİSTEMİ BAŞLIYOR!
+[2025-11-20 21:37:07] [INFO] ============================================================
+[2025-11-20 21:37:07] [INFO] 🔥 TÜM MAÇLAR - team_dynamic_streaks_all hesaplanıyor...
+   ✅ calculate_dynamic_streaks eklendi (AKTİF, son 999 maç)
+🏆 TEAM STATS CALCULATION BAŞLIYOR
+============================================================
+📊 fixtures_2x tablosundan veriler çekiliyor...
+   ✅ 201,498 kayıt çekildi
+📊 1 istatistik fonksiyonu hesaplanıyor...
+   🔄 calculate_dynamic_streaks hesaplanıyor (son 999 maç)...
+   🔥 Streak hesaplanacak özellikler: 139 adet
+   📋 Özellikler: ['is_home', 'is_away', 'team_score', 'opponent_score', 'team_score_1h', 'opponent_score_1h', 'team_score_2h', 'opponent_score_2h', 'ht_win', 'ht_draw']...
+   ✅ calculate_dynamic_streaks tamamlandı (13680 takım)[2025-11-20 21:45:07] [INFO] 🏠 EV SAHİBİ STREAK - team_dynamic_streaks_home_all hesaplanıyor...
+/var/www/spradar/database/analytics_connection.py:94: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql_query(sql, conn, params=params)
+[2025-11-20 21:51:18] [INFO] ============================================================
+[2025-11-20 21:51:18] [SUCCESS] ✅ TÜM İŞLEMLER TAMAMLANDI! (Süre: 2326.31 saniye)
+[2025-11-20 21:51:18] [INFO] ============================================================
+[2025-11-20 21:51:40] [INFO] ✈️  DEPLASMAN STREAK - team_dynamic_streaks_away_all hesaplanıyor...
+/var/www/spradar/database/analytics_connection.py:94: UserWarning: pandas only supports SQLAlchemy connectable (engine/connection) or database string URI or sqlite3 DBAPI2 connection. Other DBAPI2 objects are not tested. Please consider using SQLAlchemy.
+  df = pd.read_sql_query(sql, conn, params=params)
+[2025-11-20 21:57:10] [INFO] ============================================================
+[2025-11-20 21:57:10] [SUCCESS] ✅ TÜM İŞLEMLER TAMAMLANDI! (Süre: 2287.83 saniye)
+[2025-11-20 21:57:10] [INFO] ============================================================
+
+🔗 İstatistikler birleştiriliyor...
+   ⏰ created_at eklendi: 2025-11-20 21:45:05.720716
+   🔄 updated_at güncellendi: 2025-11-20 21:45:05.720716
+   ✅ 13680 takım istatistiği hazır
+💾 team_dynamic_streaks_all tablosuna kaydediliyor...
+🗑️ team_dynamic_streaks_all tablosu siliniyor...
+🔨 team_dynamic_streaks_all tablosu oluşturuluyor...
+⚡ 13,680 kayıt team_dynamic_streaks_all tablosuna yükleniyor...
+✅ team_dynamic_streaks_all tablosu oluşturuldu (13,680 kayıt)
+   ✅ 13,680 takım istatistiği kaydedildi
+
+🎉 TEAM STATS TAMAMLANDI!
+   📊 Kaynak: fixtures_2x
+   🏆 Hedef: team_dynamic_streaks_all
+   📈 Takım Sayısı: 13680
+   📋 Kolon Sayısı: 148
+[2025-11-20 21:45:07] [INFO] 🏠 EV SAHİBİ STREAK - team_dynamic_streaks_home_all hesaplanıyor...
+   ✅ calculate_dynamic_streaks_home eklendi (AKTİF, son 999 maç)
+🏆 TEAM STATS CALCULATION BAŞLIYOR
+============================================================
+📊 fixtures_2x tablosundan veriler çekiliyor...
+   ✅ 201,498 kayıt çekildi
+📊 1 istatistik fonksiyonu hesaplanıyor...
+   🔄 calculate_dynamic_streaks_home hesaplanıyor (son 999 maç)...
+   🏠 Ev sahibi maçları filtresi uygulandı: 100749 kayıt
+   🔥 Ev sahibi streak özellikleri: 137 adet
+   ✅ calculate_dynamic_streaks_home tamamlandı (12942 takım)
+🔗 İstatistikler birleştiriliyor...
+   ⏰ created_at eklendi: 2025-11-20 21:51:38.982122
+   🔄 updated_at güncellendi: 2025-11-20 21:51:38.982122
+   ✅ 12942 takım istatistiği hazır
+💾 team_dynamic_streaks_home_all tablosuna kaydediliyor...
+🗑️ team_dynamic_streaks_home_all tablosu siliniyor...
+🔨 team_dynamic_streaks_home_all tablosu oluşturuluyor...
+⚡ 12,942 kayıt team_dynamic_streaks_home_all tablosuna yükleniyor...
+✅ team_dynamic_streaks_home_all tablosu oluşturuldu (12,942 kayıt)
+   ✅ 12,942 takım istatistiği kaydedildi
+
+🎉 TEAM STATS TAMAMLANDI!
+   📊 Kaynak: fixtures_2x
+   🏆 Hedef: team_dynamic_streaks_home_all
+   📈 Takım Sayısı: 12942
+   📋 Kolon Sayısı: 146
+[2025-11-20 21:51:40] [INFO] ✈️  DEPLASMAN STREAK - team_dynamic_streaks_away_all hesaplanıyor...
+   ✅ calculate_dynamic_streaks_away eklendi (AKTİF, son 999 maç)
+🏆 TEAM STATS CALCULATION BAŞLIYOR
+============================================================
+📊 fixtures_2x tablosundan veriler çekiliyor...
+   ✅ 201,498 kayıt çekildi
+📊 1 istatistik fonksiyonu hesaplanıyor...
+   🔄 calculate_dynamic_streaks_away hesaplanıyor (son 999 maç)...
+   ✈️ Deplasman maçları filtresi uygulandı: 100749 kayıt
+   🔥 Deplasman streak özellikleri: 137 adet
+   ✅ calculate_dynamic_streaks_away tamamlandı (12646 takım)
+🔗 İstatistikler birleştiriliyor...
+   ⏰ created_at eklendi: 2025-11-20 21:57:09.838270
+   🔄 updated_at güncellendi: 2025-11-20 21:57:09.838270
+   ✅ 12646 takım istatistiği hazır
+💾 team_dynamic_streaks_away_all tablosuna kaydediliyor...
+🗑️ team_dynamic_streaks_away_all tablosu siliniyor...
+🔨 team_dynamic_streaks_away_all tablosu oluşturuluyor...
+⚡ 12,646 kayıt team_dynamic_streaks_away_all tablosuna yükleniyor...
+✅ team_dynamic_streaks_away_all tablosu oluşturuldu (12,646 kayıt)
+   ✅ 12,646 takım istatistiği kaydedildi
+
+🎉 TEAM STATS TAMAMLANDI!
+   📊 Kaynak: fixtures_2x
+   🏆 Hedef: team_dynamic_streaks_away_all
+   📈 Takım Sayısı: 12646
+   📋 Kolon Sayısı: 146
+[2025-11-20 21:57:10] [INFO] ============================================================
+[2025-11-20 21:57:10] [SUCCESS] ✅ TÜM İŞLEMLER TAMAMLANDI! (Süre: 2287.83 saniye)
+[2025-11-20 21:57:10] [INFO] ============================================================
+[2025-11-20 22:35:59] [INFO] ============================================================
+[2025-11-20 22:35:59] [INFO] 🚀 FIXTURE 2X SİSTEMİ BAŞLADI
+[2025-11-20 22:35:59] [INFO] ============================================================
+[2025-11-20 22:35:59] [INFO] 📋 Fixtures 2X sistemi oluşturuluyor...
+[2025-11-20 22:35:59] [INFO] ⚙️  Fonksiyonlar ekleniyor...
+[2025-11-20 22:35:59] [INFO] 🔄 Fixture 2X transformasyonu başlatılıyor...
+[2025-11-20 22:36:29] [SUCCESS] ✅ Fixture 2x işlem başarılı!
+[2025-11-20 22:36:29] [INFO] ============================================================
+[2025-11-20 22:36:29] [INFO] 🏆 TEAM STATS SİSTEMİ BAŞLIYOR - SADECE SUM TABLOSU!
+[2025-11-20 22:36:29] [INFO] ============================================================
+[2025-11-20 22:36:29] [INFO] 📊 TÜM MAÇLAR - team_sum_last_10 hesaplanıyor...
+[2025-11-20 22:40:56] [INFO] 🏠 EV SAHİBİ - team_sum_home_last_10 hesaplanıyor...
+[2025-11-20 22:44:54] [INFO] ✈️  DEPLASMAN - team_sum_away_last_10 hesaplanıyor...
+[2025-11-20 22:48:50] [INFO] ============================================================
+[2025-11-20 22:48:50] [INFO] 🔥 DİNAMİK STREAK SİSTEMİ BAŞLIYOR!
+[2025-11-20 22:48:50] [INFO] ============================================================
+[2025-11-20 22:48:50] [INFO] 🔥 TÜM MAÇLAR - team_dynamic_streaks_all hesaplanıyor...
+[2025-11-20 22:55:33] [INFO] 🏠 EV SAHİBİ STREAK - team_dynamic_streaks_home_all hesaplanıyor...
+[2025-11-20 23:01:46] [INFO] ✈️  DEPLASMAN STREAK - team_dynamic_streaks_away_all hesaplanıyor...
+[2025-11-20 23:07:22] [INFO] ============================================================
+[2025-11-20 23:07:22] [SUCCESS] ✅ TÜM İŞLEMLER TAMAMLANDI! (Süre: 1883.59 saniye)
+[2025-11-20 23:07:22] [INFO] ============================================================

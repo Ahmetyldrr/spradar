@@ -1,0 +1,413 @@
+{% extends 'accounts/base.html' %}
+{% load static %}
+
+{% block title %}Yardım & SSS - Spradar{% endblock %}
+
+{% block extra_css %}
+<style>
+    .page-header {
+        background: linear-gradient(135deg, var(--grass-green) 0%, var(--field-green) 100%);
+        color: white;
+        padding: 80px 0 60px;
+        margin: -2rem -15px 3rem;
+        text-align: center;
+    }
+    
+    .faq-section {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        margin-bottom: 30px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+    
+    .category-title {
+        color: var(--grass-green);
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 3px solid var(--primary-green);
+    }
+    
+    .faq-item {
+        margin-bottom: 15px;
+        border: 1px solid #e5e7eb;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    
+    .faq-question {
+        background: #f9fafb;
+        padding: 15px 20px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .faq-question:hover {
+        background: var(--light-green);
+        color: white;
+    }
+    
+    .faq-question.active {
+        background: var(--primary-green);
+        color: white;
+    }
+    
+    .faq-answer {
+        padding: 20px;
+        display: none;
+        background: white;
+        border-top: 1px solid #e5e7eb;
+    }
+    
+    .faq-answer.show {
+        display: block;
+        animation: fadeIn 0.3s ease;
+    }
+    
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .support-form-section {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+    
+    .form-label {
+        font-weight: 600;
+        color: var(--grass-green);
+    }
+    
+    .form-control, .form-select {
+        border: 2px solid #e5e7eb;
+        border-radius: 10px;
+        padding: 12px;
+        transition: all 0.3s ease;
+    }
+    
+    .form-control:focus, .form-select:focus {
+        border-color: var(--primary-green);
+        box-shadow: 0 0 0 0.2rem rgba(46, 204, 113, 0.25);
+    }
+    
+    .btn-submit {
+        background: linear-gradient(135deg, var(--primary-green) 0%, var(--dark-green) 100%);
+        color: white;
+        padding: 12px 40px;
+        border: none;
+        border-radius: 50px;
+        font-weight: bold;
+        transition: all 0.3s ease;
+    }
+    
+    .btn-submit:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(46, 204, 113, 0.4);
+    }
+    
+    .sidebar {
+        background: white;
+        border-radius: 15px;
+        padding: 25px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        position: sticky;
+        top: 100px;
+    }
+    
+    .sidebar h5 {
+        color: var(--grass-green);
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+    
+    .sidebar-link {
+        display: block;
+        padding: 12px 15px;
+        margin-bottom: 10px;
+        background: #f9fafb;
+        border-radius: 10px;
+        text-decoration: none;
+        color: #333;
+        transition: all 0.3s ease;
+    }
+    
+    .sidebar-link:hover {
+        background: var(--light-green);
+        color: white;
+        transform: translateX(5px);
+    }
+    
+    .contact-info {
+        background: linear-gradient(135deg, var(--grass-green) 0%, var(--field-green) 100%);
+        color: white;
+        padding: 25px;
+        border-radius: 15px;
+        margin-top: 20px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<!-- Page Header -->
+<div class="page-header">
+    <div class="container">
+        <h1 class="display-4 fw-bold">
+            <i class="fas fa-question-circle"></i> Yardım & Destek
+        </h1>
+        <p class="lead">Sık sorulan sorular ve destek talebi oluşturma</p>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <!-- Ana İçerik -->
+        <div class="col-lg-8">
+            
+            <!-- Genel Sorular -->
+            <div class="faq-section">
+                <h3 class="category-title">
+                    <i class="fas fa-info-circle"></i> Genel Sorular
+                </h3>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span><strong>Spradar nedir?</strong></span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Spradar, yapay zeka destekli futbol analiz platformudur. Maç tahminleri, detaylı analizler ve AI yorumları sunarak kullanıcılarımıza doğru kararlar almada yardımcı olur.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span><strong>Nasıl kayıt olurum?</strong></span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Sağ üst köşedeki "Kayıt Ol" butonuna tıklayın, kullanıcı adı, email ve şifrenizi girerek ücretsiz hesap oluşturabilirsiniz. İlk kayıtta 10 kredi hediye!</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span><strong>Sistemde kredi ne işe yarar?</strong></span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Her AI yorumu için 1 kredi harcanır. Kredi sayesinde istediğiniz kadar maç analizi ve tahmin alabilirsiniz.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Ödeme & Kredi -->
+            <div class="faq-section">
+                <h3 class="category-title">
+                    <i class="fas fa-wallet"></i> Ödeme & Kredi
+                </h3>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span><strong>Kredi nasıl satın alırım?</strong></span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>"Kredi Al" menüsünden istediğiniz paketi seçin, banka havalesi ile ödeme yapın ve dekont yükleyin. Onay sonrası krediniz hesabınıza yüklenir.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span><strong>Hangi ödeme yöntemlerini kabul ediyorsunuz?</strong></span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Şu anda banka havalesi/EFT ile ödeme kabul ediyoruz. Yakında kredi kartı ve diğer ödeme yöntemleri de eklenecek.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span><strong>Kredi transferi nasıl yapılır?</strong></span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>"Kredi Gönder" sayfasından kullanıcı seçip göndermek istediğiniz kredi miktarını yazın. Anında transfer gerçekleşir.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Supervisor -->
+            <div class="faq-section">
+                <h3 class="category-title">
+                    <i class="fas fa-star"></i> Supervisor Sistemi
+                </h3>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span><strong>Supervisor nedir?</strong></span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Supervisor, diğer kullanıcılara kredi satan ve komisyon kazanan kullanıcılardır. Kendi fiyatlarını belirleyebilirler.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span><strong>Supervisor olmak için ne yapmalıyım?</strong></span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>"Supervisor Başvurusu" sayfasından başvurunuzu yapın. Yönetici onayı sonrası supervisor olabilirsiniz.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Teknik -->
+            <div class="faq-section">
+                <h3 class="category-title">
+                    <i class="fas fa-cog"></i> Teknik Sorular
+                </h3>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span><strong>Mobil uygulamanız var mı?</strong></span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Şu anda web tabanlı hizmet veriyoruz ancak mobil uygulamalar yakında yayınlanacak. Web sitemiz tamamen mobil uyumludur.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span><strong>Şifremi unuttum, ne yapmalıyım?</strong></span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Giriş sayfasındaki "Şifremi Unuttum" linkine tıklayarak email adresinize şifre sıfırlama linki gönderebilirsiniz.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Destek Formu -->
+            {% if user.is_authenticated %}
+            <div class="support-form-section mt-4">
+                <h3 class="mb-4">
+                    <i class="fas fa-envelope"></i> Destek Talebi Oluştur
+                </h3>
+                
+                <form method="POST" action="{% url 'submit_support_ticket' %}">
+                    {% csrf_token %}
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Kategori</label>
+                        <select name="category" class="form-select" required>
+                            <option value="">Seçiniz...</option>
+                            <option value="GENERAL">Genel</option>
+                            <option value="PAYMENT">Ödeme & Kredi</option>
+                            <option value="TECHNICAL">Teknik</option>
+                            <option value="SUPERVISOR">Supervisor</option>
+                            <option value="ACCOUNT">Hesap</option>
+                            <option value="OTHER">Diğer</option>
+                        </select>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Konu</label>
+                        <input type="text" name="subject" class="form-control" maxlength="200" placeholder="Kısa bir açıklama..." required>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label class="form-label">Mesajınız</label>
+                        <textarea name="message" class="form-control" rows="5" placeholder="Detaylı açıklama..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-submit">
+                        <i class="fas fa-paper-plane"></i> Gönder
+                    </button>
+                </form>
+            </div>
+            {% else %}
+            <div class="alert alert-info mt-4">
+                <i class="fas fa-info-circle"></i>
+                Destek talebi oluşturmak için <a href="{% url 'login' %}">giriş yapın</a>.
+            </div>
+            {% endif %}
+            
+        </div>
+        
+        <!-- Sidebar -->
+        <div class="col-lg-4">
+            <div class="sidebar">
+                <h5><i class="fas fa-link"></i> Hızlı Erişim</h5>
+                <a href="{% url 'buy_credits' %}" class="sidebar-link">
+                    <i class="fas fa-shopping-cart"></i> Kredi Satın Al
+                </a>
+                <a href="{% url 'credit_transfer' %}" class="sidebar-link">
+                    <i class="fas fa-exchange-alt"></i> Kredi Gönder
+                </a>
+                <a href="{% url 'supervisor_application' %}" class="sidebar-link">
+                    <i class="fas fa-user-tie"></i> Supervisor Başvurusu
+                </a>
+                <a href="{% url 'supervisor_list' %}" class="sidebar-link">
+                    <i class="fas fa-store"></i> Supervisor Listesi
+                </a>
+                <a href="{% url 'credit_history' %}" class="sidebar-link">
+                    <i class="fas fa-history"></i> İşlem Geçmişi
+                </a>
+            </div>
+            
+            <div class="contact-info">
+                <h5><i class="fas fa-headset"></i> İletişim</h5>
+                <p class="mb-2">
+                    <i class="fas fa-envelope"></i> 
+                    <strong>Email:</strong> destek@spradar.com
+                </p>
+                <p class="mb-2">
+                    <i class="fas fa-clock"></i> 
+                    <strong>Çalışma Saatleri:</strong> 7/24
+                </p>
+                <p class="mb-0">
+                    <i class="fas fa-reply"></i> 
+                    <strong>Yanıt Süresi:</strong> 1-24 saat
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // FAQ Accordion
+    document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('click', function() {
+            const answer = this.nextElementSibling;
+            const icon = this.querySelector('i');
+            
+            // Toggle active state
+            this.classList.toggle('active');
+            answer.classList.toggle('show');
+            
+            // Toggle icon
+            if (answer.classList.contains('show')) {
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+            } else {
+                icon.classList.remove('fa-chevron-up');
+                icon.classList.add('fa-chevron-down');
+            }
+        });
+    });
+</script>
+{% endblock %}

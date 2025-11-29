@@ -1,0 +1,395 @@
+{% extends 'base.html' %}
+{% load socialaccount %}
+
+{% block title %}Kayıt Ol - FX Futbol{% endblock %}
+
+{% block extra_css %}
+<style>
+    :root {
+        --green-primary: #1b5e20;
+        --green-light: #2e7d32;
+        --green-dark: #0d3d10;
+        --green-hover: #388e3c;
+    }
+    
+    .register-container {
+        min-height: calc(100vh - 200px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 15px;
+        background: linear-gradient(135deg, #f5f7fa 0%, #e8f5e9 100%);
+    }
+    
+    .register-card {
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        overflow: hidden;
+        max-width: 520px;
+        width: 100%;
+        border: none;
+    }
+    
+    .register-header {
+        background: linear-gradient(135deg, var(--green-primary) 0%, var(--green-light) 100%);
+        padding: 40px 30px;
+        text-align: center;
+        color: white;
+    }
+    
+    .register-header h1 {
+        font-size: 28px;
+        font-weight: 700;
+        margin: 0;
+        letter-spacing: -0.5px;
+    }
+    
+    .register-header p {
+        margin: 10px 0 0 0;
+        opacity: 0.9;
+        font-size: 15px;
+    }
+    
+    .register-body {
+        padding: 40px 35px;
+    }
+    
+    .welcome-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background: rgba(255,255,255,0.2);
+        padding: 10px 20px;
+        border-radius: 25px;
+        font-size: 14px;
+        font-weight: 600;
+        margin-top: 10px;
+    }
+    
+    .google-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        padding: 14px 20px;
+        background: white;
+        border: 2px solid #e0e0e0;
+        border-radius: 12px;
+        font-size: 16px;
+        font-weight: 600;
+        color: #333;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        gap: 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+    
+    .google-btn:hover {
+        background: #f8f9fa;
+        border-color: var(--green-primary);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        color: var(--green-primary);
+    }
+    
+    .google-icon {
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+    }
+    
+    .divider-section {
+        position: relative;
+        text-align: center;
+        margin: 30px 0;
+    }
+    
+    .divider-line {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        height: 1px;
+        background: #e0e0e0;
+    }
+    
+    .divider-text {
+        position: relative;
+        display: inline-block;
+        background: white;
+        padding: 0 20px;
+        color: #757575;
+        font-size: 14px;
+        font-weight: 500;
+    }
+    
+    .form-group {
+        margin-bottom: 20px;
+    }
+    
+    .form-label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #333;
+        font-size: 14px;
+    }
+    
+    .form-control {
+        width: 100%;
+        padding: 12px 16px;
+        border: 2px solid #e0e0e0;
+        border-radius: 10px;
+        font-size: 15px;
+        transition: all 0.3s ease;
+    }
+    
+    .form-control:focus {
+        outline: none;
+        border-color: var(--green-primary);
+        box-shadow: 0 0 0 3px rgba(27, 94, 32, 0.1);
+    }
+    
+    .form-text {
+        font-size: 12px;
+        color: #666;
+        margin-top: 5px;
+    }
+    
+    .btn-register {
+        width: 100%;
+        padding: 14px;
+        background: linear-gradient(135deg, var(--green-primary) 0%, var(--green-light) 100%);
+        color: white;
+        border: none;
+        border-radius: 12px;
+        font-size: 16px;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 10px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    
+    .btn-register:hover {
+        background: linear-gradient(135deg, var(--green-light) 0%, var(--green-hover) 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(27, 94, 32, 0.3);
+    }
+    
+    .btn-register:active {
+        transform: translateY(0);
+    }
+    
+    .login-link {
+        text-align: center;
+        margin-top: 30px;
+        padding-top: 25px;
+        border-top: 1px solid #e0e0e0;
+    }
+    
+    .login-link p {
+        margin: 0;
+        color: #666;
+        font-size: 15px;
+    }
+    
+    .login-link a {
+        color: var(--green-primary);
+        font-weight: 700;
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+    
+    .login-link a:hover {
+        color: var(--green-hover);
+        text-decoration: underline;
+    }
+    
+    .error-message {
+        background: #ffebee;
+        color: #c62828;
+        padding: 10px 15px;
+        border-radius: 8px;
+        font-size: 14px;
+        margin-top: 5px;
+    }
+    
+    .perks-section {
+        background: linear-gradient(135deg, #e8f5e9 0%, #f1f8f4 100%);
+        padding: 25px;
+        border-radius: 15px;
+        margin-bottom: 25px;
+    }
+    
+    .perks-section h6 {
+        color: var(--green-primary);
+        font-weight: 700;
+        margin-bottom: 15px;
+        font-size: 15px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    
+    .perks-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .perks-list li {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 8px 0;
+        color: #333;
+        font-size: 14px;
+        font-weight: 500;
+    }
+    
+    .perks-list li i {
+        color: var(--green-primary);
+        font-size: 18px;
+    }
+    
+    .perk-highlight {
+        background: rgba(27, 94, 32, 0.1);
+        padding: 3px 8px;
+        border-radius: 4px;
+        font-weight: 700;
+        color: var(--green-primary);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="register-container">
+    <div class="register-card">
+        <div class="register-header">
+            <h1>🚀 Hesap Oluştur</h1>
+            <p>FX Futbol'a katılın, analizlerin tadını çıkarın</p>
+            <div class="welcome-badge">
+                🎁 10 Ücretsiz Kredi Hediye!
+            </div>
+        </div>
+        
+        <div class="register-body">
+            <!-- Perks Section -->
+            <div class="perks-section">
+                <h6>
+                    <i class="bi bi-star-fill"></i>
+                    Kayıt Avantajları
+                </h6>
+                <ul class="perks-list">
+                    <li>
+                        <i class="bi bi-gift-fill"></i>
+                        <span><span class="perk-highlight">10 Kredi</span> anında hesabınızda!</span>
+                    </li>
+                    <li>
+                        <i class="bi bi-robot"></i>
+                        <span>AI destekli maç yorumları</span>
+                    </li>
+                    <li>
+                        <i class="bi bi-graph-up"></i>
+                        <span>Detaylı analiz ve istatistikler</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Google ile Kayıt -->
+            <a href="{% provider_login_url 'google' %}" class="google-btn">
+                <svg class="google-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+                    <path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>
+                    <path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>
+                    <path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>
+                    <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/>
+                </svg>
+                <span>Google ile Hızlı Kayıt</span>
+            </a>
+
+            <div class="divider-section">
+                <div class="divider-line"></div>
+                <span class="divider-text">veya email ile kayıt olun</span>
+            </div>
+
+            <form method="post" novalidate>
+                {% csrf_token %}
+                
+                <!-- Username -->
+                <div class="form-group">
+                    <label for="{{ form.username.id_for_label }}" class="form-label">
+                        👤 Kullanıcı Adı
+                    </label>
+                    {{ form.username }}
+                    {% if form.username.errors %}
+                        <div class="error-message">
+                            {{ form.username.errors.0 }}
+                        </div>
+                    {% endif %}
+                    {% if form.username.help_text %}
+                        <div class="form-text">{{ form.username.help_text }}</div>
+                    {% endif %}
+                </div>
+                
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="{{ form.email.id_for_label }}" class="form-label">
+                        📧 E-posta Adresi
+                    </label>
+                    {{ form.email }}
+                    {% if form.email.errors %}
+                        <div class="error-message">
+                            {{ form.email.errors.0 }}
+                        </div>
+                    {% endif %}
+                </div>
+                
+                <!-- Password -->
+                <div class="form-group">
+                    <label for="{{ form.password1.id_for_label }}" class="form-label">
+                        🔒 Şifre
+                    </label>
+                    {{ form.password1 }}
+                    {% if form.password1.errors %}
+                        <div class="error-message">
+                            {{ form.password1.errors.0 }}
+                        </div>
+                    {% endif %}
+                    {% if form.password1.help_text %}
+                        <div class="form-text">{{ form.password1.help_text }}</div>
+                    {% endif %}
+                </div>
+                
+                <!-- Password Confirmation -->
+                <div class="form-group">
+                    <label for="{{ form.password2.id_for_label }}" class="form-label">
+                        🔒 Şifre Tekrar
+                    </label>
+                    {{ form.password2 }}
+                    {% if form.password2.errors %}
+                        <div class="error-message">
+                            {{ form.password2.errors.0 }}
+                        </div>
+                    {% endif %}
+                </div>
+                
+                <!-- Submit Button -->
+                <button type="submit" class="btn-register">
+                    Hesap Oluştur
+                </button>
+                
+                <!-- Login Link -->
+                <div class="login-link">
+                    <p>
+                        Zaten hesabınız var mı?
+                        <a href="{% url 'login' %}">Giriş Yapın</a>
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+
+{% block title %}Başvuru Durumu - Spradar{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <!-- Başlık -->
+            <div class="text-center mb-4">
+                <h2><i class="bi bi-file-earmark-check"></i> Satıcı Başvuru Durumu</h2>
+                <p class="text-muted">Başvurunuzun mevcut durumunu görüntüleyin</p>
+            </div>
+
+            <!-- Durum Kartı -->
+            <div class="card shadow-sm mb-4">
+                <div class="card-header 
+                    {% if application.status == 'PENDING' %}bg-warning text-dark
+                    {% elif application.status == 'APPROVED' %}bg-success text-white
+                    {% elif application.status == 'REJECTED' %}bg-danger text-white
+                    {% endif %}">
+                    <h5 class="mb-0">
+                        {% if application.status == 'PENDING' %}
+                            <i class="bi bi-hourglass-split"></i> Başvurunuz İnceleniyor
+                        {% elif application.status == 'APPROVED' %}
+                            <i class="bi bi-check-circle"></i> Başvurunuz Onaylandı!
+                        {% elif application.status == 'REJECTED' %}
+                            <i class="bi bi-x-circle"></i> Başvurunuz Reddedildi
+                        {% endif %}
+                    </h5>
+                </div>
+                <div class="card-body">
+                    {% if application.status == 'PENDING' %}
+                        <div class="alert alert-info mb-0">
+                            <h5 class="alert-heading">⏳ Başvurunuz İnceleme Aşamasında</h5>
+                            <p class="mb-0">
+                                Başvurunuz admin tarafından inceleniyor. Genellikle 24-48 saat içinde sonuç bildirilir.
+                                Lütfen düzenli olarak bu sayfayı kontrol edin veya e-posta bildirimlerini bekleyin.
+                            </p>
+                        </div>
+                    {% elif application.status == 'APPROVED' %}
+                        <div class="alert alert-success mb-3">
+                            <h5 class="alert-heading">🎉 Tebrikler!</h5>
+                            <p class="mb-0">
+                                Başvurunuz onaylandı! Artık Spradar platformunda kredi satıcısısınız.
+                                Satıcı panelinizden kredi satışlarınızı yönetebilirsiniz.
+                            </p>
+                        </div>
+                        <div class="d-grid gap-2">
+                            <a href="{% url 'supervisor_panel' %}" class="btn btn-success btn-lg">
+                                <i class="bi bi-speedometer2"></i> Satıcı Paneline Git
+                            </a>
+                            <a href="{% url 'supervisor_settings' %}" class="btn btn-outline-primary">
+                                <i class="bi bi-gear"></i> Ayarlarımı Düzenle
+                            </a>
+                        </div>
+                    {% elif application.status == 'REJECTED' %}
+                        <div class="alert alert-danger mb-3">
+                            <h5 class="alert-heading">❌ Üzgünüz</h5>
+                            <p>Başvurunuz reddedildi. Detaylar için aşağıdaki admin notunu inceleyebilirsiniz.</p>
+                            {% if application.admin_note %}
+                                <hr>
+                                <p class="mb-0"><strong>Admin Notu:</strong><br>{{ application.admin_note }}</p>
+                            {% endif %}
+                        </div>
+                        <div class="d-grid gap-2">
+                            <a href="{% url 'supervisor_application' %}" class="btn btn-primary">
+                                <i class="bi bi-arrow-clockwise"></i> Yeni Başvuru Yap
+                            </a>
+                            <a href="{% url 'profile' %}" class="btn btn-outline-secondary">
+                                <i class="bi bi-house"></i> Profilime Dön
+                            </a>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Başvuru Detayları -->
+            <div class="card shadow-sm">
+                <div class="card-header bg-light">
+                    <h5 class="mb-0"><i class="bi bi-info-circle"></i> Başvuru Detayları</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <strong><i class="bi bi-calendar-event"></i> Başvuru Tarihi:</strong>
+                            <p class="mb-0">{{ application.created_at|date:"d.m.Y H:i" }}</p>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <strong><i class="bi bi-hourglass"></i> Durum:</strong>
+                            <p class="mb-0">
+                                <span class="badge 
+                                    {% if application.status == 'PENDING' %}bg-warning text-dark
+                                    {% elif application.status == 'APPROVED' %}bg-success
+                                    {% elif application.status == 'REJECTED' %}bg-danger
+                                    {% endif %}">
+                                    {{ application.get_status_display }}
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <strong><i class="bi bi-bank"></i> Banka:</strong>
+                            <p class="mb-0">{{ application.bank_name }}</p>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <strong><i class="bi bi-credit-card"></i> IBAN:</strong>
+                            <p class="mb-0"><code>{{ application.iban }}</code></p>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <strong><i class="bi bi-person-badge"></i> Hesap Sahibi:</strong>
+                            <p class="mb-0">{{ application.account_holder }}</p>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <strong><i class="bi bi-cash-coin"></i> Önerilen Fiyat:</strong>
+                            <p class="mb-0">
+                                <span class="badge bg-success">{{ application.proposed_price }} ₺ / kredi</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    {% if application.description %}
+                        <hr>
+                        <div class="mb-0">
+                            <strong><i class="bi bi-chat-left-text"></i> Açıklama:</strong>
+                            <p class="mb-0 mt-2">{{ application.description }}</p>
+                        </div>
+                    {% endif %}
+
+                    {% if application.reviewed_at %}
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <strong><i class="bi bi-calendar-check"></i> İnceleme Tarihi:</strong>
+                                <p class="mb-0">{{ application.reviewed_at|date:"d.m.Y H:i" }}</p>
+                            </div>
+                            {% if application.reviewed_by %}
+                                <div class="col-md-6">
+                                    <strong><i class="bi bi-person-check"></i> İnceleyen:</strong>
+                                    <p class="mb-0">{{ application.reviewed_by.username }}</p>
+                                </div>
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <!-- Yardım Kartı -->
+            {% if application.status == 'PENDING' %}
+                <div class="card mt-4 shadow-sm">
+                    <div class="card-body">
+                        <h6><i class="bi bi-lightbulb"></i> İpucu</h6>
+                        <p class="mb-0 text-muted">
+                            Başvurunuz onaylandığında e-posta ile bilgilendirileceksiniz.
+                            Ayrıca bu sayfayı istediğiniz zaman tekrar ziyaret edebilirsiniz.
+                        </p>
+                    </div>
+                </div>
+            {% endif %}
+
+            <!-- Geri Dön Butonu -->
+            <div class="text-center mt-4">
+                <a href="{% url 'profile' %}" class="btn btn-outline-secondary">
+                    <i class="bi bi-arrow-left"></i> Profilime Dön
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

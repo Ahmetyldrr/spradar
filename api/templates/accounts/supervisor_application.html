@@ -1,0 +1,210 @@
+{% extends 'base.html' %}
+
+{% block title %}Satıcı Başvurusu - Spradar{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <!-- Başlık -->
+            <div class="text-center mb-4">
+                <h2><i class="bi bi-shop"></i> Satıcı Ol - Başvuru Formu</h2>
+                <p class="text-muted">Spradar platformunda kredi satıcısı olun ve kazanmaya başlayın!</p>
+            </div>
+
+            <!-- Bilgilendirme Kartı -->
+            <div class="alert alert-info mb-4">
+                <h5 class="alert-heading"><i class="bi bi-info-circle"></i> Satıcı Sistemi Nasıl Çalışır?</h5>
+                <ul class="mb-0">
+                    <li><strong>Toptan Fiyat:</strong> Admin'den 0.29 ₺'ye kredi alırsınız</li>
+                    <li><strong>Satış Fiyatı:</strong> Kullanıcılara 0.29 ₺ - 0.99 ₺ arasında fiyat belirleyebilirsiniz</li>
+                    <li><strong>Kazanç:</strong> Fiyat farkından kazanç elde edersiniz (örnek: 0.49 ₺'ye satarsanız 0.20 ₺ kâr)</li>
+                    <li><strong>Güvenilirlik:</strong> Başarı oranınız tüm kullanıcılar tarafından görülür</li>
+                    <li><strong>Ödeme:</strong> Banka havalesi ile kredi satışı yaparsınız</li>
+                </ul>
+            </div>
+
+            <!-- Başvuru Formu -->
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0"><i class="bi bi-file-earmark-text"></i> Başvuru Bilgileri</h5>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        {% csrf_token %}
+
+                        <!-- Banka Adı -->
+                        <div class="mb-3">
+                            <label for="bank_name" class="form-label">
+                                <i class="bi bi-bank"></i> Banka Adı <span class="text-danger">*</span>
+                            </label>
+                            <input 
+                                type="text" 
+                                class="form-control" 
+                                id="bank_name" 
+                                name="bank_name" 
+                                value="{{ bank_name|default:'' }}"
+                                placeholder="Örn: Ziraat Bankası, İş Bankası"
+                                required
+                            >
+                            <small class="form-text text-muted">Kredi ödemeleri için kullanacağınız banka</small>
+                        </div>
+
+                        <!-- IBAN -->
+                        <div class="mb-3">
+                            <label for="iban" class="form-label">
+                                <i class="bi bi-credit-card"></i> IBAN Numarası <span class="text-danger">*</span>
+                            </label>
+                            <input 
+                                type="text" 
+                                class="form-control" 
+                                id="iban" 
+                                name="iban" 
+                                value="{{ iban|default:'' }}"
+                                placeholder="TR00 0000 0000 0000 0000 0000 00"
+                                maxlength="34"
+                                required
+                            >
+                            <small class="form-text text-muted">Ödeme alacağınız IBAN numarası (TR ile başlayan)</small>
+                        </div>
+
+                        <!-- Hesap Sahibi -->
+                        <div class="mb-3">
+                            <label for="account_holder" class="form-label">
+                                <i class="bi bi-person-badge"></i> Hesap Sahibi Adı Soyadı <span class="text-danger">*</span>
+                            </label>
+                            <input 
+                                type="text" 
+                                class="form-control" 
+                                id="account_holder" 
+                                name="account_holder" 
+                                value="{{ account_holder|default:'' }}"
+                                placeholder="Örn: Ahmet Yılmaz"
+                                required
+                            >
+                            <small class="form-text text-muted">Banka hesabının sahibinin tam adı</small>
+                        </div>
+
+                        <!-- Önerilen Fiyat -->
+                        <div class="mb-3">
+                            <label for="proposed_price" class="form-label">
+                                <i class="bi bi-cash-coin"></i> Kredi Başına Satış Fiyatınız (₺)
+                            </label>
+                            <input 
+                                type="number" 
+                                class="form-control" 
+                                id="proposed_price" 
+                                name="proposed_price" 
+                                value="{{ proposed_price|default:'0.35' }}"
+                                min="0.29" 
+                                max="0.99" 
+                                step="0.01"
+                                required
+                            >
+                            <small class="form-text text-muted">
+                                Kullanıcılara satacağınız fiyat (min: 0.29 ₺, max: 0.99 ₺)
+                                <br>
+                                <strong>Kazancınız:</strong> <span id="profit_display">0.06 ₺</span> / kredi
+                            </small>
+                        </div>
+
+                        <!-- Açıklama -->
+                        <div class="mb-4">
+                            <label for="description" class="form-label">
+                                <i class="bi bi-chat-left-text"></i> Kendinizi Tanıtın (Opsiyonel)
+                            </label>
+                            <textarea 
+                                class="form-control" 
+                                id="description" 
+                                name="description" 
+                                rows="4"
+                                placeholder="Neden iyi bir satıcı olacağınızı ve deneyimlerinizi kısaca anlatın..."
+                            >{{ description|default:'' }}</textarea>
+                            <small class="form-text text-muted">Bu bilgi admin incelemesi için kullanılacak</small>
+                        </div>
+
+                        <!-- Onay Kutusu -->
+                        <div class="mb-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="terms" required>
+                                <label class="form-check-label" for="terms">
+                                    Satıcı şartlarını ve koşullarını kabul ediyorum <span class="text-danger">*</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Butonlar -->
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="bi bi-send"></i> Başvuruyu Gönder
+                            </button>
+                            <a href="{% url 'profile' %}" class="btn btn-outline-secondary">
+                                <i class="bi bi-arrow-left"></i> İptal
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Sıkça Sorulan Sorular -->
+            <div class="card mt-4 shadow-sm">
+                <div class="card-header bg-light">
+                    <h5 class="mb-0"><i class="bi bi-question-circle"></i> Sıkça Sorulan Sorular</h5>
+                </div>
+                <div class="card-body">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq1">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1">
+                                    Başvurum ne kadar sürede onaylanır?
+                                </button>
+                            </h2>
+                            <div id="collapse1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Başvurular genellikle 24-48 saat içinde incelenir ve sonuçlandırılır.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq2">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2">
+                                    Satıcı olmak için önkoşul var mı?
+                                </button>
+                            </h2>
+                            <div id="collapse2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Aktif bir Spradar hesabınız ve geçerli bir banka hesabınız olması yeterlidir. Güvenilirlik için hesabınızın belirli bir süre aktif olması tercih edilir.
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item">
+                            <h2 class="accordion-header" id="faq3">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3">
+                                    Fiyatımı sonradan değiştirebilir miyim?
+                                </button>
+                            </h2>
+                            <div id="collapse3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Evet, satıcı panelinden istediğiniz zaman fiyatınızı güncelleyebilirsiniz (0.29-0.99 ₺ aralığında).
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Kar hesaplama
+    document.getElementById('proposed_price').addEventListener('input', function() {
+        const price = parseFloat(this.value) || 0.29;
+        const cost = 0.29;
+        const profit = Math.max(0, price - cost);
+        document.getElementById('profit_display').textContent = profit.toFixed(2) + ' ₺';
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,188 @@
+{% extends 'base.html' %}
+
+{% block title %}Ödeme Bilgileri - Spradar{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <!-- Başarı Mesajı -->
+            <div class="alert alert-success text-center mb-4">
+                <h4><i class="bi bi-check-circle"></i> Siparişiniz Oluşturuldu!</h4>
+                <p class="mb-0">Ödeme yapıldıktan sonra satıcı siparişinizi onaylayacaktır.</p>
+            </div>
+
+            <!-- Sipariş Özeti -->
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0"><i class="bi bi-receipt"></i> Sipariş Özeti</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <strong>Sipariş Numarası:</strong>
+                        </div>
+                        <div class="col-6 text-end">
+                            <code>{{ purchase.id }}</code>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <strong>Ödeme Kodu:</strong>
+                        </div>
+                        <div class="col-6 text-end">
+                            <code class="fs-5 text-danger">{{ purchase.payment_code }}</code>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <strong>Kredi Miktarı:</strong>
+                        </div>
+                        <div class="col-6 text-end">
+                            <span class="badge bg-info fs-6">{{ purchase.credit_amount }} kredi</span>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <strong>Birim Fiyat:</strong>
+                        </div>
+                        <div class="col-6 text-end">
+                            {{ purchase.unit_price }} ₺
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-6">
+                            <h5>Toplam Tutar:</h5>
+                        </div>
+                        <div class="col-6 text-end">
+                            <h5 class="text-success">{{ purchase.total_amount }} ₺</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ödeme Bilgileri -->
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-warning text-dark">
+                    <h5 class="mb-0"><i class="bi bi-bank"></i> Ödeme Bilgileri</h5>
+                </div>
+                <div class="card-body">
+                    <div class="alert alert-danger mb-3">
+                        <h6><i class="bi bi-exclamation-triangle"></i> ÖNEMLİ!</h6>
+                        <p class="mb-0">
+                            Havale/EFT yaparken <strong>MUTLAKA</strong> açıklama kısmına 
+                            <code class="text-danger fs-6">{{ purchase.payment_code }}</code> kodunu yazın!
+                        </p>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <strong><i class="bi bi-person-badge"></i> Alıcı Adı:</strong>
+                        </div>
+                        <div class="col-md-8">
+                            <strong>{{ purchase.supervisor.supervisor_account_holder }}</strong>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <strong><i class="bi bi-bank"></i> Banka:</strong>
+                        </div>
+                        <div class="col-md-8">
+                            {{ purchase.supervisor.supervisor_bank_name }}
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <strong><i class="bi bi-credit-card"></i> IBAN:</strong>
+                        </div>
+                        <div class="col-md-8">
+                            <code class="fs-6">{{ purchase.supervisor.supervisor_iban }}</code>
+                            <button class="btn btn-sm btn-outline-secondary ms-2" onclick="copyIban()">
+                                <i class="bi bi-clipboard"></i> Kopyala
+                            </button>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="row mb-3">
+                        <div class="col-md-4">
+                            <strong><i class="bi bi-cash-coin"></i> Gönderilecek Tutar:</strong>
+                        </div>
+                        <div class="col-md-8">
+                            <h4 class="text-success mb-0">{{ purchase.total_amount }} ₺</h4>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <strong><i class="bi bi-chat-text"></i> Açıklama:</strong>
+                        </div>
+                        <div class="col-md-8">
+                            <code class="fs-5 text-danger">{{ purchase.payment_code }}</code>
+                            <button class="btn btn-sm btn-outline-secondary ms-2" onclick="copyCode()">
+                                <i class="bi bi-clipboard"></i> Kopyala
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Adımlar -->
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-info text-white">
+                    <h5 class="mb-0"><i class="bi bi-list-ol"></i> Yapmanız Gerekenler</h5>
+                </div>
+                <div class="card-body">
+                    <ol class="mb-0">
+                        <li class="mb-2">Yukarıdaki <strong>IBAN</strong> numarasına havale/EFT yapın</li>
+                        <li class="mb-2">
+                            Havale açıklaması olarak <code class="text-danger">{{ purchase.payment_code }}</code> kodunu yazın
+                        </li>
+                        <li class="mb-2">Satıcı ödemenizi kontrol edecek ve siparişi onaylayacak</li>
+                        <li class="mb-0">Onaylandıktan sonra kredileriniz hesabınıza yüklenecek</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Durum Bilgisi -->
+            <div class="card shadow-sm">
+                <div class="card-body text-center">
+                    <h5>
+                        <i class="bi bi-hourglass-split text-warning"></i> 
+                        Sipariş Durumu: <span class="badge bg-warning text-dark">Ödeme Bekleniyor</span>
+                    </h5>
+                    <p class="text-muted mb-3">
+                        Satıcı: <strong>{{ purchase.supervisor.user.username }}</strong>
+                    </p>
+                    <a href="{% url 'profile' %}" class="btn btn-primary">
+                        <i class="bi bi-house"></i> Profilime Dön
+                    </a>
+                    <a href="{% url 'supervisor_list' %}" class="btn btn-outline-secondary">
+                        <i class="bi bi-arrow-left"></i> Satıcılar Listesi
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function copyIban() {
+        const iban = "{{ purchase.supervisor.supervisor_iban }}";
+        navigator.clipboard.writeText(iban).then(function() {
+            alert('IBAN kopyalandı: ' + iban);
+        });
+    }
+
+    function copyCode() {
+        const code = "{{ purchase.payment_code }}";
+        navigator.clipboard.writeText(code).then(function() {
+            alert('Ödeme kodu kopyalandı: ' + code);
+        });
+    }
+</script>
+{% endblock %}

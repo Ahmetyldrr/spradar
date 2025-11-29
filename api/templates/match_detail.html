@@ -1,0 +1,675 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ match.home_team_name }} vs {{ match.away_team_name }} - Detay{% endblock %}
+
+{% block extra_css %}
+<style>
+    .commentary-section {
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        margin-bottom: 30px;
+        box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+    }
+    
+    .commentary-text {
+        white-space: pre-wrap;
+        font-size: 1.05rem;
+        line-height: 1.8;
+        color: #333;
+    }
+    
+    .team-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 20px;
+        border-radius: 15px;
+        margin-bottom: 20px;
+        text-align: center;
+    }
+    
+    .metadata-badge {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+        margin: 5px;
+    }
+    
+    .back-button {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        z-index: 1000;
+    }
+    
+    .section-title {
+        color: #667eea;
+        font-weight: bold;
+        margin-top: 30px;
+        margin-bottom: 15px;
+        padding-bottom: 10px;
+        border-bottom: 3px solid #667eea;
+    }
+    
+    /* AI Chat Widget Styles */
+    .ai-chat-button {
+        position: fixed;
+        bottom: 30px;
+        left: 30px;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border: none;
+        box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
+        cursor: pointer;
+        z-index: 1001;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 24px;
+    }
+    
+    .ai-chat-button:hover {
+        transform: scale(1.1);
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+    }
+    
+    .ai-chat-container {
+        position: fixed;
+        bottom: 100px;
+        left: 30px;
+        width: 400px;
+        max-width: calc(100vw - 60px);
+        height: 600px;
+        max-height: calc(100vh - 140px);
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        z-index: 1002;
+        display: none;
+        flex-direction: column;
+        overflow: hidden;
+    }
+    
+    .ai-chat-container.active {
+        display: flex;
+    }
+    
+    .ai-chat-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .ai-chat-header h4 {
+        margin: 0;
+        font-size: 1.1rem;
+    }
+    
+    .ai-chat-close {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        padding: 0;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: background 0.2s;
+    }
+    
+    .ai-chat-close:hover {
+        background: rgba(255,255,255,0.2);
+    }
+    
+    .ai-chat-messages {
+        flex: 1;
+        overflow-y: auto;
+        padding: 20px;
+        background: #f8f9fa;
+    }
+    
+    .chat-message {
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .chat-message.user {
+        align-items: flex-end;
+    }
+    
+    .chat-message.ai {
+        align-items: flex-start;
+    }
+    
+    .chat-bubble {
+        max-width: 80%;
+        padding: 12px 16px;
+        border-radius: 18px;
+        word-wrap: break-word;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .chat-message.user .chat-bubble {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        border-bottom-right-radius: 4px;
+    }
+    
+    .chat-message.ai .chat-bubble {
+        background: white;
+        color: #333;
+        border-bottom-left-radius: 4px;
+    }
+    
+    .chat-timestamp {
+        font-size: 0.75rem;
+        color: #999;
+        margin-top: 5px;
+        padding: 0 5px;
+    }
+    
+    .ai-chat-input-container {
+        padding: 15px;
+        background: white;
+        border-top: 1px solid #e0e0e0;
+        display: flex;
+        gap: 10px;
+    }
+    
+    .ai-chat-input {
+        flex: 1;
+        border: 2px solid #e0e0e0;
+        border-radius: 25px;
+        padding: 10px 20px;
+        font-size: 0.95rem;
+        outline: none;
+        transition: border-color 0.2s;
+    }
+    
+    .ai-chat-input:focus {
+        border-color: #667eea;
+    }
+    
+    .ai-chat-send {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        border: none;
+        color: white;
+        cursor: pointer;
+        transition: all 0.2s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .ai-chat-send:hover:not(:disabled) {
+        transform: scale(1.05);
+    }
+    
+    .ai-chat-send:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+    
+    .typing-indicator {
+        display: none;
+        padding: 12px 16px;
+        background: white;
+        border-radius: 18px;
+        border-bottom-left-radius: 4px;
+        max-width: 80px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .typing-indicator.active {
+        display: block;
+    }
+    
+    .typing-indicator span {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        background: #667eea;
+        border-radius: 50%;
+        margin: 0 2px;
+        animation: typing 1.4s infinite;
+    }
+    
+    .typing-indicator span:nth-child(2) {
+        animation-delay: 0.2s;
+    }
+    
+    .typing-indicator span:nth-child(3) {
+        animation-delay: 0.4s;
+    }
+    
+    @keyframes typing {
+        0%, 60%, 100% {
+            transform: translateY(0);
+        }
+        30% {
+            transform: translateY(-10px);
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .ai-chat-container {
+            left: 10px;
+            right: 10px;
+            width: auto;
+            bottom: 90px;
+        }
+        
+        .ai-chat-button {
+            left: 10px;
+            bottom: 20px;
+        }
+    }
+
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="team-header">
+            <h2 class="mb-3">
+                <i class="fas fa-home"></i> {{ match.home_team_name }}
+                <span class="mx-3">VS</span>
+                <i class="fas fa-plane"></i> {{ match.away_team_name }}
+            </h2>
+            <p class="mb-2">
+                <i class="fas fa-calendar"></i> {{ match.match_date }} | 
+                <i class="fas fa-clock"></i> {{ match.match_time }}
+            </p>
+            <p class="mb-3">
+                <i class="fas fa-flag"></i> {{ match.country }} - {{ match.league }}
+            </p>
+            <button onclick="copyAllCommentary()" class="btn btn-success btn-lg">
+                <i class="fas fa-copy"></i> Tümünü Kopyala
+            </button>
+        </div>
+    </div>
+</div>
+
+{% if commentary %}
+    <!-- Metadata Badges -->
+    {% if commentary.metadata %}
+    <div class="row mb-4">
+        <div class="col-12 text-center">
+            {% if commentary.metadata.season_name %}
+            <span class="badge bg-info metadata-badge">
+                <i class="fas fa-trophy"></i> {{ commentary.metadata.season_name }}
+            </span>
+            {% endif %}
+            <span class="badge bg-success metadata-badge">
+                <i class="fas fa-database"></i> Match ID: {{ match.match_id }}
+            </span>
+        </div>
+    </div>
+    {% endif %}
+    
+    <!-- Home Team Commentary -->
+    <div class="commentary-section">
+        <h3 class="section-title">
+            <i class="fas fa-home text-primary"></i> Ev Sahibi Analizi: {{ match.home_team_name }}
+        </h3>
+        {% if commentary.home_commentary %}
+            <div class="commentary-text">{{ commentary.home_commentary }}</div>
+        {% else %}
+            <p class="text-muted">Ev sahibi yorumu bulunamadı.</p>
+        {% endif %}
+    </div>
+    
+    <!-- Away Team Commentary -->
+    <div class="commentary-section">
+        <h3 class="section-title">
+            <i class="fas fa-plane text-danger"></i> Deplasman Analizi: {{ match.away_team_name }}
+        </h3>
+        {% if commentary.away_commentary %}
+            <div class="commentary-text">{{ commentary.away_commentary }}</div>
+        {% else %}
+            <p class="text-muted">Deplasman yorumu bulunamadı.</p>
+        {% endif %}
+    </div>
+    
+    <!-- Match Interaction -->
+    {% if commentary.match_interaction %}
+    <div class="commentary-section">
+        <h3 class="section-title">
+            <i class="fas fa-exchange-alt text-warning"></i> Maç Etkileşimi & Karşılaştırma
+        </h3>
+        <div class="commentary-text">{{ commentary.match_interaction }}</div>
+    </div>
+    {% endif %}
+    
+    <!-- Combined Prompt (Full Analysis) -->
+    {% if commentary.combined_prompt %}
+    <div class="commentary-section">
+        <h3 class="section-title">
+            <i class="fas fa-file-alt text-success"></i> Kapsamlı Analiz
+        </h3>
+        <div class="commentary-text">{{ commentary.combined_prompt }}</div>
+    </div>
+    {% endif %}
+    
+    <!-- AI Question -->
+    {% if commentary.ai_question %}
+    <div class="commentary-section">
+        <h3 class="section-title">
+            <i class="fas fa-robot text-info"></i> AI İçin Soru
+        </h3>
+        <div class="alert alert-info">
+            <strong>{{ commentary.ai_question }}</strong>
+        </div>
+    </div>
+    {% endif %}
+    
+{% else %}
+    <div class="row">
+        <div class="col-12">
+            <div class="alert alert-warning text-center">
+                <i class="fas fa-exclamation-triangle fa-2x mb-3"></i>
+                <h4>Yorum Bulunamadı</h4>
+                <p>Bu maç için henüz yorum oluşturulmamış.</p>
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+<!-- Back Button -->
+<a href="{% url 'match_list' %}" class="btn btn-primary btn-lg back-button">
+    <i class="fas fa-arrow-left"></i> Geri
+</a>
+
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+    
+    // Tüm commentary'yi kopyala
+    function copyAllCommentary() {
+        let textToCopy = '';
+        
+        // Başlık
+        const header = document.querySelector('.team-header h2');
+        if (header) {
+            textToCopy += header.textContent.trim() + '\n\n';
+        }
+        
+        // Tarih ve lig bilgisi
+        const metaInfo = document.querySelectorAll('.team-header p');
+        metaInfo.forEach(p => {
+            if (p.textContent.trim()) {
+                textToCopy += p.textContent.trim() + '\n';
+            }
+        });
+        
+        textToCopy += '\n' + '='.repeat(60) + '\n\n';
+        
+        // Tüm section'ları al
+        const sections = document.querySelectorAll('.commentary-section');
+        sections.forEach(section => {
+            const title = section.querySelector('.section-title');
+            const content = section.querySelector('.commentary-text, .alert');
+            
+            if (title) {
+                textToCopy += '\n' + title.textContent.trim() + '\n' + '-'.repeat(40) + '\n\n';
+            }
+            
+            if (content) {
+                textToCopy += content.textContent.trim() + '\n\n';
+            }
+        });
+        
+        // Geçici textarea oluştur
+        const textarea = document.createElement('textarea');
+        textarea.value = textToCopy;
+        textarea.style.position = 'fixed';
+        textarea.style.top = '0';
+        textarea.style.left = '0';
+        textarea.style.width = '2em';
+        textarea.style.height = '2em';
+        textarea.style.padding = '0';
+        textarea.style.border = 'none';
+        textarea.style.outline = 'none';
+        textarea.style.boxShadow = 'none';
+        textarea.style.background = 'transparent';
+        document.body.appendChild(textarea);
+        textarea.select();
+        
+        try {
+            const successful = document.execCommand('copy');
+            
+            if (successful) {
+                // Butonu başarı mesajına çevir
+                const btn = event.target.closest('button');
+                const originalHTML = btn.innerHTML;
+                btn.innerHTML = '<i class="fas fa-check"></i> Kopyalandı!';
+                btn.classList.remove('btn-success');
+                btn.classList.add('btn-primary');
+                
+                // 2 saniye sonra eski haline dön
+                setTimeout(() => {
+                    btn.innerHTML = originalHTML;
+                    btn.classList.remove('btn-primary');
+                    btn.classList.add('btn-success');
+                }, 2000);
+            } else {
+                alert('Kopyalama başarısız oldu. Lütfen manuel olarak kopyalayın.');
+            }
+        } catch (err) {
+            alert('Kopyalama hatası: ' + err.message);
+        } finally {
+            document.body.removeChild(textarea);
+        }
+    }
+    
+    // AI Chat Functions
+    const MATCH_ID = {{ match.match_id }};
+    let chatHistory = [];
+    
+    // Chat açık/kapalı durumunu toggle et
+    function toggleAIChat() {
+        const container = document.getElementById('aiChatContainer');
+        container.classList.toggle('active');
+        
+        // İlk açılışta chat geçmişini yükle
+        if (container.classList.contains('active') && chatHistory.length === 0) {
+            loadChatHistory();
+        }
+    }
+    
+    // Chat geçmişini API'den yükle
+    async function loadChatHistory() {
+        try {
+            const response = await fetch(`/api/chat/${MATCH_ID}/history/`);
+            const data = await response.json();
+            
+            const messagesContainer = document.getElementById('aiChatMessages');
+            
+            // Hoş geldin mesajını temizle (sadece ilk yüklemede)
+            if (data.messages.length > 0) {
+                messagesContainer.innerHTML = '<div class="typing-indicator" id="typingIndicator"><span></span><span></span><span></span></div>';
+            }
+            
+            // Mesajları ekle
+            data.messages.forEach(msg => {
+                addMessageToUI(msg.user_message, 'user', msg.created_at);
+                addMessageToUI(msg.ai_response, 'ai', msg.created_at);
+            });
+            
+            chatHistory = data.messages;
+            scrollChatToBottom();
+        } catch (error) {
+            console.error('Chat geçmişi yüklenemedi:', error);
+        }
+    }
+    
+    // UI'ya mesaj ekle
+    function addMessageToUI(message, sender, timestamp = null) {
+        const messagesContainer = document.getElementById('aiChatMessages');
+        const typingIndicator = document.getElementById('typingIndicator');
+        
+        const messageDiv = document.createElement('div');
+        messageDiv.className = `chat-message ${sender}`;
+        
+        const bubble = document.createElement('div');
+        bubble.className = 'chat-bubble';
+        bubble.textContent = message;
+        
+        messageDiv.appendChild(bubble);
+        
+        if (timestamp) {
+            const timeDiv = document.createElement('div');
+            timeDiv.className = 'chat-timestamp';
+            const date = new Date(timestamp);
+            timeDiv.textContent = date.toLocaleTimeString('tr-TR', { hour: '2-digit', minute: '2-digit' });
+            messageDiv.appendChild(timeDiv);
+        }
+        
+        // Typing indicator'dan önce ekle
+        messagesContainer.insertBefore(messageDiv, typingIndicator);
+        scrollChatToBottom();
+    }
+    
+    // Chat'i en alta scroll et
+    function scrollChatToBottom() {
+        const messagesContainer = document.getElementById('aiChatMessages');
+        messagesContainer.scrollTop = messagesContainer.scrollHeight;
+    }
+    
+    // Mesaj gönder
+    async function sendChatMessage() {
+        const input = document.getElementById('aiChatInput');
+        const sendButton = document.getElementById('aiChatSend');
+        const message = input.value.trim();
+        
+        if (!message) return;
+        
+        // UI'yı güncelle
+        addMessageToUI(message, 'user', new Date().toISOString());
+        input.value = '';
+        sendButton.disabled = true;
+        
+        // Typing indicator göster
+        const typingIndicator = document.getElementById('typingIndicator');
+        typingIndicator.classList.add('active');
+        scrollChatToBottom();
+        
+        try {
+            const response = await fetch(`/api/chat/${MATCH_ID}/`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': getCookie('csrftoken')
+                },
+                body: JSON.stringify({ message: message })
+            });
+            
+            const data = await response.json();
+            
+            // Typing indicator gizle
+            typingIndicator.classList.remove('active');
+            
+            // AI yanıtını ekle
+            addMessageToUI(data.ai_response, 'ai', data.timestamp);
+            
+        } catch (error) {
+            console.error('Mesaj gönderilemedi:', error);
+            typingIndicator.classList.remove('active');
+            addMessageToUI('❌ Üzgünüm, bir hata oluştu. Lütfen tekrar dene.', 'ai');
+        } finally {
+            sendButton.disabled = false;
+            input.focus();
+        }
+    }
+    
+    // Enter tuşu ile gönder
+    function handleChatKeyPress(event) {
+        if (event.key === 'Enter') {
+            sendChatMessage();
+        }
+    }
+    
+    // CSRF token al
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+</script>
+
+<!-- AI Chat Widget HTML -->
+<button class="ai-chat-button" onclick="toggleAIChat()" id="aiChatButton" title="AI Asistan ile Konuş">
+    <i class="fas fa-robot"></i>
+</button>
+
+<div class="ai-chat-container" id="aiChatContainer">
+    <div class="ai-chat-header">
+        <h4><i class="fas fa-robot"></i> AI Asistan</h4>
+        <button class="ai-chat-close" onclick="toggleAIChat()">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+    
+    <div class="ai-chat-messages" id="aiChatMessages">
+        <div class="chat-message ai">
+            <div class="chat-bubble">
+                👋 Merhaba! Bu maç hakkında sana yardımcı olabilirim. Sormak istediğin bir şey var mı?
+            </div>
+        </div>
+        <div class="typing-indicator" id="typingIndicator">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+    
+    <div class="ai-chat-input-container">
+        <input 
+            type="text" 
+            class="ai-chat-input" 
+            id="aiChatInput" 
+            placeholder="Bir soru sor..."
+            onkeypress="handleChatKeyPress(event)"
+        >
+        <button class="ai-chat-send" onclick="sendChatMessage()" id="aiChatSend">
+            <i class="fas fa-paper-plane"></i>
+        </button>
+    </div>
+</div>
+
+</script>
+{% endblock %}

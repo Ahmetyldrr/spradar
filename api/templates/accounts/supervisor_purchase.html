@@ -1,0 +1,142 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ supervisor.user.username }} - Kredi Satın Al - Spradar{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <!-- Satıcı Bilgisi -->
+            <div class="card shadow-sm mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0">
+                        <i class="bi bi-person-badge"></i> Satıcı: {{ supervisor.user.username }}
+                    </h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="mb-2">
+                                <strong><i class="bi bi-star-fill text-warning"></i> Başarı Oranı:</strong>
+                                <span class="badge bg-success">{{ success_rate|floatformat:1 }}%</span>
+                            </p>
+                            <p class="mb-2">
+                                <strong><i class="bi bi-box-seam"></i> Stok:</strong>
+                                <span class="badge bg-info">{{ supervisor.credits }} kredi</span>
+                            </p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="mb-2">
+                                <strong><i class="bi bi-cash-coin"></i> Fiyat:</strong>
+                                <span class="badge bg-success fs-6">{{ supervisor.supervisor_price }} ₺ / kredi</span>
+                            </p>
+                            <p class="mb-2">
+                                <strong><i class="bi bi-bank"></i> Banka:</strong>
+                                {{ supervisor.supervisor_bank_name }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Satın Alma Formu -->
+            <div class="card shadow-sm">
+                <div class="card-header bg-light">
+                    <h5 class="mb-0"><i class="bi bi-cart-plus"></i> Kredi Satın Al</h5>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        {% csrf_token %}
+
+                        <!-- Kredi Miktarı -->
+                        <div class="mb-4">
+                            <label for="amount" class="form-label">
+                                <i class="bi bi-coins"></i> Kaç Kredi Almak İstiyorsunuz?
+                            </label>
+                            <input 
+                                type="number" 
+                                class="form-control form-control-lg" 
+                                id="amount" 
+                                name="amount" 
+                                min="1" 
+                                max="{{ supervisor.credits }}"
+                                value="10"
+                                required
+                            >
+                            <small class="form-text text-muted">
+                                Maksimum: {{ supervisor.credits }} kredi
+                            </small>
+                        </div>
+
+                        <!-- Toplam Tutar Gösterimi -->
+                        <div class="alert alert-info mb-4">
+                            <h5 class="alert-heading"><i class="bi bi-calculator"></i> Ödeme Özeti</h5>
+                            <hr>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Kredi Miktarı:</span>
+                                <strong id="credit_amount_display">10 kredi</strong>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span>Birim Fiyat:</span>
+                                <strong>{{ supervisor.supervisor_price }} ₺</strong>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between">
+                                <h5>Toplam Tutar:</h5>
+                                <h5 class="text-success">
+                                    <strong id="total_price_display">{{ initial_total }} ₺</strong>
+                                </h5>
+                            </div>
+                        </div>
+
+                        <!-- Bilgilendirme -->
+                        <div class="alert alert-warning">
+                            <h6><i class="bi bi-info-circle"></i> Önemli Bilgiler</h6>
+                            <ul class="mb-0">
+                                <li>Siparişi verdikten sonra ödeme bilgileri gösterilecektir</li>
+                                <li>Satıcının banka hesabına havale/EFT yapmanız gerekecek</li>
+                                <li>Ödeme onayı satıcı tarafından kontrol edilecektir</li>
+                                <li>Krediler onaylandıktan sonra hesabınıza yüklenecektir</li>
+                            </ul>
+                        </div>
+
+                        <!-- Onay Kutusu -->
+                        <div class="mb-4">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" id="terms" required>
+                                <label class="form-check-label" for="terms">
+                                    Satın alma koşullarını kabul ediyorum ve ödemeyi yapacağımı taahhüt ediyorum
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Butonlar -->
+                        <div class="d-grid gap-2">
+                            <button type="submit" class="btn btn-success btn-lg">
+                                <i class="bi bi-cart-check"></i> Siparişi Onayla
+                            </button>
+                            <a href="{% url 'supervisor_list' %}" class="btn btn-outline-secondary">
+                                <i class="bi bi-arrow-left"></i> Geri Dön
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Toplam tutar hesaplama
+    const amountInput = document.getElementById('amount');
+    const pricePerCredit = {{ supervisor.supervisor_price }};
+    
+    amountInput.addEventListener('input', function() {
+        const amount = parseInt(this.value) || 0;
+        const total = (amount * pricePerCredit).toFixed(2);
+        
+        document.getElementById('credit_amount_display').textContent = amount + ' kredi';
+        document.getElementById('total_price_display').textContent = total + ' ₺';
+    });
+</script>
+{% endblock %}

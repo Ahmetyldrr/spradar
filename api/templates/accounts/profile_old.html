@@ -1,0 +1,466 @@
+{% extends 'base.html' %}
+
+{% block title %}Profilim - Spradar{% endblock %}
+
+{% block content %}
+<!-- Kullanıcı Başlık Kartı -->
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h2 class="mb-1">
+                            <i class="bi bi-person-circle text-primary"></i>
+                            {{ user.get_full_name|default:user.username }}
+                        </h2>
+                        <p class="text-muted mb-0">
+                            <i class="bi bi-envelope"></i> {{ user.email }}
+                        </p>
+                        <p class="text-muted mb-0">
+                            <i class="bi bi-calendar"></i> Üyelik: {{ profile.created_at|date:"d F Y" }}
+                        </p>
+                    </div>
+                    <div class="col-md-4 text-md-end mt-3 mt-md-0">
+                        <span class="badge badge-membership badge-{{ profile.membership_type|lower }} fs-5">
+                            {% if profile.membership_type == 'FREE' %}🆓
+                            {% elif profile.membership_type == 'GOLD' %}🥇
+                            {% elif profile.membership_type == 'PREMIUM' %}💎
+                            {% elif profile.membership_type == 'PROFESSIONAL' %}👑
+                            {% endif %}
+                            {{ profile.get_membership_type_display }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Kredi ve İstatistikler -->
+<div class="row mb-4">
+    <!-- Kalan Kredi -->
+    <div class="col-md-4 mb-3 mb-md-0">
+        <div class="credit-display">
+            <i class="bi bi-coin" style="font-size: 2rem;"></i>
+            <h1>{{ profile.credits }}</h1>
+            <p class="mb-0">Kalan Kredi</p>
+        </div>
+    </div>
+    
+    <!-- İstatistikler -->
+    <div class="col-md-8">
+        <div class="row g-3">
+            <div class="col-6 col-md-4">
+                <div class="stat-card">
+                    <h3>{{ total_comments }}</h3>
+                    <p>Toplam Yorum</p>
+                    <i class="bi bi-chat-dots text-primary" style="font-size: 2rem;"></i>
+                </div>
+            </div>
+            <div class="col-6 col-md-4">
+                <div class="stat-card">
+                    <h3>+{{ profile.total_credits_earned }}</h3>
+                    <p>Kazanılan</p>
+                    <i class="bi bi-plus-circle text-success" style="font-size: 2rem;"></i>
+                </div>
+            </div>
+            <div class="col-6 col-md-4">
+                <div class="stat-card">
+                    <h3>-{{ profile.total_credits_used }}</h3>
+                    <p>Kullanılan</p>
+                    <i class="bi bi-dash-circle text-danger" style="font-size: 2rem;"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Son Yorumlar ve İşlemler -->
+<div class="row mb-4">
+    <!-- Son Yorumlar -->
+    <div class="col-md-6 mb-3 mb-md-0">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">
+                    <i class="bi bi-clock-history"></i>
+                    Son Yorumlar
+                </h5>
+                <a href="{% url 'history' %}" class="btn btn-sm btn-light">
+                    Tümü <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+            <div class="card-body p-0">
+                {% if recent_comments %}
+                    {% for comment in recent_comments %}
+                        <div class="transaction-item">
+                            <div class="d-flex justify-content-between align-items-start">
+                                <div class="flex-grow-1">
+                                    <h6 class="mb-1">{{ comment.match_info|default:"Maç Yorumu" }}</h6>
+                                    <p class="text-muted mb-1 small">
+                                        {{ comment.user_question|truncatewords:10 }}
+                                    </p>
+                                    <small class="text-muted">
+                                        <i class="bi bi-clock"></i>
+                                        {{ comment.created_at|timesince }} önce
+                                    </small>
+                                </div>
+                                <span class="badge bg-danger ms-2">-{{ comment.credits_used }}</span>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="text-center py-4 text-muted">
+                        <i class="bi bi-inbox" style="font-size: 3rem;"></i>
+                        <p class="mt-2">Henüz yorum yapmadınız</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    
+    <!-- Son İşlemler -->
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h5 class="mb-0">
+                    <i class="bi bi-receipt"></i>
+                    Son İşlemler
+                </h5>
+                <a href="{% url 'credit_history' %}" class="btn btn-sm btn-light">
+                    Tümü <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+            <div class="card-body p-0">
+                {% if recent_transactions %}
+                    {% for transaction in recent_transactions %}
+                        <div class="transaction-item">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div>
+                                    <h6 class="mb-1">
+                                        {% if transaction.transaction_type == 'CREDIT' %}
+                                            <i class="bi bi-plus-circle text-success"></i>
+                                        {% else %}
+                                            <i class="bi bi-dash-circle text-danger"></i>
+                                        {% endif %}
+                                        {{ transaction.reason }}
+                                    </h6>
+                                    <small class="text-muted">
+                                        <i class="bi bi-clock"></i>
+                                        {{ transaction.created_at|timesince }} önce
+                                    </small>
+                                </div>
+                                <div class="text-end">
+                                    {% if transaction.transaction_type == 'CREDIT' %}
+                                        <span class="badge bg-success">+{{ transaction.amount }}</span>
+                                    {% else %}
+                                        <span class="badge bg-danger">-{{ transaction.amount }}</span>
+                                    {% endif %}
+                                    <br>
+                                    <small class="text-muted">Bakiye: {{ transaction.balance_after }}</small>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="text-center py-4 text-muted">
+                        <i class="bi bi-inbox" style="font-size: 3rem;"></i>
+                        <p class="mt-2">Henüz işlem yok</p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Özel Kredi Satın Alma -->
+<div class="row mb-4" id="purchase-credits">
+    <div class="col-12">
+        <div class="card border-primary">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0">
+                    <i class="bi bi-lightning-charge-fill"></i>
+                    İstediğiniz Kadar Kredi Satın Alın
+                </h4>
+            </div>
+            <div class="card-body">
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <p class="mb-3">
+                            <i class="bi bi-info-circle text-primary"></i>
+                            <strong>Her kredi sadece 0,49 TL!</strong> İhtiyacınız kadar kredi satın alabilirsiniz.
+                        </p>
+                        
+                        <form method="POST" action="{% url 'purchase_credits' %}" class="needs-validation" novalidate>
+                            {% csrf_token %}
+                            <div class="row g-3 align-items-end">
+                                <div class="col-md-6">
+                                    <label for="credit_amount" class="form-label">
+                                        <i class="bi bi-coin"></i>
+                                        Kredi Miktarı
+                                    </label>
+                                    <input 
+                                        type="number" 
+                                        class="form-control form-control-lg" 
+                                        id="credit_amount" 
+                                        name="credit_amount" 
+                                        min="10" 
+                                        max="100000" 
+                                        value="100" 
+                                        required
+                                        oninput="calculatePrice()"
+                                    >
+                                    <div class="form-text">
+                                        Min: 10 - Max: 100.000
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <button type="submit" class="btn btn-primary btn-lg w-100">
+                                        <i class="bi bi-cart-plus"></i>
+                                        <span id="purchase_button_text">49,00 TL - Sipariş Ver</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                        
+                        <div class="alert alert-info mt-3 mb-0">
+                            <i class="bi bi-info-circle-fill"></i>
+                            <strong>Nasıl Çalışır?</strong>
+                            <ol class="mb-0 mt-2 ps-3">
+                                <li>Kredi miktarını girin ve sipariş verin</li>
+                                <li>Banka havalesi veya EFT ile ödeme yapın</li>
+                                <li>Ödeme onaylandıktan sonra krediler hesabınıza tanımlanır</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-4 text-center">
+                        <div class="price-display-box">
+                            <div class="price-label">Toplam Tutar</div>
+                            <div class="price-amount" id="total_price">49,00 ₺</div>
+                            <div class="price-per-credit">0,49 ₺ / kredi</div>
+                        </div>
+                        
+                        <div class="mt-3">
+                            <small class="text-muted">
+                                <i class="bi bi-shield-check"></i>
+                                Güvenli ödeme
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bekleyen Siparişler ve Ödeme Bilgileri -->
+{% if new_purchase or pending_purchases %}
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card border-success">
+            <div class="card-header bg-success text-white">
+                <h4 class="mb-0">
+                    <i class="bi bi-credit-card-fill"></i>
+                    {% if new_purchase %}✅ Sipariş Onaylandı - Ödeme Bilgileri{% else %}Bekleyen Siparişleriniz{% endif %}
+                </h4>
+            </div>
+            <div class="card-body">
+                {% if new_purchase %}
+                <!-- Yeni Sipariş Bilgileri -->
+                <div class="alert alert-success">
+                    <h5><i class="bi bi-check-circle-fill"></i> Sipariş Başarıyla Oluşturuldu!</h5>
+                    <hr>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p><strong>Sipariş No:</strong> #{{ new_purchase.id }}</p>
+                            <p><strong>Kredi Miktarı:</strong> {{ new_purchase.credit_amount|floatformat:0 }} Kredi</p>
+                            <p><strong>Tutar:</strong> {{ new_purchase.price|floatformat:2 }} TL</p>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="alert alert-warning mb-0">
+                                <h6><i class="bi bi-exclamation-triangle-fill"></i> Ödeme Kodu</h6>
+                                <h3 class="text-center mb-0" style="font-family: monospace; letter-spacing: 2px;">
+                                    {{ new_purchase.payment_code }}
+                                </h3>
+                                <small class="d-block text-center mt-2">Havale/EFT açıklamasına bu kodu yazın!</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endif %}
+                
+                <!-- Banka Hesap Bilgileri -->
+                <div class="row mt-3">
+                    <div class="col-12">
+                        <h5><i class="bi bi-bank"></i> Ödeme Yapabileceğiniz Banka Hesapları:</h5>
+                    </div>
+                    {% for bank in bank_accounts %}
+                    <div class="col-md-6 mb-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h6 class="card-title"><i class="bi bi-bank2"></i> {{ bank.bank_name }}</h6>
+                                <p class="mb-1"><strong>IBAN:</strong></p>
+                                <div class="input-group mb-2">
+                                    <input type="text" class="form-control" value="{{ bank.iban }}" readonly id="iban_{{ forloop.counter }}">
+                                    <button class="btn btn-outline-primary" type="button" onclick="copyToClipboard('iban_{{ forloop.counter }}')">
+                                        <i class="bi bi-clipboard"></i> Kopyala
+                                    </button>
+                                </div>
+                                <p class="mb-0"><strong>Hesap Sahibi:</strong> {{ bank.account_holder }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                
+                <!-- Ödeme Talimatları -->
+                <div class="alert alert-info mt-3">
+                    <h6><i class="bi bi-info-circle-fill"></i> Ödeme Nasıl Yapılır?</h6>
+                    {{ payment_instructions|linebreaks }}
+                    <ol class="mb-0">
+                        <li>Yukarıdaki banka hesaplarından birine havale/EFT yapın</li>
+                        <li><strong>Açıklama kısmına ödeme kodunuzu yazın</strong> ({% if new_purchase %}{{ new_purchase.payment_code }}{% else %}Sipariş detaylarında görebilirsiniz{% endif %})</li>
+                        <li>Ödeme yaptıktan sonra admin onayı bekleyin</li>
+                        <li>Onaylandığında kredileriniz otomatik olarak hesabınıza tanımlanır</li>
+                    </ol>
+                </div>
+                
+                <!-- Bekleyen Siparişler Tablosu -->
+                {% if pending_purchases %}
+                <div class="table-responsive mt-4">
+                    <h6><i class="bi bi-hourglass-split"></i> Bekleyen Siparişleriniz</h6>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Sipariş No</th>
+                                <th>Kredi</th>
+                                <th>Tutar</th>
+                                <th>Ödeme Kodu</th>
+                                <th>Tarih</th>
+                                <th>Durum</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for purchase in pending_purchases %}
+                            <tr>
+                                <td>#{{ purchase.id }}</td>
+                                <td>{{ purchase.credit_amount|floatformat:0 }}</td>
+                                <td>{{ purchase.price|floatformat:2 }} TL</td>
+                                <td>
+                                    <code style="font-weight: bold; font-size: 0.9rem;">{{ purchase.payment_code }}</code>
+                                </td>
+                                <td>{{ purchase.created_at|date:"d.m.Y H:i" }}</td>
+                                <td><span class="badge bg-warning">⏳ Beklemede</span></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function copyToClipboard(elementId) {
+    const input = document.getElementById(elementId);
+    input.select();
+    input.setSelectionRange(0, 99999); // Mobile
+    document.execCommand('copy');
+    
+    // Feedback
+    const button = input.nextElementSibling;
+    const originalText = button.innerHTML;
+    button.innerHTML = '<i class="bi bi-check"></i> Kopyalandı!';
+    button.classList.remove('btn-outline-primary');
+    button.classList.add('btn-success');
+    
+    setTimeout(() => {
+        button.innerHTML = originalText;
+        button.classList.remove('btn-success');
+        button.classList.add('btn-outline-primary');
+    }, 2000);
+}
+</script>
+{% endif %}
+
+<script>
+function calculatePrice() {
+    const creditAmount = document.getElementById('credit_amount').value;
+    const pricePerCredit = 0.49;
+    const totalPrice = (creditAmount * pricePerCredit).toFixed(2);
+    
+    // Fiyat gösterimini güncelle
+    document.getElementById('total_price').textContent = totalPrice.replace('.', ',') + ' ₺';
+    document.getElementById('purchase_button_text').textContent = totalPrice.replace('.', ',') + ' TL - Sipariş Ver';
+}
+
+// Sayfa yüklendiğinde varsayılan fiyatı hesapla
+document.addEventListener('DOMContentLoaded', calculatePrice);
+</script>
+
+<!-- Üyelik Paketleri -->
+{% if profile.membership_type == 'FREE' %}
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="mb-0">
+                    <i class="bi bi-star-fill"></i>
+                    Üyeliğinizi Yükseltin
+                </h4>
+            </div>
+            <div class="card-body">
+                <div class="row g-4">
+                    {% for package in membership_packages %}
+                        <div class="col-md-4">
+                            <div class="membership-card">
+                                <div class="membership-icon">{{ package.icon }}</div>
+                                <h4>{{ package.name }}</h4>
+                                <h2 class="text-primary mb-3">{{ package.price }}</h2>
+                                <p class="text-muted mb-3">{{ package.credits }} AI Yorumu</p>
+                                <ul class="feature-list">
+                                    {% for feature in package.features %}
+                                        <li>
+                                            <i class="bi bi-check-circle-fill"></i>
+                                            {{ feature }}
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                                <button class="btn btn-gradient w-100 mt-3" onclick="alert('Ödeme sistemi yakında aktif olacak!')">
+                                    <i class="bi bi-cart-plus"></i>
+                                    Satın Al
+                                </button>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<script>
+// Sayfa yüklendiğinde anchor varsa smooth scroll yap
+document.addEventListener('DOMContentLoaded', function() {
+    if (window.location.hash === '#purchase-credits') {
+        const element = document.getElementById('purchase-credits');
+        if (element) {
+            setTimeout(function() {
+                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                // Karta dikkat çekmek için kısa bir animasyon
+                element.style.transition = 'all 0.3s ease';
+                element.style.transform = 'scale(1.02)';
+                setTimeout(function() {
+                    element.style.transform = 'scale(1)';
+                }, 300);
+            }, 100);
+        }
+    }
+});
+</script>
+
+{% endblock %}

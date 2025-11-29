@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% block title %}Comeback Analizleri - FX Futbol{% endblock %}
+
+{% block content %}
+<div class="row mb-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body text-center">
+                <h2 class="mb-3">
+                    <i class="fas fa-chart-line"></i> Comeback Analizleri
+                </h2>
+                <p class="text-muted">En yüksek comeback potansiyeline sahip maçlar</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% if matches %}
+    <div class="row mb-3">
+        <div class="col-12">
+            <div class="alert alert-success">
+                <i class="fas fa-check-circle"></i> 
+                <strong>{{ matches|length }}</strong> comeback analizi bulundu
+            </div>
+        </div>
+    </div>
+    
+    <div class="row">
+        {% for match in matches %}
+        <div class="col-md-6 col-lg-4 mb-4">
+            <a href="{% url 'comeback_detail' match.match_id %}" class="text-decoration-none">
+                <div class="card match-card h-100">
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <span class="badge bg-success badge-score">
+                                Skor: {{ match.combined_comeback_score|floatformat:1 }}
+                            </span>
+                            {% if match.data_quality == 'OK' %}
+                            <span class="badge bg-primary">
+                                <i class="fas fa-check"></i> Kaliteli
+                            </span>
+                            {% else %}
+                            <span class="badge bg-warning">
+                                <i class="fas fa-exclamation"></i> Eksik
+                            </span>
+                            {% endif %}
+                        </div>
+                        
+                        <h6 class="team-name text-center mb-2">
+                            <i class="fas fa-home"></i> {{ match.home_team_name }}
+                            <br>
+                            <small class="text-muted">({{ match.home_comeback_score|floatformat:1 }})</small>
+                        </h6>
+                        
+                        <p class="text-center text-muted mb-2">
+                            <strong>VS</strong>
+                        </p>
+                        
+                        <h6 class="team-name text-center mb-3">
+                            <i class="fas fa-plane"></i> {{ match.away_team_name }}
+                            <br>
+                            <small class="text-muted">({{ match.away_comeback_score|floatformat:1 }})</small>
+                        </h6>
+                        
+                        <hr>
+                        
+                        <div class="text-center">
+                            <small>
+                                <i class="fas fa-calendar"></i> {{ match.match_date }}
+                            </small>
+                        </div>
+                        
+                        <div class="text-center mt-3">
+                            <button class="btn btn-sm btn-outline-success">
+                                <i class="fas fa-chart-line"></i> Analizi Gör
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body text-center py-5">
+                    <i class="fas fa-search fa-3x text-muted mb-3"></i>
+                    <h4>Comeback Analizi Bulunamadı</h4>
+                    <p class="text-muted">Henüz comeback analizi yapılmamış</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endif %}
+{% endblock %}
