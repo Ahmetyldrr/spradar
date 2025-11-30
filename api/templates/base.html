@@ -228,6 +228,126 @@
             font-weight: 600;
         }
         
+        /* 📱 MOBİL İYİLEŞTİRMELER */
+        @media (max-width: 768px) {
+            /* Navbar mobil düzenlemeler */
+            .navbar-brand {
+                font-size: 1.2rem;
+            }
+            
+            /* Navbar menü mobilde - YEŞİL arkaplan */
+            .navbar-nav {
+                background: linear-gradient(135deg, var(--grass-green) 0%, var(--field-green) 100%);
+                border-radius: 12px;
+                margin-top: 10px;
+                padding: 10px;
+            }
+            
+            .nav-link {
+                color: white !important;
+                padding: 12px 15px !important;
+                border-radius: 8px;
+                margin: 5px 0;
+            }
+            
+            .nav-link:hover, .nav-link.active {
+                background: rgba(255, 255, 255, 0.2);
+                color: white !important;
+            }
+            
+            /* Dropdown menü mobilde */
+            .dropdown-menu {
+                width: 100%;
+                margin-top: 5px !important;
+            }
+            
+            /* Main container mobil padding */
+            .main-container {
+                margin-top: 15px;
+                margin-bottom: 30px;
+                padding: 0 10px;
+            }
+            
+            /* Card'lar mobilde */
+            .card {
+                border-radius: 12px;
+                margin-bottom: 15px;
+            }
+            
+            /* Match card mobil */
+            .match-card {
+                padding: 15px !important;
+            }
+            
+            .team-name {
+                font-size: 0.95rem;
+            }
+            
+            .badge-score {
+                font-size: 0.9rem;
+                padding: 6px 12px;
+            }
+            
+            /* Butonlar mobilde */
+            .btn {
+                font-size: 0.9rem;
+                padding: 0.5rem 1rem;
+            }
+            
+            .btn-register {
+                padding: 0.5rem 1.2rem;
+                font-size: 0.9rem;
+            }
+            
+            /* Footer mobil */
+            .footer {
+                padding: 15px 0;
+                font-size: 0.9rem;
+            }
+            
+            /* Container padding */
+            .container-fluid {
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+            
+            /* Tablo responsive */
+            .table-responsive {
+                font-size: 0.85rem;
+            }
+            
+            /* Modal mobilde tam ekran gibi */
+            .modal-dialog {
+                margin: 10px;
+                max-width: calc(100% - 20px);
+            }
+            
+            .modal-content {
+                border-radius: 12px;
+            }
+        }
+        
+        /* Çok küçük ekranlar (iPhone SE gibi) */
+        @media (max-width: 375px) {
+            .navbar-brand {
+                font-size: 1rem;
+            }
+            
+            .team-name {
+                font-size: 0.85rem;
+            }
+            
+            .badge-score {
+                font-size: 0.8rem;
+                padding: 5px 10px;
+            }
+            
+            .btn {
+                font-size: 0.85rem;
+                padding: 0.4rem 0.8rem;
+            }
+        }
+        
         .footer {
             background: rgba(255, 255, 255, 0.95);
             padding: 20px 0;
@@ -254,7 +374,7 @@
     <nav class="navbar navbar-expand-lg navbar-light sticky-top">
         <div class="container-fluid px-4">
             <a class="navbar-brand" href="/">
-                <i class="fas fa-futbol"></i> FX Futbol Analytics
+                <i class="fas fa-futbol"></i> FxFutbol Analytics
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -263,7 +383,7 @@
                 <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item">
                         <a class="nav-link {% if request.resolver_match.url_name == 'match_list' %}active{% endif %}" href="{% url 'match_list' %}">
-                            <i class="fas fa-home"></i> Ana Sayfa
+                            <i class="fas fa-futbol"></i> Maçlar
                         </a>
                     </li>
                     <li class="nav-item">

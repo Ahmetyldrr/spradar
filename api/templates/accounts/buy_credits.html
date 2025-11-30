@@ -19,7 +19,7 @@
                         <div class="card-body text-center">
                             <h3 class="text-primary"><i class="bi bi-building"></i> Admin'den Al</h3>
                             <p class="mb-2">Resmi satış kanalı</p>
-                            <h4 class="text-success">0.49 ₺ / kredi</h4>
+                            <h4 class="text-success">1.49 ₺ / kredi</h4>
                             <button class="btn btn-primary" onclick="showAdminPurchase()">
                                 <i class="bi bi-cart-plus"></i> Admin'den Satın Al
                             </button>
@@ -72,8 +72,8 @@
                             <div class="col-md-6">
                                 <div class="price-display-box text-center">
                                     <div class="price-label">Toplam Tutar</div>
-                                    <div class="price-amount" id="total_price">49,00 ₺</div>
-                                    <div class="price-per-credit">0,49 ₺ / kredi</div>
+                                    <div class="price-amount" id="total_price">149,00 ₺</div>
+                                    <div class="price-per-credit">1,49 ₺ / kredi</div>
                                 </div>
                             </div>
                             
@@ -251,7 +251,7 @@
 <script>
 function calculatePrice() {
     const creditAmount = document.getElementById('credit_amount').value;
-    const pricePerCredit = 0.49;
+    const pricePerCredit = 1.49;
     const totalPrice = (creditAmount * pricePerCredit).toFixed(2);
     
     // Fiyat gösterimini güncelle

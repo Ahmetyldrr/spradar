@@ -27,28 +27,20 @@
                         {% csrf_token %}
                         
                         <div class="row">
-                            <!-- Kullanıcı Seçimi -->
+                            <!-- Email Girişi -->
                             <div class="col-md-6 mb-3">
                                 <label for="to_username" class="form-label">
-                                    <i class="bi bi-person"></i> Alıcı Kullanıcı Adı
+                                    <i class="bi bi-envelope"></i> Alıcı Email Adresi
                                 </label>
                                 <input 
-                                    type="text" 
+                                    type="email" 
                                     class="form-control" 
                                     id="to_username" 
                                     name="to_username" 
-                                    list="userList"
-                                    placeholder="Kullanıcı adı yazın..."
+                                    placeholder="ornek@email.com"
                                     required
                                 >
-                                <datalist id="userList">
-                                    {% for user_profile in all_users %}
-                                        <option value="{{ user_profile.user.username }}">
-                                            {{ user_profile.user.username }} ({{ user_profile.credits }} kredi)
-                                        </option>
-                                    {% endfor %}
-                                </datalist>
-                                <small class="form-text text-muted">Veya listeden seçin</small>
+                                <small class="form-text text-muted">Kredi göndermek istediğiniz kullanıcının email adresi</small>
                             </div>
 
                             <!-- Miktar -->
@@ -112,113 +104,6 @@
                     </form>
                 </div>
             </div>
-
-            <!-- Transfer Geçmişi -->
-            <div class="row">
-                <!-- Gönderilen -->
-                <div class="col-md-6 mb-4">
-                    <div class="card shadow-sm">
-                        <div class="card-header bg-danger text-white">
-                            <h5 class="mb-0"><i class="bi bi-arrow-up-circle"></i> Gönderilen Transferler</h5>
-                        </div>
-                        <div class="card-body" style="max-height: 400px; overflow-y: auto;">
-                            {% if sent_transfers %}
-                                <ul class="list-group list-group-flush">
-                                    {% for transfer in sent_transfers %}
-                                        <li class="list-group-item">
-                                            <div class="d-flex justify-content-between align-items-start">
-                                                <div>
-                                                    <strong class="text-danger">-{{ transfer.amount }} kredi</strong>
-                                                    <br>
-                                                    <small class="text-muted">
-                                                        <i class="bi bi-person"></i> {{ transfer.to_user.user.username }}
-                                                    </small>
-                                                    {% if transfer.note %}
-                                                        <br>
-                                                        <small><i class="bi bi-chat-quote"></i> {{ transfer.note }}</small>
-                                                    {% endif %}
-                                                </div>
-                                                <small class="text-muted">
-                                                    {{ transfer.created_at|date:"d.m.Y H:i" }}
-                                                </small>
-                                            </div>
-                                        </li>
-                                    {% endfor %}
-                                </ul>
-                            {% else %}
-                                <p class="text-center text-muted py-4">
-                                    <i class="bi bi-inbox"></i><br>
-                                    Henüz transfer göndermediniz
-                                </p>
-                            {% endif %}
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Alınan -->
-                <div class="col-md-6 mb-4">
-                    <div class="card shadow-sm">
-                        <div class="card-header bg-success text-white">
-                            <h5 class="mb-0"><i class="bi bi-arrow-down-circle"></i> Alınan Transferler</h5>
-                        </div>
-                        <div class="card-body" style="max-height: 400px; overflow-y: auto;">
-                            {% if received_transfers %}
-                                <ul class="list-group list-group-flush">
-                                    {% for transfer in received_transfers %}
-                                        <li class="list-group-item">
-                                            <div class="d-flex justify-content-between align-items-start">
-                                                <div>
-                                                    <strong class="text-success">+{{ transfer.amount }} kredi</strong>
-                                                    <br>
-                                                    <small class="text-muted">
-                                                        <i class="bi bi-person"></i> {{ transfer.from_user.user.username }}
-                                                    </small>
-                                                    {% if transfer.note %}
-                                                        <br>
-                                                        <small><i class="bi bi-chat-quote"></i> {{ transfer.note }}</small>
-                                                    {% endif %}
-                                                </div>
-                                                <small class="text-muted">
-                                                    {{ transfer.created_at|date:"d.m.Y H:i" }}
-                                                </small>
-                                            </div>
-                                        </li>
-                                    {% endfor %}
-                                </ul>
-                            {% else %}
-                                <p class="text-center text-muted py-4">
-                                    <i class="bi bi-inbox"></i><br>
-                                    Henüz transfer almadınız
-                                </p>
-                            {% endif %}
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Kullanıcı Listesi (Referans) -->
-            <div class="card shadow-sm">
-                <div class="card-header bg-light">
-                    <h5 class="mb-0"><i class="bi bi-people"></i> Kullanıcılar</h5>
-                </div>
-                <div class="card-body" style="max-height: 300px; overflow-y: auto;">
-                    <div class="row">
-                        {% for user_profile in all_users %}
-                            <div class="col-md-4 mb-2">
-                                <button 
-                                    type="button" 
-                                    class="btn btn-outline-secondary btn-sm w-100 select-user"
-                                    data-username="{{ user_profile.user.username }}"
-                                >
-                                    <i class="bi bi-person-fill"></i> {{ user_profile.user.username }}
-                                    <br>
-                                    <small class="text-muted">{{ user_profile.credits }} kredi</small>
-                                </button>
-                            </div>
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
         </div>
     </div>
 </div>
@@ -229,17 +114,6 @@
         btn.addEventListener('click', function() {
             const amount = this.getAttribute('data-amount');
             document.getElementById('amount').value = amount;
-        });
-    });
-
-    // Kullanıcı seçimi
-    document.querySelectorAll('.select-user').forEach(btn => {
-        btn.addEventListener('click', function() {
-            const username = this.getAttribute('data-username');
-            document.getElementById('to_username').value = username;
-            
-            // Scroll to form
-            document.getElementById('transferForm').scrollIntoView({ behavior: 'smooth' });
         });
     });
 
@@ -254,14 +128,14 @@
             return false;
         }
         
-        const username = document.getElementById('to_username').value;
-        if (username === '{{ request.user.username }}') {
+        const email = document.getElementById('to_username').value;
+        if (email === '{{ request.user.email }}') {
             e.preventDefault();
             alert('Kendinize kredi gönderemezsiniz!');
             return false;
         }
         
-        return confirm(`${amount} kredi ${username} kullanıcısına gönderilecek. Onaylıyor musunuz?`);
+        return confirm(`${amount} kredi ${email} adresine gönderilecek. Onaylıyor musunuz?`);
     });
 </script>
 {% endblock %}

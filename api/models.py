@@ -415,7 +415,7 @@ class CommentHistory(models.Model):
 class CreditPurchase(models.Model):
     """
     Özel kredi satın alma siparişleri
-    Normal kullanıcı: 0.49 TL - Kullanıcı istediği kadar kredi alabilir
+    Normal kullanıcı: 1.49 TL - Kullanıcı istediği kadar kredi alabilir
     Supervisor: 0.29 TL - Sadece satış için (maçlarda kullanamaz)
     """
     PAYMENT_STATUS = [
@@ -425,7 +425,7 @@ class CreditPurchase(models.Model):
         ('COMPLETED', 'Tamamlandı'),
     ]
     
-    CREDIT_PRICE_NORMAL = 0.49  # TL - Normal kullanıcı fiyatı
+    CREDIT_PRICE_NORMAL = 1.49  # TL - Normal kullanıcı fiyatı
     CREDIT_PRICE_SUPERVISOR = 0.29  # TL - Supervisor fiyatı (toptan)
     
     user_profile = models.ForeignKey(

@@ -23,7 +23,7 @@ def register_view(request):
             user = form.save()
             
             # Otomatik giriş yap
-            login(request, user)
+            login(request, user, backend='django.contrib.auth.backends.ModelBackend')
             
             messages.success(
                 request,
@@ -55,7 +55,7 @@ def login_view(request):
             user = authenticate(username=username, password=password)
             
             if user is not None:
-                login(request, user)
+                login(request, user, backend='django.contrib.auth.backends.ModelBackend')
                 
                 # Remember me - Session süresini ayarla
                 if not remember_me:
@@ -746,6 +746,8 @@ def submit_support_ticket(request):
         return redirect('help')
     
     from .models import SupportTicket
+    from django.core.mail import send_mail
+    from django.conf import settings
     
     try:
         category = request.POST.get('category')
@@ -765,6 +767,35 @@ def submit_support_ticket(request):
             status='OPEN',
             priority='MEDIUM'
         )
+        
+        # Mail gönder
+        try:
+            email_subject = f'🎫 Yeni Destek Talebi #{ticket.id} - {category}'
+            email_body = f"""
+Yeni Destek Talebi Alındı!
+
+Talep No: #{ticket.id}
+Kullanıcı: {request.user.username} ({request.user.email})
+Kategori: {category}
+Konu: {subject}
+
+Mesaj:
+{message}
+
+---
+Talebe yanıt vermek için admin paneline giriş yapın:
+https://fxfutbol.com.tr/admin/api/supportticket/{ticket.id}/change/
+"""
+            
+            send_mail(
+                email_subject,
+                email_body,
+                settings.DEFAULT_FROM_EMAIL,
+                ['destek@fxfutbol.community'],
+                fail_silently=True,
+            )
+        except Exception as mail_error:
+            print(f"Mail gönderme hatası: {mail_error}")
         
         messages.success(
             request,

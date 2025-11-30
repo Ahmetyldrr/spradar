@@ -40,15 +40,12 @@ def match_list_table_view(request):
     selected_date = request.GET.get('date')
     
     if not selected_date:
-        # Tarih seçilmediyse TÜM maçları göster (son 7 gün)
-        from datetime import datetime, timedelta
-        
-        # Son 7 günün maçlarını al
+        # Tarih seçilmediyse BUGÜNÜ göster
+        from datetime import datetime
         today = datetime.now()
-        date_list = [(today - timedelta(days=i)).strftime('%d/%m/%y') for i in range(-3, 4)]  # 3 gün önce, bugün, 3 gün sonra
-        
-        matches = DailyMatchCommentary.objects.filter(match_date__in=date_list).order_by('match_date', 'match_time')
-        display_date = ''  # Boş = tüm tarihler
+        formatted_date = today.strftime('%d/%m/%y')
+        matches = DailyMatchCommentary.objects.filter(match_date=formatted_date).order_by('match_time')
+        display_date = today.strftime('%Y-%m-%d')  # HTML input için YYYY-MM-DD
     else:
         # HTML date input'tan gelen YYYY-MM-DD formatını DD/MM/YY'ye çevir
         try:
@@ -58,11 +55,11 @@ def match_list_table_view(request):
             matches = DailyMatchCommentary.objects.filter(match_date=formatted_date).order_by('match_time')
             display_date = selected_date
         except:
-            from datetime import datetime, timedelta
+            from datetime import datetime
             today = datetime.now()
-            date_list = [(today - timedelta(days=i)).strftime('%d/%m/%y') for i in range(-3, 4)]
-            matches = DailyMatchCommentary.objects.filter(match_date__in=date_list).order_by('match_date', 'match_time')
-            display_date = ''
+            formatted_date = today.strftime('%d/%m/%y')
+            matches = DailyMatchCommentary.objects.filter(match_date=formatted_date).order_by('match_time')
+            display_date = today.strftime('%Y-%m-%d')
     
     # Ülke filtresi
     selected_country = request.GET.get('country', '')

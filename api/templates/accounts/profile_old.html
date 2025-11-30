@@ -188,7 +188,7 @@
                     <div class="col-md-8">
                         <p class="mb-3">
                             <i class="bi bi-info-circle text-primary"></i>
-                            <strong>Her kredi sadece 0,49 TL!</strong> İhtiyacınız kadar kredi satın alabilirsiniz.
+                            <strong>Her kredi sadece 1,49 TL!</strong> İhtiyacınız kadar kredi satın alabilirsiniz.
                         </p>
                         
                         <form method="POST" action="{% url 'purchase_credits' %}" class="needs-validation" novalidate>
@@ -237,8 +237,8 @@
                     <div class="col-md-4 text-center">
                         <div class="price-display-box">
                             <div class="price-label">Toplam Tutar</div>
-                            <div class="price-amount" id="total_price">49,00 ₺</div>
-                            <div class="price-per-credit">0,49 ₺ / kredi</div>
+                            <div class="price-amount" id="total_price">149,00 ₺</div>
+                            <div class="price-per-credit">1,49 ₺ / kredi</div>
                         </div>
                         
                         <div class="mt-3">
@@ -389,7 +389,7 @@ function copyToClipboard(elementId) {
 <script>
 function calculatePrice() {
     const creditAmount = document.getElementById('credit_amount').value;
-    const pricePerCredit = 0.49;
+    const pricePerCredit = 1.49;
     const totalPrice = (creditAmount * pricePerCredit).toFixed(2);
     
     // Fiyat gösterimini güncelle

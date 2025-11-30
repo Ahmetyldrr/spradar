@@ -11487,3 +11487,2996 @@ ModuleNotFoundError: No module named 'allauth.socialaccount'
 [2025-11-29 03:08:14 +0000] [3738768] [INFO] Booting worker with pid: 3738768
 [2025-11-29 03:08:14 +0000] [3738769] [INFO] Booting worker with pid: 3738769
 [2025-11-29 03:08:14 +0000] [3738770] [INFO] Booting worker with pid: 3738770
+[2025-11-29 06:14:20 +0300] [3738769] [INFO] Worker exiting (pid: 3738769)
+[2025-11-29 06:14:20 +0300] [3738768] [INFO] Worker exiting (pid: 3738768)
+[2025-11-29 06:14:20 +0300] [3738766] [INFO] Worker exiting (pid: 3738766)
+[2025-11-29 03:14:20 +0000] [3738745] [INFO] Handling signal: term
+[2025-11-29 06:14:20 +0300] [3738770] [INFO] Worker exiting (pid: 3738770)
+[2025-11-29 03:14:20 +0000] [3738745] [ERROR] Worker (pid:3738769) was sent SIGTERM!
+[2025-11-29 03:14:21 +0000] [3738745] [INFO] Shutting down: Master
+[2025-11-29 03:14:23 +0000] [3742675] [INFO] Starting gunicorn 23.0.0
+[2025-11-29 03:14:23 +0000] [3742675] [INFO] Listening at: http://0.0.0.0:8095 (3742675)
+[2025-11-29 03:14:23 +0000] [3742675] [INFO] Using worker: sync
+[2025-11-29 03:14:23 +0000] [3742677] [INFO] Booting worker with pid: 3742677
+[2025-11-29 03:14:23 +0000] [3742678] [INFO] Booting worker with pid: 3742678
+[2025-11-29 03:14:23 +0000] [3742679] [INFO] Booting worker with pid: 3742679
+[2025-11-29 03:14:23 +0000] [3742680] [INFO] Booting worker with pid: 3742680
+[2025-11-29 03:22:38 +0000] [3742675] [INFO] Handling signal: term
+[2025-11-29 06:22:38 +0300] [3742677] [INFO] Worker exiting (pid: 3742677)
+[2025-11-29 06:22:38 +0300] [3742679] [INFO] Worker exiting (pid: 3742679)
+[2025-11-29 06:22:38 +0300] [3742680] [INFO] Worker exiting (pid: 3742680)
+[2025-11-29 06:22:38 +0300] [3742678] [INFO] Worker exiting (pid: 3742678)
+[2025-11-29 03:22:39 +0000] [3742675] [INFO] Shutting down: Master
+[2025-11-29 03:25:54 +0000] [3754786] [INFO] Starting gunicorn 23.0.0
+[2025-11-29 03:25:54 +0000] [3754786] [INFO] Listening at: http://0.0.0.0:8095 (3754786)
+[2025-11-29 03:25:54 +0000] [3754786] [INFO] Using worker: sync
+[2025-11-29 03:25:54 +0000] [3754788] [INFO] Booting worker with pid: 3754788
+[2025-11-29 03:25:54 +0000] [3754789] [INFO] Booting worker with pid: 3754789
+[2025-11-29 03:25:54 +0000] [3754790] [INFO] Booting worker with pid: 3754790
+[2025-11-29 03:25:54 +0000] [3754791] [INFO] Booting worker with pid: 3754791
+[2025-11-29 04:20:41 +0000] [3754786] [INFO] Handling signal: term
+[2025-11-29 07:20:41 +0300] [3754789] [INFO] Worker exiting (pid: 3754789)
+[2025-11-29 07:20:41 +0300] [3754788] [INFO] Worker exiting (pid: 3754788)
+[2025-11-29 07:20:41 +0300] [3754791] [INFO] Worker exiting (pid: 3754791)
+[2025-11-29 07:20:41 +0300] [3754790] [INFO] Worker exiting (pid: 3754790)
+[2025-11-29 04:20:41 +0000] [3754786] [ERROR] Worker (pid:3754789) was sent SIGTERM!
+[2025-11-29 04:20:41 +0000] [3754786] [ERROR] Worker (pid:3754788) was sent SIGTERM!
+[2025-11-29 04:20:41 +0000] [3754786] [INFO] Shutting down: Master
+[2025-11-29 04:20:42 +0000] [3800811] [INFO] Starting gunicorn 23.0.0
+[2025-11-29 04:20:42 +0000] [3800811] [INFO] Listening at: http://0.0.0.0:8095 (3800811)
+[2025-11-29 04:20:42 +0000] [3800811] [INFO] Using worker: sync
+[2025-11-29 04:20:42 +0000] [3800825] [INFO] Booting worker with pid: 3800825
+[2025-11-29 04:20:42 +0000] [3800828] [INFO] Booting worker with pid: 3800828
+[2025-11-29 04:20:42 +0000] [3800829] [INFO] Booting worker with pid: 3800829
+[2025-11-29 04:20:42 +0000] [3800831] [INFO] Booting worker with pid: 3800831
+[2025-11-29 04:21:57 +0000] [3800811] [INFO] Handling signal: term
+[2025-11-29 07:21:57 +0300] [3800825] [INFO] Worker exiting (pid: 3800825)
+[2025-11-29 07:21:57 +0300] [3800828] [INFO] Worker exiting (pid: 3800828)
+[2025-11-29 07:21:57 +0300] [3800829] [INFO] Worker exiting (pid: 3800829)
+[2025-11-29 07:21:57 +0300] [3800831] [INFO] Worker exiting (pid: 3800831)
+[2025-11-29 04:21:58 +0000] [3800811] [INFO] Shutting down: Master
+[2025-11-29 04:21:58 +0000] [3801782] [INFO] Starting gunicorn 23.0.0
+[2025-11-29 04:21:58 +0000] [3801782] [INFO] Listening at: http://0.0.0.0:8095 (3801782)
+[2025-11-29 04:21:58 +0000] [3801782] [INFO] Using worker: sync
+[2025-11-29 04:21:58 +0000] [3801784] [INFO] Booting worker with pid: 3801784
+[2025-11-29 04:21:58 +0000] [3801785] [INFO] Booting worker with pid: 3801785
+[2025-11-29 04:21:58 +0000] [3801786] [INFO] Booting worker with pid: 3801786
+[2025-11-29 04:21:58 +0000] [3801787] [INFO] Booting worker with pid: 3801787
+[2025-11-29 04:24:14 +0000] [3801782] [INFO] Handling signal: term
+[2025-11-29 07:24:14 +0300] [3801785] [INFO] Worker exiting (pid: 3801785)
+[2025-11-29 07:24:14 +0300] [3801784] [INFO] Worker exiting (pid: 3801784)
+[2025-11-29 07:24:14 +0300] [3801787] [INFO] Worker exiting (pid: 3801787)
+[2025-11-29 07:24:14 +0300] [3801786] [INFO] Worker exiting (pid: 3801786)
+[2025-11-29 04:24:15 +0000] [3801782] [INFO] Shutting down: Master
+[2025-11-29 04:24:16 +0000] [3803262] [INFO] Starting gunicorn 23.0.0
+[2025-11-29 04:24:16 +0000] [3803262] [INFO] Listening at: http://0.0.0.0:8095 (3803262)
+[2025-11-29 04:24:16 +0000] [3803262] [INFO] Using worker: sync
+[2025-11-29 04:24:16 +0000] [3803269] [INFO] Booting worker with pid: 3803269
+[2025-11-29 04:24:16 +0000] [3803270] [INFO] Booting worker with pid: 3803270
+[2025-11-29 04:24:16 +0000] [3803271] [INFO] Booting worker with pid: 3803271
+[2025-11-29 04:24:16 +0000] [3803272] [INFO] Booting worker with pid: 3803272
+[2025-11-29 04:25:48 +0000] [3803262] [INFO] Handling signal: term
+[2025-11-29 07:25:48 +0300] [3803270] [INFO] Worker exiting (pid: 3803270)
+[2025-11-29 07:25:48 +0300] [3803269] [INFO] Worker exiting (pid: 3803269)
+[2025-11-29 07:25:48 +0300] [3803271] [INFO] Worker exiting (pid: 3803271)
+[2025-11-29 07:25:48 +0300] [3803272] [INFO] Worker exiting (pid: 3803272)
+[2025-11-29 04:25:49 +0000] [3803262] [INFO] Shutting down: Master
+[2025-11-29 04:25:49 +0000] [3804406] [INFO] Starting gunicorn 23.0.0
+[2025-11-29 04:25:49 +0000] [3804406] [INFO] Listening at: http://0.0.0.0:8095 (3804406)
+[2025-11-29 04:25:49 +0000] [3804406] [INFO] Using worker: sync
+[2025-11-29 04:25:49 +0000] [3804430] [INFO] Booting worker with pid: 3804430
+[2025-11-29 04:25:49 +0000] [3804431] [INFO] Booting worker with pid: 3804431
+[2025-11-29 04:25:49 +0000] [3804433] [INFO] Booting worker with pid: 3804433
+[2025-11-29 04:25:49 +0000] [3804434] [INFO] Booting worker with pid: 3804434
+[2025-11-29 07:27:48 +0300] [3804430] [INFO] Worker exiting (pid: 3804430)
+[2025-11-29 07:27:48 +0300] [3804433] [INFO] Worker exiting (pid: 3804433)
+[2025-11-29 04:27:48 +0000] [3804406] [INFO] Handling signal: term
+[2025-11-29 07:27:48 +0300] [3804431] [INFO] Worker exiting (pid: 3804431)
+[2025-11-29 07:27:48 +0300] [3804434] [INFO] Worker exiting (pid: 3804434)
+[2025-11-29 04:27:48 +0000] [3804406] [ERROR] Worker (pid:3804434) was sent SIGTERM!
+[2025-11-29 04:27:48 +0000] [3804406] [ERROR] Worker (pid:3804431) was sent SIGTERM!
+[2025-11-29 04:27:48 +0000] [3804406] [ERROR] Worker (pid:3804430) was sent SIGTERM!
+[2025-11-29 04:27:48 +0000] [3804406] [ERROR] Worker (pid:3804433) was sent SIGTERM!
+[2025-11-29 04:27:48 +0000] [3804406] [INFO] Shutting down: Master
+[2025-11-29 04:27:48 +0000] [3805677] [INFO] Starting gunicorn 23.0.0
+[2025-11-29 04:27:48 +0000] [3805677] [INFO] Listening at: http://0.0.0.0:8095 (3805677)
+[2025-11-29 04:27:48 +0000] [3805677] [INFO] Using worker: sync
+[2025-11-29 04:27:48 +0000] [3805698] [INFO] Booting worker with pid: 3805698
+[2025-11-29 04:27:48 +0000] [3805699] [INFO] Booting worker with pid: 3805699
+[2025-11-29 04:27:48 +0000] [3805700] [INFO] Booting worker with pid: 3805700
+[2025-11-29 04:27:48 +0000] [3805701] [INFO] Booting worker with pid: 3805701
+[2025-11-29 04:30:02 +0000] [3805677] [INFO] Handling signal: term
+[2025-11-29 07:30:02 +0300] [3805701] [INFO] Worker exiting (pid: 3805701)
+[2025-11-29 07:30:02 +0300] [3805699] [INFO] Worker exiting (pid: 3805699)
+[2025-11-29 07:30:02 +0300] [3805698] [INFO] Worker exiting (pid: 3805698)
+[2025-11-29 07:30:02 +0300] [3805700] [INFO] Worker exiting (pid: 3805700)
+[2025-11-29 04:30:03 +0000] [3805677] [INFO] Shutting down: Master
+[2025-11-29 04:30:03 +0000] [3807165] [INFO] Starting gunicorn 23.0.0
+[2025-11-29 04:30:03 +0000] [3807165] [INFO] Listening at: http://0.0.0.0:8095 (3807165)
+[2025-11-29 04:30:03 +0000] [3807165] [INFO] Using worker: sync
+[2025-11-29 04:30:03 +0000] [3807176] [INFO] Booting worker with pid: 3807176
+[2025-11-29 04:30:03 +0000] [3807178] [INFO] Booting worker with pid: 3807178
+[2025-11-29 04:30:03 +0000] [3807179] [INFO] Booting worker with pid: 3807179
+[2025-11-29 04:30:03 +0000] [3807180] [INFO] Booting worker with pid: 3807180
+[2025-11-29 07:32:38 +0300] [3807176] [INFO] Worker exiting (pid: 3807176)
+[2025-11-29 04:32:38 +0000] [3807165] [INFO] Handling signal: term
+[2025-11-29 07:32:38 +0300] [3807180] [INFO] Worker exiting (pid: 3807180)
+[2025-11-29 07:32:38 +0300] [3807179] [INFO] Worker exiting (pid: 3807179)
+[2025-11-29 07:32:38 +0300] [3807178] [INFO] Worker exiting (pid: 3807178)
+[2025-11-29 04:32:38 +0000] [3807165] [ERROR] Worker (pid:3807176) was sent SIGTERM!
+[2025-11-29 04:32:39 +0000] [3807165] [INFO] Shutting down: Master
+[2025-11-29 04:32:39 +0000] [3808834] [INFO] Starting gunicorn 23.0.0
+[2025-11-29 04:32:39 +0000] [3808834] [INFO] Listening at: http://0.0.0.0:8095 (3808834)
+[2025-11-29 04:32:39 +0000] [3808834] [INFO] Using worker: sync
+[2025-11-29 04:32:39 +0000] [3808845] [INFO] Booting worker with pid: 3808845
+[2025-11-29 04:32:39 +0000] [3808846] [INFO] Booting worker with pid: 3808846
+[2025-11-29 04:32:39 +0000] [3808847] [INFO] Booting worker with pid: 3808847
+[2025-11-29 04:32:39 +0000] [3808848] [INFO] Booting worker with pid: 3808848
+[2025-11-29 04:35:07 +0000] [3808834] [INFO] Handling signal: term
+[2025-11-29 07:35:07 +0300] [3808846] [INFO] Worker exiting (pid: 3808846)
+[2025-11-29 07:35:07 +0300] [3808847] [INFO] Worker exiting (pid: 3808847)
+[2025-11-29 07:35:07 +0300] [3808845] [INFO] Worker exiting (pid: 3808845)
+[2025-11-29 07:35:07 +0300] [3808848] [INFO] Worker exiting (pid: 3808848)
+[2025-11-29 04:35:07 +0000] [3808834] [ERROR] Worker (pid:3808847) was sent SIGTERM!
+[2025-11-29 04:35:07 +0000] [3808834] [INFO] Shutting down: Master
+[2025-11-29 04:35:08 +0000] [3810445] [INFO] Starting gunicorn 23.0.0
+[2025-11-29 04:35:08 +0000] [3810445] [INFO] Listening at: http://0.0.0.0:8095 (3810445)
+[2025-11-29 04:35:08 +0000] [3810445] [INFO] Using worker: sync
+[2025-11-29 04:35:08 +0000] [3810461] [INFO] Booting worker with pid: 3810461
+[2025-11-29 04:35:08 +0000] [3810462] [INFO] Booting worker with pid: 3810462
+[2025-11-29 04:35:08 +0000] [3810463] [INFO] Booting worker with pid: 3810463
+[2025-11-29 04:35:08 +0000] [3810464] [INFO] Booting worker with pid: 3810464
+[2025-11-29 07:37:13 +0300] [3810463] [INFO] Worker exiting (pid: 3810463)
+[2025-11-29 07:37:13 +0300] [3810462] [INFO] Worker exiting (pid: 3810462)
+[2025-11-29 04:37:13 +0000] [3810445] [INFO] Handling signal: term
+[2025-11-29 07:37:13 +0300] [3810461] [INFO] Worker exiting (pid: 3810461)
+[2025-11-29 07:37:13 +0300] [3810464] [INFO] Worker exiting (pid: 3810464)
+[2025-11-29 04:37:14 +0000] [3810445] [INFO] Shutting down: Master
+[2025-11-29 04:37:14 +0000] [3811825] [INFO] Starting gunicorn 23.0.0
+[2025-11-29 04:37:14 +0000] [3811825] [INFO] Listening at: http://0.0.0.0:8095 (3811825)
+[2025-11-29 04:37:14 +0000] [3811825] [INFO] Using worker: sync
+[2025-11-29 04:37:14 +0000] [3811860] [INFO] Booting worker with pid: 3811860
+[2025-11-29 04:37:14 +0000] [3811862] [INFO] Booting worker with pid: 3811862
+[2025-11-29 04:37:14 +0000] [3811863] [INFO] Booting worker with pid: 3811863
+[2025-11-29 04:37:14 +0000] [3811865] [INFO] Booting worker with pid: 3811865
+[2025-11-29 04:38:47 +0000] [3811825] [INFO] Handling signal: term
+[2025-11-29 07:38:47 +0300] [3811860] [INFO] Worker exiting (pid: 3811860)
+[2025-11-29 07:38:47 +0300] [3811865] [INFO] Worker exiting (pid: 3811865)
+[2025-11-29 07:38:47 +0300] [3811863] [INFO] Worker exiting (pid: 3811863)
+[2025-11-29 07:38:47 +0300] [3811862] [INFO] Worker exiting (pid: 3811862)
+[2025-11-29 04:38:48 +0000] [3811825] [INFO] Shutting down: Master
+[2025-11-29 04:38:48 +0000] [3812844] [INFO] Starting gunicorn 23.0.0
+[2025-11-29 04:38:48 +0000] [3812844] [INFO] Listening at: http://0.0.0.0:8095 (3812844)
+[2025-11-29 04:38:48 +0000] [3812844] [INFO] Using worker: sync
+[2025-11-29 04:38:48 +0000] [3812856] [INFO] Booting worker with pid: 3812856
+[2025-11-29 04:38:48 +0000] [3812859] [INFO] Booting worker with pid: 3812859
+[2025-11-29 04:38:48 +0000] [3812860] [INFO] Booting worker with pid: 3812860
+[2025-11-29 04:38:48 +0000] [3812861] [INFO] Booting worker with pid: 3812861
+[2025-11-29 04:39:42 +0000] [3812844] [INFO] Handling signal: term
+[2025-11-29 07:39:42 +0300] [3812861] [INFO] Worker exiting (pid: 3812861)
+[2025-11-29 07:39:42 +0300] [3812859] [INFO] Worker exiting (pid: 3812859)
+[2025-11-29 07:39:42 +0300] [3812856] [INFO] Worker exiting (pid: 3812856)
+[2025-11-29 07:39:42 +0300] [3812860] [INFO] Worker exiting (pid: 3812860)
+[2025-11-29 04:39:43 +0000] [3812844] [INFO] Shutting down: Master
+[2025-11-29 04:39:43 +0000] [3813499] [INFO] Starting gunicorn 23.0.0
+[2025-11-29 04:39:43 +0000] [3813499] [INFO] Listening at: http://0.0.0.0:8095 (3813499)
+[2025-11-29 04:39:43 +0000] [3813499] [INFO] Using worker: sync
+[2025-11-29 04:39:43 +0000] [3813501] [INFO] Booting worker with pid: 3813501
+[2025-11-29 04:39:43 +0000] [3813502] [INFO] Booting worker with pid: 3813502
+[2025-11-29 04:39:43 +0000] [3813503] [INFO] Booting worker with pid: 3813503
+[2025-11-29 04:39:43 +0000] [3813504] [INFO] Booting worker with pid: 3813504
+[2025-11-29 04:41:38 +0000] [3813499] [INFO] Handling signal: term
+[2025-11-29 07:41:38 +0300] [3813504] [INFO] Worker exiting (pid: 3813504)
+[2025-11-29 07:41:38 +0300] [3813501] [INFO] Worker exiting (pid: 3813501)
+[2025-11-29 07:41:38 +0300] [3813502] [INFO] Worker exiting (pid: 3813502)
+[2025-11-29 07:41:38 +0300] [3813503] [INFO] Worker exiting (pid: 3813503)
+[2025-11-29 04:41:39 +0000] [3813499] [INFO] Shutting down: Master
+[2025-11-29 04:41:39 +0000] [3814786] [INFO] Starting gunicorn 23.0.0
+[2025-11-29 04:41:39 +0000] [3814786] [INFO] Listening at: http://0.0.0.0:8095 (3814786)
+[2025-11-29 04:41:39 +0000] [3814786] [INFO] Using worker: sync
+[2025-11-29 04:41:39 +0000] [3814790] [INFO] Booting worker with pid: 3814790
+[2025-11-29 04:41:39 +0000] [3814791] [INFO] Booting worker with pid: 3814791
+[2025-11-29 04:41:40 +0000] [3814794] [INFO] Booting worker with pid: 3814794
+[2025-11-29 04:41:40 +0000] [3814795] [INFO] Booting worker with pid: 3814795
+[2025-11-29 07:45:04 +0300] [3814795] [INFO] Worker exiting (pid: 3814795)
+[2025-11-29 07:45:04 +0300] [3814791] [INFO] Worker exiting (pid: 3814791)
+[2025-11-29 07:45:04 +0300] [3814790] [INFO] Worker exiting (pid: 3814790)
+[2025-11-29 04:45:04 +0000] [3814786] [INFO] Handling signal: term
+[2025-11-29 07:45:04 +0300] [3814794] [INFO] Worker exiting (pid: 3814794)
+[2025-11-29 04:45:04 +0000] [3814786] [ERROR] Worker (pid:3814790) was sent SIGTERM!
+[2025-11-29 04:45:04 +0000] [3814786] [ERROR] Worker (pid:3814795) was sent SIGTERM!
+[2025-11-29 04:45:04 +0000] [3814786] [ERROR] Worker (pid:3814791) was sent SIGTERM!
+[2025-11-29 04:45:04 +0000] [3814786] [INFO] Shutting down: Master
+[2025-11-29 04:45:04 +0000] [3817022] [INFO] Starting gunicorn 23.0.0
+[2025-11-29 04:45:04 +0000] [3817022] [INFO] Listening at: http://0.0.0.0:8095 (3817022)
+[2025-11-29 04:45:04 +0000] [3817022] [INFO] Using worker: sync
+[2025-11-29 04:45:04 +0000] [3817025] [INFO] Booting worker with pid: 3817025
+[2025-11-29 04:45:04 +0000] [3817026] [INFO] Booting worker with pid: 3817026
+[2025-11-29 04:45:04 +0000] [3817027] [INFO] Booting worker with pid: 3817027
+[2025-11-29 04:45:04 +0000] [3817033] [INFO] Booting worker with pid: 3817033
+[2025-11-29 04:46:45 +0000] [3817022] [INFO] Handling signal: term
+[2025-11-29 07:46:45 +0300] [3817033] [INFO] Worker exiting (pid: 3817033)
+[2025-11-29 07:46:45 +0300] [3817027] [INFO] Worker exiting (pid: 3817027)
+[2025-11-29 07:46:45 +0300] [3817025] [INFO] Worker exiting (pid: 3817025)
+[2025-11-29 07:46:45 +0300] [3817026] [INFO] Worker exiting (pid: 3817026)
+[2025-11-29 04:46:46 +0000] [3817022] [INFO] Shutting down: Master
+[2025-11-29 04:46:46 +0000] [3818197] [INFO] Starting gunicorn 23.0.0
+[2025-11-29 04:46:46 +0000] [3818197] [INFO] Listening at: http://0.0.0.0:8095 (3818197)
+[2025-11-29 04:46:46 +0000] [3818197] [INFO] Using worker: sync
+[2025-11-29 04:46:46 +0000] [3818212] [INFO] Booting worker with pid: 3818212
+[2025-11-29 04:46:46 +0000] [3818213] [INFO] Booting worker with pid: 3818213
+[2025-11-29 04:46:46 +0000] [3818214] [INFO] Booting worker with pid: 3818214
+[2025-11-29 04:46:46 +0000] [3818215] [INFO] Booting worker with pid: 3818215
+[2025-11-29 04:51:58 +0000] [3818197] [INFO] Handling signal: term
+[2025-11-29 07:51:58 +0300] [3818212] [INFO] Worker exiting (pid: 3818212)
+[2025-11-29 07:51:58 +0300] [3818213] [INFO] Worker exiting (pid: 3818213)
+[2025-11-29 07:51:58 +0300] [3818214] [INFO] Worker exiting (pid: 3818214)
+[2025-11-29 07:51:58 +0300] [3818215] [INFO] Worker exiting (pid: 3818215)
+[2025-11-29 04:51:58 +0000] [3818197] [ERROR] Worker (pid:3818214) was sent SIGTERM!
+[2025-11-29 04:51:58 +0000] [3818197] [ERROR] Worker (pid:3818215) was sent SIGTERM!
+[2025-11-29 04:51:59 +0000] [3818197] [INFO] Shutting down: Master
+[2025-11-29 04:51:59 +0000] [3821656] [INFO] Starting gunicorn 23.0.0
+[2025-11-29 04:51:59 +0000] [3821656] [INFO] Listening at: http://0.0.0.0:8095 (3821656)
+[2025-11-29 04:51:59 +0000] [3821656] [INFO] Using worker: sync
+[2025-11-29 04:51:59 +0000] [3821672] [INFO] Booting worker with pid: 3821672
+[2025-11-29 04:51:59 +0000] [3821673] [INFO] Booting worker with pid: 3821673
+[2025-11-29 04:51:59 +0000] [3821674] [INFO] Booting worker with pid: 3821674
+[2025-11-29 04:51:59 +0000] [3821675] [INFO] Booting worker with pid: 3821675
+[2025-11-30 06:33:55 +0300] [3821672] [INFO] Worker exiting (pid: 3821672)
+[2025-11-30 06:33:55 +0300] [3821674] [INFO] Worker exiting (pid: 3821674)
+[2025-11-30 06:33:55 +0300] [3821673] [INFO] Worker exiting (pid: 3821673)
+[2025-11-30 06:33:55 +0300] [3821675] [INFO] Worker exiting (pid: 3821675)
+[2025-11-30 03:33:55 +0000] [3821656] [INFO] Handling signal: term
+[2025-11-30 03:33:55 +0000] [3821656] [ERROR] Worker (pid:3821674) was sent SIGTERM!
+[2025-11-30 03:33:55 +0000] [3821656] [ERROR] Worker (pid:3821672) was sent SIGTERM!
+[2025-11-30 03:33:55 +0000] [3821656] [ERROR] Worker (pid:3821675) was sent SIGTERM!
+[2025-11-30 03:33:55 +0000] [3821656] [INFO] Shutting down: Master
+[2025-11-30 03:33:55 +0000] [450803] [INFO] Starting gunicorn 23.0.0
+[2025-11-30 03:33:55 +0000] [450803] [INFO] Listening at: http://0.0.0.0:8095 (450803)
+[2025-11-30 03:33:55 +0000] [450803] [INFO] Using worker: sync
+[2025-11-30 03:33:55 +0000] [450813] [INFO] Booting worker with pid: 450813
+[2025-11-30 03:33:55 +0000] [450815] [INFO] Booting worker with pid: 450815
+[2025-11-30 03:33:55 +0000] [450816] [INFO] Booting worker with pid: 450816
+[2025-11-30 03:33:55 +0000] [450817] [INFO] Booting worker with pid: 450817
+[2025-11-30 03:45:25 +0000] [450803] [INFO] Handling signal: term
+[2025-11-30 06:45:25 +0300] [450813] [INFO] Worker exiting (pid: 450813)
+[2025-11-30 06:45:25 +0300] [450816] [INFO] Worker exiting (pid: 450816)
+[2025-11-30 06:45:25 +0300] [450815] [INFO] Worker exiting (pid: 450815)
+[2025-11-30 06:45:25 +0300] [450817] [INFO] Worker exiting (pid: 450817)
+[2025-11-30 03:45:25 +0000] [450803] [ERROR] Worker (pid:450813) was sent SIGTERM!
+[2025-11-30 03:45:25 +0000] [450803] [ERROR] Worker (pid:450817) was sent SIGTERM!
+[2025-11-30 03:45:25 +0000] [450803] [ERROR] Worker (pid:450815) was sent SIGTERM!
+[2025-11-30 03:45:25 +0000] [450803] [ERROR] Worker (pid:450816) was sent SIGTERM!
+[2025-11-30 03:45:25 +0000] [450803] [INFO] Shutting down: Master
+[2025-11-30 03:45:25 +0000] [458392] [INFO] Starting gunicorn 23.0.0
+[2025-11-30 03:45:25 +0000] [458392] [INFO] Listening at: http://0.0.0.0:8095 (458392)
+[2025-11-30 03:45:25 +0000] [458392] [INFO] Using worker: sync
+[2025-11-30 03:45:25 +0000] [458408] [INFO] Booting worker with pid: 458408
+[2025-11-30 03:45:26 +0000] [458411] [INFO] Booting worker with pid: 458411
+[2025-11-30 03:45:26 +0000] [458412] [INFO] Booting worker with pid: 458412
+[2025-11-30 03:45:26 +0000] [458413] [INFO] Booting worker with pid: 458413
+[2025-11-30 03:50:54 +0000] [458392] [INFO] Handling signal: term
+[2025-11-30 06:50:54 +0300] [458408] [INFO] Worker exiting (pid: 458408)
+[2025-11-30 06:50:54 +0300] [458411] [INFO] Worker exiting (pid: 458411)
+[2025-11-30 06:50:54 +0300] [458413] [INFO] Worker exiting (pid: 458413)
+[2025-11-30 06:50:54 +0300] [458412] [INFO] Worker exiting (pid: 458412)
+[2025-11-30 03:50:54 +0000] [458392] [ERROR] Worker (pid:458411) was sent SIGTERM!
+[2025-11-30 03:50:54 +0000] [458392] [ERROR] Worker (pid:458408) was sent SIGTERM!
+[2025-11-30 03:50:55 +0000] [458392] [INFO] Shutting down: Master
+[2025-11-30 03:50:55 +0000] [461947] [INFO] Starting gunicorn 23.0.0
+[2025-11-30 03:50:55 +0000] [461947] [INFO] Listening at: http://0.0.0.0:8095 (461947)
+[2025-11-30 03:50:55 +0000] [461947] [INFO] Using worker: sync
+[2025-11-30 03:50:55 +0000] [461973] [INFO] Booting worker with pid: 461973
+[2025-11-30 03:50:55 +0000] [461985] [INFO] Booting worker with pid: 461985
+[2025-11-30 03:50:56 +0000] [461986] [INFO] Booting worker with pid: 461986
+[2025-11-30 03:50:56 +0000] [461974] [INFO] Booting worker with pid: 461974
+[2025-11-30 03:55:16 +0000] [461947] [INFO] Handling signal: term
+[2025-11-30 06:55:16 +0300] [461973] [INFO] Worker exiting (pid: 461973)
+[2025-11-30 06:55:16 +0300] [461986] [INFO] Worker exiting (pid: 461986)
+[2025-11-30 06:55:16 +0300] [461974] [INFO] Worker exiting (pid: 461974)
+[2025-11-30 06:55:16 +0300] [461985] [INFO] Worker exiting (pid: 461985)
+[2025-11-30 03:55:18 +0000] [461947] [INFO] Shutting down: Master
+[2025-11-30 03:55:18 +0000] [465038] [INFO] Starting gunicorn 23.0.0
+[2025-11-30 03:55:18 +0000] [465038] [INFO] Listening at: http://0.0.0.0:8095 (465038)
+[2025-11-30 03:55:18 +0000] [465038] [INFO] Using worker: sync
+[2025-11-30 03:55:18 +0000] [465041] [INFO] Booting worker with pid: 465041
+[2025-11-30 03:55:18 +0000] [465042] [INFO] Booting worker with pid: 465042
+[2025-11-30 03:55:18 +0000] [465043] [INFO] Booting worker with pid: 465043
+[2025-11-30 03:55:18 +0000] [465044] [INFO] Booting worker with pid: 465044
+[2025-11-30 03:56:31 +0000] [465038] [INFO] Handling signal: term
+[2025-11-30 06:56:31 +0300] [465043] [INFO] Worker exiting (pid: 465043)
+[2025-11-30 06:56:31 +0300] [465042] [INFO] Worker exiting (pid: 465042)
+[2025-11-30 06:56:31 +0300] [465044] [INFO] Worker exiting (pid: 465044)
+[2025-11-30 06:56:31 +0300] [465041] [INFO] Worker exiting (pid: 465041)
+[2025-11-30 03:56:31 +0000] [465038] [ERROR] Worker (pid:465043) was sent SIGTERM!
+[2025-11-30 03:56:32 +0000] [465038] [INFO] Shutting down: Master
+[2025-11-30 03:56:32 +0000] [465910] [INFO] Starting gunicorn 23.0.0
+[2025-11-30 03:56:32 +0000] [465910] [INFO] Listening at: http://0.0.0.0:8095 (465910)
+[2025-11-30 03:56:32 +0000] [465910] [INFO] Using worker: sync
+[2025-11-30 03:56:32 +0000] [465912] [INFO] Booting worker with pid: 465912
+[2025-11-30 03:56:32 +0000] [465913] [INFO] Booting worker with pid: 465913
+[2025-11-30 03:56:32 +0000] [465915] [INFO] Booting worker with pid: 465915
+[2025-11-30 03:56:32 +0000] [465916] [INFO] Booting worker with pid: 465916
+[2025-11-30 03:59:48 +0000] [465910] [INFO] Handling signal: term
+[2025-11-30 06:59:48 +0300] [465916] [INFO] Worker exiting (pid: 465916)
+[2025-11-30 06:59:48 +0300] [465912] [INFO] Worker exiting (pid: 465912)
+[2025-11-30 06:59:48 +0300] [465913] [INFO] Worker exiting (pid: 465913)
+[2025-11-30 06:59:48 +0300] [465915] [INFO] Worker exiting (pid: 465915)
+[2025-11-30 03:59:49 +0000] [465910] [INFO] Shutting down: Master
+[2025-11-30 03:59:49 +0000] [468414] [INFO] Starting gunicorn 23.0.0
+[2025-11-30 03:59:49 +0000] [468414] [INFO] Listening at: http://0.0.0.0:8095 (468414)
+[2025-11-30 03:59:49 +0000] [468414] [INFO] Using worker: sync
+[2025-11-30 03:59:49 +0000] [468422] [INFO] Booting worker with pid: 468422
+[2025-11-30 03:59:50 +0000] [468424] [INFO] Booting worker with pid: 468424
+[2025-11-30 03:59:50 +0000] [468425] [INFO] Booting worker with pid: 468425
+[2025-11-30 03:59:50 +0000] [468427] [INFO] Booting worker with pid: 468427
+[2025-11-30 04:01:15 +0000] [468414] [INFO] Handling signal: term
+[2025-11-30 07:01:15 +0300] [468427] [INFO] Worker exiting (pid: 468427)
+[2025-11-30 07:01:15 +0300] [468424] [INFO] Worker exiting (pid: 468424)
+[2025-11-30 07:01:15 +0300] [468422] [INFO] Worker exiting (pid: 468422)
+[2025-11-30 07:01:15 +0300] [468425] [INFO] Worker exiting (pid: 468425)
+[2025-11-30 04:01:16 +0000] [468414] [INFO] Shutting down: Master
+[2025-11-30 04:01:16 +0000] [469488] [INFO] Starting gunicorn 23.0.0
+[2025-11-30 04:01:16 +0000] [469488] [INFO] Listening at: http://0.0.0.0:8095 (469488)
+[2025-11-30 04:01:16 +0000] [469488] [INFO] Using worker: sync
+[2025-11-30 04:01:16 +0000] [469497] [INFO] Booting worker with pid: 469497
+[2025-11-30 04:01:16 +0000] [469498] [INFO] Booting worker with pid: 469498
+[2025-11-30 04:01:17 +0000] [469499] [INFO] Booting worker with pid: 469499
+[2025-11-30 04:01:17 +0000] [469500] [INFO] Booting worker with pid: 469500
+[2025-11-30 14:31:00 +0000] [469488] [INFO] Handling signal: term
+[2025-11-30 17:31:00 +0300] [469499] [INFO] Worker exiting (pid: 469499)
+[2025-11-30 17:31:00 +0300] [469500] [INFO] Worker exiting (pid: 469500)
+[2025-11-30 17:31:00 +0300] [469498] [INFO] Worker exiting (pid: 469498)
+[2025-11-30 17:31:00 +0300] [469497] [INFO] Worker exiting (pid: 469497)
+[2025-11-30 14:31:01 +0000] [469488] [ERROR] Worker (pid:469500) was sent SIGTERM!
+[2025-11-30 14:31:01 +0000] [469488] [INFO] Shutting down: Master
+[2025-11-30 14:31:01 +0000] [690244] [INFO] Starting gunicorn 23.0.0
+[2025-11-30 14:31:01 +0000] [690244] [INFO] Listening at: http://0.0.0.0:8095 (690244)
+[2025-11-30 14:31:01 +0000] [690244] [INFO] Using worker: sync
+[2025-11-30 14:31:01 +0000] [690247] [INFO] Booting worker with pid: 690247
+[2025-11-30 14:31:01 +0000] [690248] [INFO] Booting worker with pid: 690248
+[2025-11-30 14:31:02 +0000] [690249] [INFO] Booting worker with pid: 690249
+[2025-11-30 14:31:02 +0000] [690250] [INFO] Booting worker with pid: 690250
+[2025-11-30 17:34:40 +0300] [690247] [INFO] Worker exiting (pid: 690247)
+[2025-11-30 14:34:40 +0000] [690244] [INFO] Handling signal: term
+[2025-11-30 17:34:40 +0300] [690249] [INFO] Worker exiting (pid: 690249)
+[2025-11-30 17:34:40 +0300] [690248] [INFO] Worker exiting (pid: 690248)
+[2025-11-30 17:34:40 +0300] [690250] [INFO] Worker exiting (pid: 690250)
+[2025-11-30 14:34:40 +0000] [690244] [ERROR] Worker (pid:690250) was sent SIGTERM!
+[2025-11-30 14:34:40 +0000] [690244] [INFO] Shutting down: Master
+[2025-11-30 14:34:40 +0000] [692574] [INFO] Starting gunicorn 23.0.0
+[2025-11-30 14:34:40 +0000] [692574] [INFO] Listening at: http://0.0.0.0:8095 (692574)
+[2025-11-30 14:34:40 +0000] [692574] [INFO] Using worker: sync
+[2025-11-30 14:34:40 +0000] [692577] [INFO] Booting worker with pid: 692577
+[2025-11-30 14:34:41 +0000] [692578] [INFO] Booting worker with pid: 692578
+[2025-11-30 14:34:41 +0000] [692582] [INFO] Booting worker with pid: 692582
+[2025-11-30 14:34:41 +0000] [692587] [INFO] Booting worker with pid: 692587
+[2025-11-30 14:38:03 +0000] [692574] [INFO] Handling signal: term
+[2025-11-30 17:38:03 +0300] [692582] [INFO] Worker exiting (pid: 692582)
+[2025-11-30 17:38:03 +0300] [692578] [INFO] Worker exiting (pid: 692578)
+[2025-11-30 17:38:03 +0300] [692577] [INFO] Worker exiting (pid: 692577)
+[2025-11-30 17:38:03 +0300] [692587] [INFO] Worker exiting (pid: 692587)
+[2025-11-30 14:38:03 +0000] [692574] [INFO] Shutting down: Master
+[2025-11-30 14:38:04 +0000] [694711] [INFO] Starting gunicorn 23.0.0
+[2025-11-30 14:38:04 +0000] [694711] [INFO] Listening at: http://0.0.0.0:8095 (694711)
+[2025-11-30 14:38:04 +0000] [694711] [INFO] Using worker: sync
+[2025-11-30 14:38:04 +0000] [694714] [INFO] Booting worker with pid: 694714
+[2025-11-30 14:38:04 +0000] [694715] [INFO] Booting worker with pid: 694715
+[2025-11-30 14:38:04 +0000] [694716] [INFO] Booting worker with pid: 694716
+[2025-11-30 14:38:04 +0000] [694717] [INFO] Booting worker with pid: 694717
+[2025-11-30 19:09:21 +0000] [694711] [INFO] Handling signal: term
+[2025-11-30 22:09:21 +0300] [694716] [INFO] Worker exiting (pid: 694716)
+[2025-11-30 22:09:21 +0300] [694714] [INFO] Worker exiting (pid: 694714)
+[2025-11-30 22:09:21 +0300] [694715] [INFO] Worker exiting (pid: 694715)
+[2025-11-30 22:09:21 +0300] [694717] [INFO] Worker exiting (pid: 694717)
+[2025-11-30 19:09:22 +0000] [694711] [INFO] Shutting down: Master
+[2025-11-30 19:09:22 +0000] [857983] [INFO] Starting gunicorn 23.0.0
+[2025-11-30 19:09:22 +0000] [857983] [INFO] Listening at: http://0.0.0.0:8095 (857983)
+[2025-11-30 19:09:22 +0000] [857983] [INFO] Using worker: sync
+[2025-11-30 19:09:22 +0000] [857989] [INFO] Booting worker with pid: 857989
+[2025-11-30 19:09:22 +0000] [857991] [INFO] Booting worker with pid: 857991
+[2025-11-30 19:09:23 +0000] [857992] [INFO] Booting worker with pid: 857992
+[2025-11-30 19:09:23 +0000] [857993] [INFO] Booting worker with pid: 857993
+[2025-11-30 19:15:29 +0000] [857983] [INFO] Handling signal: term
+[2025-11-30 22:15:29 +0300] [857989] [INFO] Worker exiting (pid: 857989)
+[2025-11-30 22:15:29 +0300] [857991] [INFO] Worker exiting (pid: 857991)
+[2025-11-30 22:15:29 +0300] [857993] [INFO] Worker exiting (pid: 857993)
+[2025-11-30 22:15:29 +0300] [857992] [INFO] Worker exiting (pid: 857992)
+[2025-11-30 19:15:29 +0000] [857983] [ERROR] Worker (pid:857989) was sent SIGTERM!
+[2025-11-30 19:15:30 +0000] [857983] [INFO] Shutting down: Master
+[2025-11-30 19:15:30 +0000] [862208] [INFO] Starting gunicorn 23.0.0
+[2025-11-30 19:15:30 +0000] [862208] [INFO] Listening at: http://0.0.0.0:8095 (862208)
+[2025-11-30 19:15:30 +0000] [862208] [INFO] Using worker: sync
+[2025-11-30 19:15:30 +0000] [862211] [INFO] Booting worker with pid: 862211
+[2025-11-30 19:15:30 +0000] [862216] [INFO] Booting worker with pid: 862216
+[2025-11-30 19:15:30 +0000] [862227] [INFO] Booting worker with pid: 862227
+[2025-11-30 19:15:30 +0000] [862230] [INFO] Booting worker with pid: 862230
+[2025-11-30 19:17:15 +0000] [862208] [INFO] Handling signal: term
+[2025-11-30 22:17:15 +0300] [862230] [INFO] Worker exiting (pid: 862230)
+[2025-11-30 22:17:15 +0300] [862211] [INFO] Worker exiting (pid: 862211)
+[2025-11-30 22:17:15 +0300] [862216] [INFO] Worker exiting (pid: 862216)
+[2025-11-30 22:17:15 +0300] [862227] [INFO] Worker exiting (pid: 862227)
+[2025-11-30 19:17:15 +0000] [862208] [ERROR] Worker (pid:862230) was sent SIGTERM!
+[2025-11-30 19:17:15 +0000] [862208] [INFO] Shutting down: Master
+[2025-11-30 19:17:16 +0000] [863521] [INFO] Starting gunicorn 23.0.0
+[2025-11-30 19:17:16 +0000] [863521] [INFO] Listening at: http://0.0.0.0:8095 (863521)
+[2025-11-30 19:17:16 +0000] [863521] [INFO] Using worker: sync
+[2025-11-30 19:17:16 +0000] [863523] [INFO] Booting worker with pid: 863523
+[2025-11-30 19:17:16 +0000] [863524] [INFO] Booting worker with pid: 863524
+[2025-11-30 19:17:16 +0000] [863525] [INFO] Booting worker with pid: 863525
+[2025-11-30 19:17:16 +0000] [863526] [INFO] Booting worker with pid: 863526
+[2025-11-30 22:18:43 +0300] [863523] [INFO] Worker exiting (pid: 863523)
+[2025-11-30 19:18:43 +0000] [863521] [INFO] Handling signal: term
+[2025-11-30 22:18:43 +0300] [863525] [INFO] Worker exiting (pid: 863525)
+[2025-11-30 22:18:43 +0300] [863526] [INFO] Worker exiting (pid: 863526)
+[2025-11-30 22:19:03 +0300] [863524] [INFO] Worker exiting (pid: 863524)
+[2025-11-30 19:19:03 +0000] [863521] [INFO] Shutting down: Master
+[2025-11-30 19:19:03 +0000] [864843] [INFO] Starting gunicorn 23.0.0
+[2025-11-30 19:19:03 +0000] [864843] [INFO] Listening at: http://0.0.0.0:8095 (864843)
+[2025-11-30 19:19:03 +0000] [864843] [INFO] Using worker: sync
+[2025-11-30 19:19:03 +0000] [864845] [INFO] Booting worker with pid: 864845
+[2025-11-30 19:19:03 +0000] [864846] [INFO] Booting worker with pid: 864846
+[2025-11-30 19:19:03 +0000] [864847] [INFO] Booting worker with pid: 864847
+[2025-11-30 19:19:04 +0000] [864848] [INFO] Booting worker with pid: 864848
+[2025-11-30 19:19:20 +0000] [864843] [INFO] Handling signal: term
+[2025-11-30 22:19:20 +0300] [864848] [INFO] Worker exiting (pid: 864848)
+[2025-11-30 22:19:20 +0300] [864847] [INFO] Worker exiting (pid: 864847)
+[2025-11-30 22:19:20 +0300] [864846] [INFO] Worker exiting (pid: 864846)
+[2025-11-30 22:19:20 +0300] [864845] [INFO] Worker exiting (pid: 864845)
+[2025-11-30 19:19:20 +0000] [864843] [ERROR] Worker (pid:864847) was sent SIGTERM!
+[2025-11-30 19:19:20 +0000] [864843] [ERROR] Worker (pid:864845) was sent SIGTERM!
+[2025-11-30 19:19:20 +0000] [864843] [ERROR] Worker (pid:864848) was sent SIGTERM!
+[2025-11-30 19:19:20 +0000] [864843] [ERROR] Worker (pid:864846) was sent SIGTERM!
+[2025-11-30 19:19:20 +0000] [864843] [INFO] Shutting down: Master
+[2025-11-30 19:19:20 +0000] [865129] [INFO] Starting gunicorn 23.0.0
+[2025-11-30 19:19:20 +0000] [865129] [INFO] Listening at: http://0.0.0.0:8095 (865129)
+[2025-11-30 19:19:20 +0000] [865129] [INFO] Using worker: sync
+[2025-11-30 19:19:20 +0000] [865139] [INFO] Booting worker with pid: 865139
+[2025-11-30 19:19:20 +0000] [865141] [INFO] Booting worker with pid: 865141
+[2025-11-30 19:19:20 +0000] [865142] [INFO] Booting worker with pid: 865142
+[2025-11-30 19:19:20 +0000] [865143] [INFO] Booting worker with pid: 865143
+[2025-11-30 22:22:07 +0300] [865139] [INFO] Worker exiting (pid: 865139)
+[2025-11-30 19:22:07 +0000] [865129] [INFO] Handling signal: term
+[2025-11-30 22:22:07 +0300] [865142] [INFO] Worker exiting (pid: 865142)
+[2025-11-30 22:22:07 +0300] [865141] [INFO] Worker exiting (pid: 865141)
+[2025-11-30 22:22:07 +0300] [865143] [INFO] Worker exiting (pid: 865143)
+[2025-11-30 19:22:08 +0000] [865129] [INFO] Shutting down: Master
+[2025-11-30 19:22:08 +0000] [866989] [INFO] Starting gunicorn 23.0.0
+[2025-11-30 19:22:08 +0000] [866989] [INFO] Listening at: http://0.0.0.0:8095 (866989)
+[2025-11-30 19:22:08 +0000] [866989] [INFO] Using worker: sync
+[2025-11-30 19:22:08 +0000] [866991] [INFO] Booting worker with pid: 866991
+[2025-11-30 19:22:08 +0000] [866993] [INFO] Booting worker with pid: 866993
+[2025-11-30 19:22:08 +0000] [866992] [INFO] Booting worker with pid: 866992
+[2025-11-30 19:22:08 +0000] [866994] [INFO] Booting worker with pid: 866994
+[2025-11-30 22:23:43 +0300] [866991] [INFO] Worker exiting (pid: 866991)
+[2025-11-30 22:23:43 +0300] [866992] [INFO] Worker exiting (pid: 866992)
+[2025-11-30 19:23:43 +0000] [866989] [INFO] Handling signal: term
+[2025-11-30 22:23:43 +0300] [866993] [INFO] Worker exiting (pid: 866993)
+[2025-11-30 19:23:43 +0000] [866989] [ERROR] Worker (pid:866991) was sent SIGTERM!
+[2025-11-30 19:23:43 +0000] [866989] [ERROR] Worker (pid:866992) was sent SIGTERM!
+[2025-11-30 22:23:43 +0300] [866994] [INFO] Worker exiting (pid: 866994)
+[2025-11-30 19:23:43 +0000] [866989] [ERROR] Worker (pid:866993) was sent SIGTERM!
+[2025-11-30 19:23:44 +0000] [866989] [INFO] Shutting down: Master
+[2025-11-30 19:23:44 +0000] [868123] [INFO] Starting gunicorn 23.0.0
+[2025-11-30 19:23:44 +0000] [868123] [INFO] Listening at: http://0.0.0.0:8095 (868123)
+[2025-11-30 19:23:44 +0000] [868123] [INFO] Using worker: sync
+[2025-11-30 19:23:44 +0000] [868126] [INFO] Booting worker with pid: 868126
+[2025-11-30 19:23:44 +0000] [868127] [INFO] Booting worker with pid: 868127
+[2025-11-30 19:23:44 +0000] [868128] [INFO] Booting worker with pid: 868128
+[2025-11-30 19:23:44 +0000] [868129] [INFO] Booting worker with pid: 868129
+[2025-11-30 19:25:54 +0000] [868123] [INFO] Handling signal: term
+[2025-11-30 22:25:54 +0300] [868126] [INFO] Worker exiting (pid: 868126)
+[2025-11-30 22:25:54 +0300] [868127] [INFO] Worker exiting (pid: 868127)
+[2025-11-30 22:25:54 +0300] [868128] [INFO] Worker exiting (pid: 868128)
+[2025-11-30 22:25:54 +0300] [868129] [INFO] Worker exiting (pid: 868129)
+[2025-11-30 19:25:55 +0000] [868123] [INFO] Shutting down: Master
+[2025-11-30 19:25:55 +0000] [869659] [INFO] Starting gunicorn 23.0.0
+[2025-11-30 19:25:55 +0000] [869659] [INFO] Listening at: http://0.0.0.0:8095 (869659)
+[2025-11-30 19:25:55 +0000] [869659] [INFO] Using worker: sync
+[2025-11-30 19:25:55 +0000] [869663] [INFO] Booting worker with pid: 869663
+[2025-11-30 19:25:55 +0000] [869664] [INFO] Booting worker with pid: 869664
+[2025-11-30 19:25:55 +0000] [869665] [INFO] Booting worker with pid: 869665
+[2025-11-30 19:25:55 +0000] [869666] [INFO] Booting worker with pid: 869666
+[2025-11-30 22:25:59 +0300] [869664] [ERROR] Error handling request /
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+                                               ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 666, in resolve
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 718, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/allauth/account/middleware.py", line 36, in middleware
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 141, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 141, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 141, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 141, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 141, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 141, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 141, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/corsheaders/middleware.py", line 53, in __call__
+    result = self.get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 141, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 141, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/wsgi.py", line 124, in __call__
+    response = self.get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 140, in get_response
+    response = self._middleware_chain(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 141, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+[2025-11-30 22:26:03 +0300] [869665] [ERROR] Error handling request /accounts/register/
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+                                               ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 666, in resolve
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 718, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/allauth/account/middleware.py", line 36, in middleware
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 141, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 141, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 141, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 141, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 141, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 141, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 141, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/corsheaders/middleware.py", line 53, in __call__
+    result = self.get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 141, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 141, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/wsgi.py", line 124, in __call__
+    response = self.get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 140, in get_response
+    response = self._middleware_chain(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 141, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+[2025-11-30 22:26:08 +0300] [869666] [ERROR] Error handling request /help/
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+                                               ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 666, in resolve
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 718, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/allauth/account/middleware.py", line 36, in middleware
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 141, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 141, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 141, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 141, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 141, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 141, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 141, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/corsheaders/middleware.py", line 53, in __call__
+    result = self.get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 141, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 141, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/wsgi.py", line 124, in __call__
+    response = self.get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 140, in get_response
+    response = self._middleware_chain(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 141, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+[2025-11-30 22:26:11 +0300] [869665] [ERROR] Error handling request /
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    callback, callback_args, callback_kwargs = self.resolve_request(request)
+                                               ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 313, in resolve_request
+    resolver_match = resolver.resolve(request.path_info)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 666, in resolve
+    for pattern in self.url_patterns:
+                   ^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 718, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/allauth/account/middleware.py", line 36, in middleware
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 141, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 141, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 141, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 141, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 141, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 141, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 141, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/corsheaders/middleware.py", line 53, in __call__
+    result = self.get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 141, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/deprecation.py", line 120, in __call__
+    response = response or self.get_response(request)
+                           ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 141, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/gunicorn/workers/sync.py", line 177, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/wsgi.py", line 124, in __call__
+    response = self.get_response(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/base.py", line 140, in get_response
+    response = self._middleware_chain(request)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 141, in response_for_exception
+    response = handle_uncaught_exception(
+        request, get_resolver(get_urlconf()), sys.exc_info()
+    )
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/core/handlers/exception.py", line 185, in handle_uncaught_exception
+    callback = resolver.resolve_error_handler(500)
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 732, in resolve_error_handler
+    callback = getattr(self.urlconf_module, "handler%s" % view_type, None)
+                       ^^^^^^^^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ~~~~~~~~~^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/resolvers.py", line 711, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/spradar_api/urls.py", line 43, in <module>
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+             ~~~~~~~^^^^^^^^^^^^
+  File "/var/www/spradar/venv/lib/python3.13/site-packages/django/urls/conf.py", line 39, in include
+    urlconf_module = import_module(urlconf_module)
+  File "/usr/lib/python3.13/importlib/__init__.py", line 88, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1331, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 935, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 1026, in exec_module
+  File "<frozen importlib._bootstrap>", line 488, in _call_with_frames_removed
+  File "/var/www/spradar/api/urls.py", line 27, in <module>
+    from .auth_views import (
+    ...<25 lines>...
+    )
+  File "/var/www/spradar/api/auth_views.py", line 683
+    )
+    ^
+SyntaxError: unmatched ')'
+[2025-11-30 22:26:53 +0300] [869663] [INFO] Worker exiting (pid: 869663)
+[2025-11-30 19:26:53 +0000] [869659] [INFO] Handling signal: term
+[2025-11-30 22:26:53 +0300] [869664] [INFO] Worker exiting (pid: 869664)
+[2025-11-30 22:26:53 +0300] [869665] [INFO] Worker exiting (pid: 869665)
+[2025-11-30 22:26:53 +0300] [869666] [INFO] Worker exiting (pid: 869666)
+[2025-11-30 19:26:54 +0000] [869659] [INFO] Shutting down: Master
+[2025-11-30 19:26:54 +0000] [870414] [INFO] Starting gunicorn 23.0.0
+[2025-11-30 19:26:54 +0000] [870414] [INFO] Listening at: http://0.0.0.0:8095 (870414)
+[2025-11-30 19:26:54 +0000] [870414] [INFO] Using worker: sync
+[2025-11-30 19:26:54 +0000] [870416] [INFO] Booting worker with pid: 870416
+[2025-11-30 19:26:54 +0000] [870417] [INFO] Booting worker with pid: 870417
+[2025-11-30 19:26:54 +0000] [870418] [INFO] Booting worker with pid: 870418
+[2025-11-30 19:26:54 +0000] [870419] [INFO] Booting worker with pid: 870419
+[2025-11-30 19:30:18 +0000] [870414] [INFO] Handling signal: term
+[2025-11-30 22:30:18 +0300] [870418] [INFO] Worker exiting (pid: 870418)
+[2025-11-30 22:30:18 +0300] [870417] [INFO] Worker exiting (pid: 870417)
+[2025-11-30 22:30:18 +0300] [870416] [INFO] Worker exiting (pid: 870416)
+[2025-11-30 22:30:18 +0300] [870419] [INFO] Worker exiting (pid: 870419)
+[2025-11-30 19:30:19 +0000] [870414] [INFO] Shutting down: Master
+[2025-11-30 19:30:19 +0000] [872708] [INFO] Starting gunicorn 23.0.0
+[2025-11-30 19:30:19 +0000] [872708] [INFO] Listening at: http://0.0.0.0:8095 (872708)
+[2025-11-30 19:30:19 +0000] [872708] [INFO] Using worker: sync
+[2025-11-30 19:30:19 +0000] [872710] [INFO] Booting worker with pid: 872710
+[2025-11-30 19:30:19 +0000] [872711] [INFO] Booting worker with pid: 872711
+[2025-11-30 19:30:19 +0000] [872712] [INFO] Booting worker with pid: 872712
+[2025-11-30 19:30:19 +0000] [872713] [INFO] Booting worker with pid: 872713
+[2025-11-30 19:40:21 +0000] [872708] [INFO] Handling signal: term
+[2025-11-30 22:40:21 +0300] [872710] [INFO] Worker exiting (pid: 872710)
+[2025-11-30 22:40:21 +0300] [872713] [INFO] Worker exiting (pid: 872713)
+[2025-11-30 22:40:21 +0300] [872712] [INFO] Worker exiting (pid: 872712)
+[2025-11-30 22:40:21 +0300] [872711] [INFO] Worker exiting (pid: 872711)
+[2025-11-30 19:40:22 +0000] [872708] [INFO] Shutting down: Master
+[2025-11-30 19:40:22 +0000] [879043] [INFO] Starting gunicorn 23.0.0
+[2025-11-30 19:40:22 +0000] [879043] [INFO] Listening at: http://0.0.0.0:8095 (879043)
+[2025-11-30 19:40:22 +0000] [879043] [INFO] Using worker: sync
+[2025-11-30 19:40:22 +0000] [879048] [INFO] Booting worker with pid: 879048
+[2025-11-30 19:40:22 +0000] [879062] [INFO] Booting worker with pid: 879062
+[2025-11-30 19:40:22 +0000] [879067] [INFO] Booting worker with pid: 879067
+[2025-11-30 19:40:22 +0000] [879071] [INFO] Booting worker with pid: 879071

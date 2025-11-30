@@ -21,8 +21,8 @@ class MatchAIChat:
         Together AI Limit: inputs + max_new_tokens <= 8193
         Strateji: 
         - combined_prompt'un en önemli kısımlarını al (ilk 6000 karakter ~ 1500 token)
-        - max_tokens: 2500 (yeterli uzun yanıtlar için)
-        - Toplam: ~4000 token (limit içinde)
+        - max_tokens: 4000 (daha uzun ve detaylı yanıtlar)
+        - Toplam: ~5500 token (limit içinde)
         
         Args:
             match_data: DailyMatchCommentary objesi veya dict
@@ -37,26 +37,26 @@ class MatchAIChat:
             
             
             
-            context = f"""Sen bir maç analiz robotusun. SADECE maç istatistiklerine dayalı cevap ver.
+            context = f"""Sen futbol maç analistisin. SADECE verilen istatistiklere dayalı cevap ver.
 
-⛔ KATÝ KURALLAR:
-1. ASLA genel futbol bilgisi verme (lig tablosu, şampiyonluk sayýsý, yýldýz sayýsý vs.)
-2. Kullanýcý maç dýşý soru sorarsa: "⚠️ Bu bilgi maç verilerinde yok. Sadece bu maçýn istatistiklerini analiz edebilirim." de
-3. SADECE aşaðýdaki DETAYLI ANALiZ verisini kullan
-4. Bilmediðin bir şeyi ASLA uydurma
+⚠️ ÖNEMLİ KURALLAR:
+1. SADECE aşağıdaki maç verisini kullan
+2. Bilmediğin bir şeyi ASLA uydurma
+3. Lig sıralaması, şampiyonluk sayısı gibi genel bilgileri SÖYLEME (veride yok)
+4. Kullanıcı genel soru sorarsa: "Bu soru maç verileriyle ilgili değil, sadece bu maç hakkında cevap verebilirim." de
 
 MAÇ: {match_data.home_team_name} vs {match_data.away_team_name}
-LiG: {match_data.league} ({match_data.country})
-TARiH: {match_data.match_date} {match_data.match_time}
+LİG: {match_data.league} ({match_data.country})
+TARİH: {match_data.match_date} {match_data.match_time}
 
-DETAYLI ANALiZ (SADECE BU VERiYi KULLAN):
+DETAYLI ANALİZ (SADECE BU VERİYİ KULLAN):
 {combined_prompt}
 
-⚠️ MUTLAKA TÜRKÇE CEVAP VER! ingilizce kesinlikle yasak!
+⚠️ MUTLAKA TÜRKÇE CEVAP VER! İngilizce kesinlikle yasak!
 
 🎨 FORMATLAMA KURALLARI:
-- Başlýklar için ### kullan (örn: ### Fenerbahçe:)
-- Önemli kelimeleri **kalýn** yap (örn: **önemli**)
+- Başlıklar için ### kullan (örn: ### Fenerbahçe:)
+- Önemli kelimeleri **kalın** yap (örn: **önemli**)
 - Madde işaretleri için - kullan (örn: - Form: ...)
 - Uygun emojiler ekle (⚽ 🏆 📊 🔥 ⚠️ 💪 🎯 📈 📉 ✅ ❌ 🟢 🔴 🟡)
 """
@@ -67,7 +67,7 @@ MAÇ: {match_data.get('home_team_name')} vs {match_data.get('away_team_name')}
 LİG: {match_data.get('league')} ({match_data.get('country')})
 TARİH: {match_data.get('match_date')} {match_data.get('match_time')}
 
-Sen profesyonel bir futbol analistisin. Kullanıcının sorularını yanıtla.
+Sen profesyonel bir futbol bahis analistisin. Kullanıcının sorularını yanıtla.
 """
         
         return context
@@ -100,23 +100,20 @@ Sen profesyonel bir futbol analistisin. Kullanıcının sorularını yanıtla.
         # Yeni kullanıcı mesajı
         messages.append({
             "role": "system",
-            "content": """⛔ KATI KURALLAR - ASLA iHLAL ETME:
-
-1. TÜRKÇE: Cevabın %100 Türkçe olmalı!
-2. SADECE MAÇ VERiSi: Yukarıdaki DETAYLI ANALiZ dışında BiLGi KULLANMA!
-3. GENEL SORULAR: Lig tablosu, şampiyonluk sayısı, yıldız sayısı gibi sorulara CEVAP VERME!
-   ➜ Cevap: "⚠️ Bu bilgi maç verilerinde yok. Sadece bu maçın istatistiklerini analiz edebilirim."
-4. EMOJi: Cevabında MUTLAKA emoji kullan (⚽🏆📊🔥💪��📈✅❌)
-5. FORMAT: ### başlık, **kalın**, - madde işareti kullan
-
-⛔ YASAK: Takım tarihi, genel istatistikler, lig sıralaması, şampiyonluk bilgileri!
-✅ iZiNLi: SADECE bu maçın son 10 maç performans istatistikleri!"""
-        
+            "content": """⚠️ ÖNEMLİ: 
+1. Cevabın TAMAMEN Türkçe olmalı! İngilizce kelime kullanma!
+2. SADECE yukarıdaki maç verilerini kullan - başka bilgi ekleme!
+3. Cevabında MUTLAKA emoji kullan (⚽🏆📊🔥💪🎯📈✅❌🟢🔴)
+4. Başlıklar için ### kullan
+5. Önemli kelimeleri **kalın** yap
+6. Madde işaretleri için - kullan
+7. Genel sorulara (lig sıralaması, şampiyonluk sayısı vb.) cevap verme, sadece maç istatistiklerine odaklan!"""
         })
         messages.append({
             "role": "user",
             "content": user_message
         })
+        
         # Türkçe enforcement için retry mekanizması
         max_retries = 3
         for attempt in range(max_retries):
@@ -124,9 +121,9 @@ Sen profesyonel bir futbol analistisin. Kullanıcının sorularını yanıtla.
                 response = self.client.chat.completions.create(
                     model=self.model,
                     messages=messages,
-                    max_tokens=2500,  # Kısa ve öz cevaplar
-                    temperature=0.4,  # Qwen için optimize
-                    top_p=0.8,
+                    max_tokens=4000,  # Daha uzun ve detaylı cevaplar
+                    temperature=0.6,  # Qwen için optimize
+                    top_p=0.9,
                 )
                 
                 ai_response = response.choices[0].message.content
@@ -197,8 +194,10 @@ Sen profesyonel bir futbol analistisin. Kullanıcının sorularını yanıtla.
         context = self.get_match_context(match_data)
         
         prompt = """
-Bu maç hakkında 3-4 cümlelik kısa bir analiz yap. 
-Takımların son durumunu, güçlü/zayıf yönlerini ve maç tahmini hakkında fikir ver.
+
+bu maç hakkında kullanıcılara kaliteli ve istatistiklere uygun cevaplar ver , kullanıcılara yapacakları bahisler konusunda yardımcı olabilecek analizler yap , Türkçe cevap ver.
+Takımların güçlü ve zayıf yönlerini, maçın kritik anlarını ve olası sonuçları değerlendir. takımların ilk yarı ve maç sonucu kgvar,alt üst gibi analizler yap.
+
 """
         
         return self.chat(prompt, context)

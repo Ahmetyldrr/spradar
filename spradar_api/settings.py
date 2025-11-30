@@ -36,6 +36,14 @@ DEBUG = True
 ALLOWED_HOSTS = ['*']  # Tüm hostlar (development için)
 # Production'da: ['fxfutbol.com.tr', 'www.fxfutbol.com.tr', '167.71.74.229']
 
+# CSRF Settings
+CSRF_TRUSTED_ORIGINS = [
+    'https://fxfutbol.com.tr',
+    'https://www.fxfutbol.com.tr',
+    'http://localhost:8095',
+    'http://127.0.0.1:8095',
+]
+
 
 # Application definition
 

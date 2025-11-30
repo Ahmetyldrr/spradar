@@ -199,11 +199,11 @@
     <div class="login-box">
         <div class="login-header">
             <h1>⚽ Hoş Geldiniz</h1>
-            <p>FX Futbol hesabınıza giriş yapın</p>
+            <p>Google hesabınızla hızlıca giriş yapın</p>
         </div>
         
         <div class="login-body">
-            <!-- Google Login -->
+            <!-- Google Login Button -->
             <a href="{% provider_login_url 'google' %}" class="btn-google">
                 <svg class="google-icon" viewBox="0 0 24 24">
                     <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
@@ -214,58 +214,14 @@
                 Google ile Giriş Yap
             </a>
             
-            <div class="divider">
-                <span>veya email ile</span>
-            </div>
-            
-            <!-- Login Form -->
-            <form method="post" action="{% url 'account_login' %}">
-                {% csrf_token %}
-                
-                {% if form.non_field_errors %}
-                <div class="alert alert-danger">
-                    {{ form.non_field_errors }}
-                </div>
-                {% endif %}
-                
-                <div class="form-group">
-                    <label class="form-label" for="id_login">Email Adresi</label>
-                    <input type="email" name="login" class="form-control" id="id_login" 
-                           placeholder="ornek@email.com" required 
-                           value="{{ form.login.value|default:'' }}">
-                    {% if form.login.errors %}
-                    <small class="text-danger">{{ form.login.errors }}</small>
-                    {% endif %}
-                </div>
-                
-                <div class="form-group">
-                    <label class="form-label" for="id_password">Şifre</label>
-                    <input type="password" name="password" class="form-control" id="id_password" 
-                           placeholder="••••••••" required>
-                    {% if form.password.errors %}
-                    <small class="text-danger">{{ form.password.errors }}</small>
-                    {% endif %}
-                </div>
-                
-                <div class="d-flex justify-content-between align-items-center">
-                    <div class="form-check">
-                        <input type="checkbox" name="remember" class="form-check-input" id="remember">
-                        <label class="form-check-label" for="remember">
-                            Beni Hatırla
-                        </label>
-                    </div>
-                    <a href="{% url 'account_reset_password' %}" class="forgot-link">
-                        Şifremi Unuttum?
-                    </a>
-                </div>
-                
-                <button type="submit" class="btn-login">
-                    Giriş Yap
-                </button>
-            </form>
-            
-            <div class="signup-link">
-                Hesabınız yok mu? <a href="{% url 'account_signup' %}">Hemen Üye Olun</a>
+            <div style="margin-top: 30px; text-align: center; color: #666; font-size: 14px;">
+                <p style="margin: 0;">
+                    <i class="bi bi-shield-check" style="color: #1b5e20; margin-right: 5px;"></i>
+                    Güvenli ve hızlı giriş için Google hesabınızı kullanın
+                </p>
+                <p style="margin-top: 15px; font-size: 13px; color: #999;">
+                    İlk kez giriş yapıyorsanız otomatik olarak hesabınız oluşturulacaktır
+                </p>
             </div>
         </div>
     </div>

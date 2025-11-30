@@ -38,8 +38,15 @@ def api_root(request):
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('accounts/', include('allauth.urls')),  # django-allauth URLs
-    # Custom redirects for URL compatibility
-    path('accounts/register/', RedirectView.as_view(url='/accounts/signup/', permanent=True)),
-    path('', include('api.urls')),  # Ana sayfa için
+    
+    # Ana URL'ler (ÖNCELİKLİ - api.urls'den gelenler)
+    path('', include('api.urls')),  # Özel login/register/match listesi vb.
+    
+    # Allauth gereksiz URL'lerini engelle (ana sayfaya yönlendir)
+    path('accounts/3rdparty/signup/', RedirectView.as_view(url='/', permanent=False)),
+    path('accounts/social/signup/', RedirectView.as_view(url='/', permanent=False)),
+    
+    # django-allauth URLs (SADECE KULLANILMAYANLAR)
+    # Not: api.urls'de tanımlı olanlar zaten yakalandı
+    path('accounts/', include('allauth.urls')),  # Sadece Google OAuth için
 ]

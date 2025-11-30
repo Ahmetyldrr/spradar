@@ -1,0 +1,3 @@
+README: BU DOCKER DOSYALARINI KULLANMA!
+Bu dosyalar yanlış yapılandırılmış ve tüm siteleri bozdu.
+Sistem şu an doğru çalışıyor, Docker'a gerek yok!

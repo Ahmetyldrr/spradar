@@ -96,6 +96,29 @@
         overflow: hidden;
         box-shadow: 0 8px 24px rgba(0,0,0,0.1);
         border: 3px solid #a5d6a7;
+        max-height: calc(100vh - 400px);
+        overflow-y: auto;
+        position: relative;
+        scroll-behavior: smooth;
+    }
+    
+    /* Scrollbar özelleştirme */
+    .matches-table::-webkit-scrollbar {
+        width: 10px;
+    }
+    
+    .matches-table::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 10px;
+    }
+    
+    .matches-table::-webkit-scrollbar-thumb {
+        background: var(--green);
+        border-radius: 10px;
+    }
+    
+    .matches-table::-webkit-scrollbar-thumb:hover {
+        background: var(--green-dark);
     }
     
     .table {
@@ -286,6 +309,20 @@
     }
     
     @media (max-width: 768px) {
+        /* 🔽 GENEL MOBİL KÜÇÜLTME - %50 DAHA KÜÇÜK */
+        body {
+            font-size: 0.75rem;
+        }
+        
+        .page-header h1 {
+            font-size: 1rem !important;
+        }
+        
+        .page-header p {
+            font-size: 0.7rem !important;
+        }
+        
+        /* Filtreler küçük */
         .filters-row {
             flex-direction: column;
         }
@@ -294,22 +331,248 @@
             width: 100%;
         }
         
+        .filter-item label {
+            font-size: 0.7rem;
+        }
+        
+        .filter-item input, 
+        .filter-item select {
+            font-size: 0.7rem !important;
+            padding: 6px !important;
+        }
+        
+        .btn {
+            font-size: 0.7rem !important;
+            padding: 6px 10px !important;
+        }
+        
+        /* Tablo mobilde küçült */
         .table {
-            font-size: 0.75rem;
+            font-size: 0.6rem;
         }
         
         .table thead th,
         .table tbody td {
-            padding: 8px 4px;
+            padding: 4px 2px;
+        }
+        
+        /* AI butonu mobilde */
+        .ai-btn-table {
+            width: 28px !important;
+            height: 28px !important;
+            font-size: 12px !important;
+            padding: 3px !important;
+            flex-shrink: 0;
+        }
+        
+        /* Takım isimleri mobilde kısalt */
+        .team-name {
+            font-size: 0.6rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 60px;
+        }
+        
+        /* Tarih ve saat mobilde küçük */
+        .match-time {
+            font-size: 0.6rem;
+        }
+        
+        /* Lig adı mobilde gizle (çok yer kaplıyor) */
+        .table tbody td:nth-child(4) {
+            display: none;
+        }
+        
+        .table thead th:nth-child(4) {
+            display: none;
+        }
+        
+        /* Ülke mobilde küçük */
+        .table tbody td:nth-child(3) {
+            font-size: 0.55rem;
         }
         
         .stats-cards {
             flex-direction: column;
         }
         
-        .page-header h1 {
-            font-size: 1.4rem;
+        /* 📱 MOBİLDE MODAL TAM EKRAN */
+        .modal-dialog {
+            margin: 0 !important;
+            max-width: 100% !important;
+            width: 100% !important;
+            height: 100vh !important;
         }
+        
+        .modal-content {
+            height: 100vh !important;
+            border-radius: 0 !important;
+            border: none !important;
+        }
+        
+        .modal-header {
+            padding: 15px !important;
+        }
+        
+        .modal-title {
+            font-size: 1rem !important;
+        }
+        
+        .modal-body {
+            padding: 15px !important;
+        }
+        
+        #chatMessages {
+            max-height: calc(100vh - 200px) !important;
+        }
+        
+        .chat-bubble {
+            max-width: 90% !important;
+            font-size: 0.9rem !important;
+            padding: 12px 16px !important;
+        }
+        
+        #userMessage {
+            font-size: 0.9rem !important;
+        }
+        
+        #aiChatSendBtn {
+            font-size: 0.9rem !important;
+            padding: 10px 20px !important;
+        }
+        
+        /* Mobilde tablo gizle, kartları göster */
+        .desktop-only {
+            display: none !important;
+        }
+        
+        .mobile-only {
+            display: block !important;
+        }
+    }
+    
+    /* Desktop'ta kartları gizle, tabloyu göster */
+    .mobile-only {
+        display: none;
+    }
+    
+    .desktop-only {
+        display: block;
+    }
+    
+    /* 📱 MOBİL KART STILLER - KÜÇÜK BOYUT */
+    .mobile-match-card {
+        background: white;
+        border-radius: 10px;
+        padding: 10px;
+        margin-bottom: 10px;
+        box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+    
+    .mobile-match-card:hover {
+        box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+        transform: translateY(-1px);
+    }
+    
+    .mobile-match-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 6px;
+        padding-bottom: 6px;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .mobile-match-date {
+        color: var(--green-dark);
+        font-weight: 600;
+        font-size: 0.65rem;
+    }
+    
+    .mobile-match-time {
+        color: var(--green);
+        font-weight: 700;
+        font-size: 0.7rem;
+    }
+    
+    .mobile-match-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 8px;
+        font-size: 0.6rem;
+        color: #666;
+    }
+    
+    .mobile-match-league {
+        font-weight: 600;
+        color: #333;
+    }
+    
+    .mobile-match-country {
+        background: #f5f5f5;
+        padding: 2px 6px;
+        border-radius: 8px;
+        font-size: 0.6rem;
+    }
+    
+    .mobile-match-teams {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        gap: 6px;
+    }
+    
+    .mobile-team {
+        flex: 1;
+        text-align: center;
+        font-weight: 600;
+        color: #333;
+        font-size: 0.7rem;
+    }
+    
+    .mobile-team i {
+        color: var(--green);
+        margin-bottom: 3px;
+        display: block;
+        font-size: 0.8rem;
+    }
+    
+    .mobile-vs {
+        background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+        color: white;
+        padding: 3px 8px;
+        border-radius: 12px;
+        font-weight: 700;
+        font-size: 0.6rem;
+    }
+    
+    .mobile-ai-btn {
+        width: 100%;
+        background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%);
+        color: white;
+        border: none;
+        padding: 8px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 0.75rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 6px rgba(33, 115, 70, 0.2);
+    }
+    
+    .mobile-ai-btn:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 3px 10px rgba(33, 115, 70, 0.3);
+    }
+    
+    .mobile-ai-btn i {
+        margin-right: 5px;
+        font-size: 0.7rem;
     }
     
     /* Chat Modal Styles - BÜYÜK EKRAN */
@@ -458,7 +721,7 @@
                 
                 <div class="filter-item">
                     <label class="form-label"><i class="fas fa-flag"></i> Ülke</label>
-                    <select class="form-select" name="country" id="countrySelect" onchange="handleCountryChange()">
+                    <select class="form-select" name="country" id="countrySelect" onchange="this.form.submit()">
                         <option value="">Tüm Ülkeler</option>
                         {% for country in countries %}
                         <option value="{{ country }}" {% if selected_country == country %}selected{% endif %}>
@@ -486,16 +749,20 @@
                         <input type="time" 
                                class="form-control" 
                                name="time_from" 
+                               id="timeFrom"
                                value="{{ time_from }}"
                                placeholder="Başlangıç"
-                               style="flex: 1; font-size: 0.8rem;">
+                               style="flex: 1; font-size: 0.8rem;"
+                               onchange="checkTimeAndSubmit()">
                         <span style="color: #999;">-</span>
                         <input type="time" 
                                class="form-control" 
                                name="time_to" 
+                               id="timeTo"
                                value="{{ time_to }}"
                                placeholder="Bitiş"
-                               style="flex: 1; font-size: 0.8rem;">
+                               style="flex: 1; font-size: 0.8rem;"
+                               onchange="checkTimeAndSubmit()">
                     </div>
                 </div>
                 
@@ -504,24 +771,24 @@
                     <input type="text" 
                            class="form-control" 
                            name="search" 
+                           id="searchInput"
                            value="{{ search_query }}"
-                           placeholder="Takım adı...">
+                           placeholder="Takım adı..."
+                           onkeyup="searchWithDelay()">
                 </div>
                 
                 <div class="filter-item" style="display: flex; align-items: flex-end; gap: 5px;">
-                    <button type="submit" class="btn btn-primary" style="flex: 1; font-size: 0.85rem; padding: 8px; background: linear-gradient(135deg, var(--green) 0%, var(--green-dark) 100%); border: none; color: white;">
-                        <i class="fas fa-filter"></i> Filtrele
-                    </button>
-                    <a href="{% url 'match_list' %}" class="btn btn-outline-secondary" style="font-size: 0.85rem; padding: 8px 12px; border: 1px solid var(--green); color: var(--green); background: white;" title="Filtreleri Temizle">
-                        <i class="fas fa-times"></i>
+                    <a href="{% url 'match_list' %}" class="btn btn-outline-secondary" style="flex: 1; font-size: 0.85rem; padding: 8px 12px; border: 1px solid var(--green); color: var(--green); background: white;" title="Filtreleri Temizle">
+                        <i class="fas fa-times"></i> Temizle
                     </a>
+                </div>
                 </div>
             </div>
         </form>
     </div>
     
-    <!-- Matches Table -->
-    <div class="matches-table">
+    <!-- Matches Table - Desktop görünümü -->
+    <div class="matches-table desktop-only">
         <table class="table table-hover">
             <thead>
                 <tr>
@@ -561,6 +828,51 @@
                 {% endfor %}
             </tbody>
         </table>
+    </div>
+    
+    <!-- Mobile Card View - Sadece mobilde görünür -->
+    <div class="mobile-match-cards mobile-only">
+        {% for match in matches %}
+        <div class="mobile-match-card" data-match-id="{{ match.match_id }}">
+            <div class="mobile-match-header">
+                <span class="mobile-match-date">
+                    <i class="fas fa-calendar"></i> {{ match.match_date }}
+                </span>
+                <span class="mobile-match-time">
+                    <i class="fas fa-clock"></i> {{ match.match_time }}
+                </span>
+            </div>
+            
+            <div class="mobile-match-info">
+                <span class="mobile-match-league">
+                    <i class="fas fa-trophy"></i> {{ match.league|truncatewords:3 }}
+                </span>
+                <span class="mobile-match-country">{{ match.country }}</span>
+            </div>
+            
+            <div class="mobile-match-teams">
+                <div class="mobile-team">
+                    <i class="fas fa-home"></i>
+                    <span>{{ match.home_team_name }}</span>
+                </div>
+                <div class="mobile-vs">VS</div>
+                <div class="mobile-team">
+                    <i class="fas fa-plane-departure"></i>
+                    <span>{{ match.away_team_name }}</span>
+                </div>
+            </div>
+            
+            <button class="mobile-ai-btn" 
+                    onclick="openAIChat({{ match.match_id }}, '{{ match.home_team_name|escapejs }}', '{{ match.away_team_name|escapejs }}')">
+                <i class="fas fa-robot"></i> AI ile Analiz Et
+            </button>
+        </div>
+        {% empty %}
+        <div class="text-center py-5">
+            <i class="fas fa-exclamation-circle fa-3x text-muted mb-3"></i>
+            <p class="text-muted">Maç bulunamadı</p>
+        </div>
+        {% endfor %}
     </div>
 </div>
 
@@ -602,6 +914,28 @@
 
 <script>
 console.log('🚀 match_list_table.html JavaScript loaded - v2025.11.28.02');
+
+// 🔍 Otomatik Filtreleme Fonksiyonları
+let searchTimeout;
+
+// Takım arama - 500ms delay ile
+function searchWithDelay() {
+    clearTimeout(searchTimeout);
+    searchTimeout = setTimeout(() => {
+        document.getElementById('filterForm').submit();
+    }, 500);
+}
+
+// Saat aralığı - Herhangi bir alan değişince kontrol et
+function checkTimeAndSubmit() {
+    const timeFrom = document.getElementById('timeFrom').value;
+    const timeTo = document.getElementById('timeTo').value;
+    
+    // İkisi de doluysa VEYA biri temizlendiyse otomatik submit
+    if ((timeFrom && timeTo) || (!timeFrom && !timeTo)) {
+        document.getElementById('filterForm').submit();
+    }
+}
 
 // Show-more behavior removed: all rows display by default and no "Daha Fazla Göster" UI.
 
